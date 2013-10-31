@@ -1,0 +1,719 @@
+body{
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #333;
+	background: #fff; /*url(images/blur.gif) top left repeat-x;*/ 
+	font-size: small;
+	font-family: "Arial", "Helvetica", "sans-serif";
+}
+
+html>body {
+	width: 100%;
+	height: 100%; 
+	text-align: center;
+}
+
+/*img{	
+	display: block;
+	border: 0;
+	}
+*/
+
+/* main content styles */
+
+#logo{
+   padding: 7px 10px 5px 10px;
+  }
+
+
+ #hTitle{
+   color: #309;
+   font-size: large;
+   font-weight: bold;
+   font-style: italic;
+   padding: 5px;
+  }
+
+#content .part1{
+	text-align: justify;
+	vertical-align: top;
+	padding: 20px;
+	height: 50px;
+   }
+
+#content .t{
+   text-align: left;
+	vertical-align: top;
+   padding: 10px 20px;
+   border-bottom: 1px dashed;
+   background: #efebf7;
+   font-size: medium;
+   font-weight: bold;
+   font-style: italic;
+   }
+
+
+#content .part2{
+	text-align: center;
+	vertical-align: top;
+	padding: 10px 10px 10px 10px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #330099;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 9pt;
+
+   }
+
+
+#contentprint .part2{
+	text-align: center;
+	vertical-align: top;
+	padding: 10px 10px 10px 10px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #330099;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 9pt;
+	width:840px;
+
+   }
+
+#content .part3 {
+	text-align: left;
+	vertical-align: top;
+	padding: 0 10px 20px 10px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #330099;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #330099;
+	background-color: #F0F0FE;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	width: 100px;
+
+
+}
+
+
+#content .part3a {
+	text-align: left;
+	vertical-align: top;
+	padding: 0 10px 20px 10px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #330099;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #330099;
+	background-color: #F0F0FE;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	width: 175px;
+
+
+}
+#content .part4{
+	text-align: left;
+	vertical-align: top;
+	padding: 10px 10px 10px 10px;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 9pt;
+/*	color: #330099;*/
+
+   }
+
+#header{
+    background: url(../images/header_nur1.jpg) no-repeat;
+	border-top: 2px solid #309;
+	border-right: 2px solid #309;
+	border-left: 2px solid #309;
+	border-bottom: 1px solid #330099;
+	height: 70px;
+	margin: 8px auto 0 auto;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-top: 3px;
+	height:61px;
+    width:940px;
+	}
+
+#content{
+	border-right: 2px solid #309;
+	border-left: 2px solid #309;
+	border-bottom: 2px solid #309;
+	background: #fff;
+	width: 940px;
+	height:423px;
+	margin: 0 auto;
+	}
+
+#contentprint{
+	border-right: 2px solid #309;
+	border-left: 2px solid #309;
+	border-bottom: 2px solid #309;
+	background: #fff;
+	width: 650px;
+	height:423px;
+	margin: 0 auto;
+	}
+
+#contenthelp{
+	border-right: 2px solid #309;
+	border-left: 2px solid #309;
+	border-top: 2px solid #309;
+	border-bottom: 2px solid #309;
+	background: #fff;
+	margin: 10;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 9pt;
+	}
+
+#footer{
+	text-align: left;
+	border: 2px solid #309;
+	border-top: 1px solid #330099;
+	background: #EBEBFF;
+	width: 940px;
+	height:60px;
+	margin: 0 auto;
+	}
+
+#footer .hasButton{
+	padding-left: 10px;
+	width:73px;
+   }
+
+#footer .spacer{
+	width:10px;
+   }
+
+#menutab {
+
+}
+
+.parta1 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #D4D4FB;
+    padding: 5px 0px 5px 0px;
+}
+
+
+.parta5 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #BDBDFD;
+    padding: 5px 0px 5px 0px;
+	background-color: #FCFCFE;
+}
+
+.parta2 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #2F028A;
+    padding: 5px 0px 15px 0px;
+}
+.parta3 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #C0C0F8;
+    padding: 15px 0px 5px 0px;
+}
+
+.parta4 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #330099;
+    padding: 5px 0px 5px 0px;
+	background-color: #D4D4FB;
+	font-weight: bold;
+}
+
+
+  /* start styles for form elements */
+ .field{
+   background: #fff;
+   border: 1px solid #333;
+   color: #333;
+   font-size: small;
+   font-family: "Trebuchet MS", "Bitstream Vera Sans", verdana, lucida, arial, helvetica, sans-serif;
+   }
+ 
+.iButton{
+   margin: 12px 12px 12px 0;
+   }
+
+/* main styles for links */
+
+a:link, a:visited {
+	font-weight : normal; 
+	text-decoration : underline;
+	color: #c30;
+	background: transparent; 
+	}
+
+a:hover {
+	font-weight : normal; 
+	text-decoration : underline;
+	color: #999;
+	background: transparent; 
+	}
+
+a:active {
+	font-weight : normal; 
+	text-decoration : underline;
+	color: #526968;
+	background: transparent;  
+	}
+
+.titlefont {
+	font-size: 20px;
+	font-weight: bold;
+	color: #333366;
+	text-align: center;
+	height: 60px;
+	font-family: "Arial", "Helvetica", "sans-serif";
+}
+
+.headfont {
+	font-size: 14px;
+	color: #330099;
+	text-align: left;
+}
+.menufont {
+	font-size: 12px;
+	text-align: left;
+}
+
+
+/*-Data Table-------------------------------------------*/ 
+ 
+TABLE.formtable
+  { 
+     font: bold 12px Verdana, sans-serif;
+     background-color:#FFF;
+     width:740px;
+     border-top: 1px solid #999999;
+     border-bottom: 1px solid #999999;
+     margin:0px;
+	 padding: 0px;
+     
+  }
+
+  TR.formtableApply
+  { 
+     vertical-align:center;
+     background:#F0F0FE;
+  }
+
+
+TABLE.scoretable
+  { 
+     font: bold 12px Verdana, sans-serif;
+     background-color:#FFF;
+     border-top: 1px solid #999999;
+     border-bottom: 1px solid #999999;
+     margin:0px;
+	 padding: 0px;
+  }
+
+
+/*-Data Table-------------------------------------------*/ 
+ 
+TABLE.datatable
+  { 
+     font: bold 12px Verdana, sans-serif;
+     background-color:#FFF;
+     width:100%;
+     border-top: 1px solid #999999;
+     border-bottom: 1px solid #999999;
+     margin:0px;
+
+  }
+
+TABLE.datatable_rep
+  { 
+     font: bold 12px Verdana, sans-serif;
+     background-color:#FFF;
+     width:100%;
+     border-top: 1px solid #999999;
+     border-bottom: 1px solid #999999;
+     margin:0px;
+
+  }
+ 
+TABLE.datatable_p
+  { 
+     font: bold 12px Verdana, sans-serif;
+     background-color:#FFF;
+     width:600px;
+     border-top: 1px solid #999999;
+     border-bottom: 3px solid #999999;
+     margin:0px;
+
+  }
+
+TABLE.datatable_ps
+  { 
+     font: bold 12px Verdana, sans-serif;
+     background-color:#FFF;
+     width:600px;
+     border-top: 1px solid #999999;
+     border-bottom: 1px solid #999999;
+     margin:0px;
+
+  }
+
+
+ TABLE.datatable_s
+  { 
+     font: bold 12px Verdana, sans-serif;
+     background-color:#FFF;
+     border-top: 1px solid #999999;
+     border-bottom: 1px solid #999999;
+     margin:0px;
+	 width:225px;
+
+  }
+
+
+  TH.datatable
+  {
+     font: bold 12px/20px Verdana, sans-serif;
+     color: #333333;
+     background-color:#FDF3A5;
+     padding:8px;
+  }
+  
+  TR.datatablelabels
+  { 
+     background: #CBCBFA;
+	 font: bold 12px Verdana, sans-serif;
+
+  }
+
+  .datatablelabels
+  { 
+     background: #CBCBFA;
+	 font: bold 12px Verdana, sans-serif;
+
+  }
+
+    TR.datatablelabels_r
+  { 
+     background: #FFCCCC;
+	 font: 12px Verdana, sans-serif;
+	 height: 25px;
+  }
+
+    TR.datatablelabels_g
+  { 
+     background: #eeeeee;
+	 font: 12px Verdana, sans-serif;
+	 height: 25px;
+	 color: #838080;
+  }
+
+      TR.datatablelabels_b
+  { 
+     background: #CBCBFA;
+	 font: 12px Verdana, sans-serif;
+	 height: 25px;
+  }
+
+  TR.datatable1
+  { 
+     text-align:left;
+     background:#F0F0FE;
+	 font-weight: normal;
+
+  }
+
+
+  
+
+  TR.datatable2
+  { 
+     vertical-align:center;
+     background:#F3F3F3;
+	 font-weight: normal;
+  }
+
+  .datatable2
+  { 
+     font: 12px Verdana, sans-serif;
+     text-align:left;
+     background:#F3F3F3;
+	 font-weight: bold;
+	 width:25%;
+
+  }
+  
+  .datatable2a
+  { 
+     font: 12px Verdana, sans-serif;
+     text-align:center;
+     background:#F0F0FE;
+	 font-weight: normal;
+
+
+  }
+
+   .datatable1a
+  { 
+     font: 12px Verdana, sans-serif;
+     text-align:center;
+     background:#F3F3F3;
+	 font-weight: normal;
+
+  }
+
+
+  .datatablelabels
+  { 
+     font: 12px Verdana, sans-serif;
+     text-align:center;
+     background:#CBCBFA;
+	 font-weight: normal;
+
+
+  }
+
+  TR.datatableApply
+  { 
+     vertical-align:center;
+     background:#FFFBD9;
+  }
+
+  TD.datatable
+  {  
+     font: normal 12px Verdana, sans-serif;
+     color: #333333;
+     padding:8px;
+	
+  }
+  
+
+   TD.datatable_p
+  {  
+     font: normal 12px Verdana, sans-serif;
+     color: #333333;
+     padding:8px;
+	 width:570px;
+	 border-bottom: 1px solid #999999;
+  }
+
+  TD.datatable_t
+  {  
+     font: normal 12px Verdana, sans-serif;
+     color: #333333;
+     padding:8px;
+	
+  }
+
+    TD.datatable_d
+  {  
+     font: normal 12px Verdana, sans-serif;
+     color: #333333;
+     padding:8px;
+	 width: 40%;
+	
+  }
+
+  TD.datatablelabels_p
+  {  
+     font: bold 12px Verdana, sans-serif;
+     color: #333333;
+     padding: 8px;
+	 width:18%;
+	 border-bottom: 1px solid #999999;
+
+  }
+  
+  TD.datatablelabels_s
+  {  
+     font: 12px Verdana, sans-serif;
+     color: #333333;
+     padding: 2px;
+	 height: 25px;
+
+  }
+
+
+  TD.datatableApply
+  {  
+     font: normal 12px Verdana, sans-serif;
+     color: #333333;
+     padding:12px;
+     text-align: right;
+  }
+
+  
+/*-End Data Table-------------------------------------------*/
+
+.statustext {
+	color: #CC6600;
+	font: bold 11px Verdana, sans-serif;
+}
+.blueborder {
+	font-size: 12px;
+	border-top: 1px solid #D4D4FB;
+	border-right: 1px solid #D4D4FB;
+	border-bottom: 1px solid #D4D4FB;
+	border-left: 1px solid #D4D4FB;
+
+}
+.smalltitle {
+	font-size: 12px;
+	color: #333366;
+	font-weight: bold;
+}
+.smalldes {
+	font-size: 11px;
+	color: #777777;
+}
+
+.tesm {
+	font-family: "Arial Unicode MS";
+	font-size: 9pt;
+	font-weight: bold;
+	color: #333399;
+}
+
+a.adminhome:link {
+
+	font-size: 12px;
+	font-weight: bold;
+	color: #333366;
+	text-decoration: underline;
+}
+a.adminhome:hover {
+    
+	font-size: 12px;
+	font-weight: bold;
+	color: #333366;
+	text-decoration: none;
+}
+a.adminhome:visited {
+	
+	font-size: 12px;
+	font-weight: bold;
+	color: #333366;
+	text-decoration: underline;
+}
+a.adminhome:active {
+	
+	font-size: 12px;
+	font-weight: bold;
+	color: #333366;
+	text-decoration: underline;
+}
+
+
+a:link, a:visited {
+	font-weight : normal; 
+	text-decoration : none;
+	color: #c30;
+	background: transparent; 
+
+	}
+
+a:hover {
+	font-weight : normal; 
+	text-decoration : underline;
+	color: #999;
+	background: transparent; 
+
+	}
+
+a:active {
+	font-weight : normal; 
+	text-decoration : none;
+	color: #526968;
+	background: transparent; 
+
+	}
+
+.tablesw {
+	font-family: "Arial Unicode MS";
+	font-size: 16px;
+	font-weight: normal;
+	background-color: D8D7EB;
+	border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+	}
+.tablesa {
+	border: 1px solid #6633CC;
+	}
+
+.welcomest {
+	font-family: "Arial Unicode MS";
+	font-size: 16px;
+	font-weight: bolder;
+	color: #6633CC;
+	}
+
+.scoreinfo
+  { 
+     background: #B7BBBB;
+	font-weight: bold;
+	color: #ffffff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+
+  }
+
+.scoreinfo1
+  { 
+     background: #F3F3F3;
+	font-weight: normal;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+
+  }
+
+  
+ #cFormHolder{
+   margin: auto;
+   }
+
+ #cFormHolder td{
+   padding: 4px;
+   }
+
+#cFormHolder .cForm{
+   text-align: left;
+   margin: auto;
+   }
+
+.red{
+   color: #660000;
+   font-weight: bold;
+   }
+
+ #cFormHolder .header{
+   text-align: center;
+   margin: auto;
+   padding: 40px 10px 10px 10px;
+   }
+
+.err
+{
+   color: #ff0000;
+   font-weight: normal;
+
+}

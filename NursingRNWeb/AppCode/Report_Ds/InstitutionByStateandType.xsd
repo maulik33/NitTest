@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="InstitutionByStateandType" targetNamespace="http:/uri.org/InstitutionByStateandType.xsd" xmlns:mstns="http:/uri.org/InstitutionByStateandType.xsd" xmlns="http:/uri.org/InstitutionByStateandType.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="InstitutionByStateandType" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="InstitutionByStateandType" msprop:Generator_UserDSName="InstitutionByStateandType">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Institutions" msprop:Generator_TableClassName="InstitutionsDataTable" msprop:Generator_TableVarName="tableInstitutions" msprop:Generator_TablePropName="Institutions" msprop:Generator_RowDeletingName="InstitutionsRowDeleting" msprop:Generator_UserTableName="Institutions" msprop:Generator_RowChangingName="InstitutionsRowChanging" msprop:Generator_RowEvHandlerName="InstitutionsRowChangeEventHandler" msprop:Generator_RowDeletedName="InstitutionsRowDeleted" msprop:Generator_RowEvArgName="InstitutionsRowChangeEvent" msprop:Generator_RowChangedName="InstitutionsRowChanged" msprop:Generator_RowClassName="InstitutionsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InstitutionID" msprop:Generator_ColumnVarNameInTable="columnInstitutionID" msprop:Generator_ColumnPropNameInRow="InstitutionID" msprop:Generator_ColumnPropNameInTable="InstitutionIDColumn" msprop:Generator_UserColumnName="InstitutionID" type="xs:string" />
+              <xs:element name="InstitutionName" msprop:Generator_ColumnVarNameInTable="columnInstitutionName" msprop:Generator_ColumnPropNameInRow="InstitutionName" msprop:Generator_ColumnPropNameInTable="InstitutionNameColumn" msprop:Generator_UserColumnName="InstitutionName" type="xs:string" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="CenterID" msprop:Generator_ColumnVarNameInTable="columnCenterID" msprop:Generator_ColumnPropNameInRow="CenterID" msprop:Generator_ColumnPropNameInTable="CenterIDColumn" msprop:Generator_UserColumnName="CenterID" type="xs:string" minOccurs="0" />
+              <xs:element name="ContactPhone" msprop:Generator_ColumnVarNameInTable="columnContactPhone" msprop:Generator_ColumnPropNameInRow="ContactPhone" msprop:Generator_ColumnPropNameInTable="ContactPhoneColumn" msprop:Generator_UserColumnName="ContactPhone" type="xs:string" minOccurs="0" />
+              <xs:element name="TimeZone" msprop:Generator_ColumnVarNameInTable="columnTimeZone" msprop:Generator_ColumnPropNameInRow="TimeZone" msprop:Generator_ColumnPropNameInTable="TimeZoneColumn" msprop:Generator_UserColumnName="TimeZone" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" msprop:Generator_UserColumnName="CreateDate" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Institutions" />
+      <xs:field xpath="mstns:InstitutionID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,35 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class ADMIN_TechAdminMaster : System.Web.UI.MasterPage
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    protected void btnLogout_OnClick(object sender, EventArgs e)
+    {
+        //signs out
+        Session.Abandon();
+
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
+        Response.Redirect("../Login.aspx");
+    }
+    protected void btnLogout_Click(object sender, ImageClickEventArgs e)
+    {
+        Session.Abandon();
+
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
+        Response.Redirect("../A_login.aspx");
+    }
+}

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GroupSearchInfo" targetNamespace="http://tempuri.org/GroupSearchInfo.xsd" xmlns:mstns="http://tempuri.org/GroupSearchInfo.xsd" xmlns="http://tempuri.org/GroupSearchInfo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="GroupSearchInfo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="GroupSearchInfo" msprop:Generator_UserDSName="GroupSearchInfo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Group" msprop:Generator_TableClassName="GroupDataTable" msprop:Generator_TableVarName="tableGroup" msprop:Generator_TablePropName="Group" msprop:Generator_RowDeletingName="GroupRowDeleting" msprop:Generator_UserTableName="Group" msprop:Generator_RowChangingName="GroupRowChanging" msprop:Generator_RowEvHandlerName="GroupRowChangeEventHandler" msprop:Generator_RowDeletedName="GroupRowDeleted" msprop:Generator_RowEvArgName="GroupRowChangeEvent" msprop:Generator_RowChangedName="GroupRowChanged" msprop:Generator_RowClassName="GroupRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="HeadId" msprop:Generator_ColumnVarNameInTable="columnHeadId" msprop:Generator_ColumnPropNameInRow="HeadId" msprop:Generator_ColumnPropNameInTable="HeadIdColumn" msprop:Generator_UserColumnName="HeadId" type="xs:int" minOccurs="0" />
+              <xs:element name="GroupId" msprop:Generator_ColumnVarNameInTable="columnGroupId" msprop:Generator_ColumnPropNameInRow="GroupId" msprop:Generator_ColumnPropNameInTable="GroupIdColumn" msprop:Generator_UserColumnName="GroupId" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Cohort" msprop:Generator_ColumnVarNameInTable="columnCohort" msprop:Generator_ColumnPropNameInRow="Cohort" msprop:Generator_ColumnPropNameInTable="CohortColumn" msprop:Generator_UserColumnName="Cohort" type="xs:string" minOccurs="0" />
+              <xs:element name="InstitutionName" msprop:Generator_ColumnVarNameInTable="columnInstitutionName" msprop:Generator_ColumnPropNameInRow="InstitutionName" msprop:Generator_ColumnPropNameInTable="InstitutionNameColumn" msprop:Generator_UserColumnName="InstitutionName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Head" msprop:Generator_TableClassName="HeadDataTable" msprop:Generator_TableVarName="tableHead" msprop:Generator_TablePropName="Head" msprop:Generator_RowDeletingName="HeadRowDeleting" msprop:Generator_UserTableName="Head" msprop:Generator_RowChangingName="HeadRowChanging" msprop:Generator_RowEvHandlerName="HeadRowChangeEventHandler" msprop:Generator_RowDeletedName="HeadRowDeleted" msprop:Generator_RowEvArgName="HeadRowChangeEvent" msprop:Generator_RowChangedName="HeadRowChanged" msprop:Generator_RowClassName="HeadRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HeadId" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnHeadId" msprop:Generator_ColumnPropNameInRow="HeadId" msprop:Generator_ColumnPropNameInTable="HeadIdColumn" msprop:Generator_UserColumnName="HeadId" type="xs:int" />
+              <xs:element name="SearchCriteria" msprop:Generator_ColumnVarNameInTable="columnSearchCriteria" msprop:Generator_ColumnPropNameInRow="SearchCriteria" msprop:Generator_ColumnPropNameInTable="SearchCriteriaColumn" msprop:Generator_UserColumnName="SearchCriteria" type="xs:string" minOccurs="0" />
+              <xs:element name="Institution" msprop:Generator_ColumnVarNameInTable="columnInstitution" msprop:Generator_ColumnPropNameInRow="Institution" msprop:Generator_ColumnPropNameInTable="InstitutionColumn" msprop:Generator_UserColumnName="Institution" type="xs:string" minOccurs="0" />
+              <xs:element name="Cohorts" msprop:Generator_ColumnVarNameInTable="columnCohorts" msprop:Generator_ColumnPropNameInRow="Cohorts" msprop:Generator_ColumnPropNameInTable="CohortsColumn" msprop:Generator_UserColumnName="Cohorts" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Group" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="Head_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Head" />
+      <xs:field xpath="mstns:HeadId" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Head_Group" msdata:parent="Head" msdata:child="Group" msdata:parentkey="HeadId" msdata:childkey="HeadId" msprop:Generator_UserChildTable="Group" msprop:Generator_ChildPropName="GetGroupRows" msprop:Generator_ParentPropName="HeadRow" msprop:Generator_UserRelationName="Head_Group" msprop:Generator_RelationVarName="relationHead_Group" msprop:Generator_UserParentTable="Head" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

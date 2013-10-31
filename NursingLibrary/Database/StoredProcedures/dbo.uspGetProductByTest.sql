@@ -1,0 +1,44 @@
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[uspGetProductByTest]') AND type in (N'P', N'PC'))
+    DROP PROCEDURE [dbo].[uspGetProductByTest]
+GO
+
+CREATE PROCEDURE [dbo].[uspGetProductByTest]  
+  
+AS    
+BEGIN   
+SET NOCOUNT ON          
+/*============================================================================================================        
+ --      Purpose: To include the 'secondsperquestion' while retieving the test details
+ --      Modified: 06/11/2012        
+ --      Author:Liju      
+ ******************************************************************************        
+ * This software is the confidential and proprietary information of        
+ * Kaplan,Inc. ("Confidential Information").  You shall not        
+ * disclose such Confidential Information and shall use it only in        
+ * accordance with the terms of the license agreement you entered into        
+ * with Kaplan, Inc.        
+ *        
+ * KAPLAN, INC. MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE         
+ * SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT         
+ * NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR        
+ * A PARTICULAR  PURPOSE, OR NON-INFRINGEMENT. KAPLAN, INC. SHALL         
+ * NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF         
+ * USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.        
+ *****************************************************************************/      
+ SELECT ProductID, TestID,TestName,TestNumber,SecondPerQuestion  
+ From Tests  
+ WHERE ProductID IS NOT NULL  
+  
+ SET NOCOUNT OFF 
+END 
+GO
+
+PRINT 'Finished creating PROCEDURE uspGetProductByTest'
+GO 
+

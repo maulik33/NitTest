@@ -1,0 +1,169 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="TechAdminMaster.master.cs" Inherits="ADMIN_TechAdminMaster" %>
+<%@ Register Src="head.ascx" TagName="head" TagPrefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Kaplan Nursing</title>
+    <style type="text/css" media="all">@import "../Temp/css/basic.css";</style>
+
+    <script language="JavaScript" type="text/javascript" src="../Temp/js/main.js"></script>
+ <script language="javascript">
+			function pickDate(Src)
+			{ 
+			window.open("CalendarPopUp.aspx?src=" + Src,"_blank", "height=260, width=250, left=100, top=100, " +  "location=no,	menubar=no, resizable=no, " + "scrollbars=no, titlebar=no, toolbar=no", true);
+			}
+			
+
+
+ function SelectAllCheckboxes(spanChk){
+
+   // Added as ASPX uses SPAN for checkbox
+   var oItem = spanChk.children;
+   var theBox= (spanChk.type=="checkbox") ? 
+        spanChk : spanChk.children.item[0];
+   xState=theBox.checked;
+   elm=theBox.form.elements;
+
+   for(i=0;i<elm.length;i++)
+     if(elm[i].type=="checkbox" && 
+              elm[i].id!=theBox.id)
+     {
+       //elm[i].click();
+       if(elm[i].checked!=xState)
+         elm[i].click();
+       //elm[i].checked=xState;
+     }
+ }
+</script>
+		
+		
+<style type="text/css">
+
+
+ #cFormHolder{
+   margin: auto;
+   }
+
+ #cFormHolder td{
+   padding: 4px;
+   }
+
+#cFormHolder .cForm{
+   text-align: left;
+   margin: auto;
+   }
+
+.red{
+   color: #660000;
+   font-weight: bold;
+   }
+
+ #cFormHolder .header{
+   text-align: center;
+   margin: auto;
+   padding: 40px 10px 10px 10px;
+   }
+
+
+</style>  
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!--Start Header-->
+
+        <uc1:head ID="Head111" runat="server" />
+       
+        <!--End Header-->
+<table id="content" border="0" cellpadding="0" cellspacing="0">
+
+    <tr>
+        <td width="100" class="part3">
+	
+         <div class="menufont">
+          <br/>       
+         <table id="menutab" width="100%" border="0" cellspacing="0" >
+           <tr> 
+             <td class="parta1">
+          &nbsp;<img src="../Temp/images/ln-bullet-on.gif"><a href="AdminHome.aspx">Home</a><br/>
+             </td>
+           </tr>
+
+    
+
+
+          
+
+
+
+        <!--section 2-->
+
+	        <tr> 
+               <td class="parta4" nowrap>
+             &nbsp;<img src="../Temp/images/ln-bullet.gif">View/Edit<br/>
+             </td>
+           </tr>
+
+           <tr> 
+             <td class="parta1">
+          &nbsp;&nbsp;&nbsp;<img src="../Temp/images/bull.gif"><a href="CohortList.aspx">Cohort</a><br/>
+  	          </td>
+           </tr>
+             
+           <tr> 
+             <td class="parta1" >
+          &nbsp;&nbsp;&nbsp;<img src="../Temp/images/bull.gif"><a href="GroupList.aspx">Groups</a><br/>
+	          </td>
+           </tr>
+
+
+             <tr> 
+             <td class="parta1" >
+          &nbsp;&nbsp;&nbsp;<img src="../Temp/images/bull.gif"><a href="UserList.aspx">Students</a><br/>
+	          </td>
+           </tr>
+           
+           
+           
+        
+        	   
+
+        <!--section 3-->
+
+	      
+
+
+
+
+          
+           <tr>
+          <td class="spacer">&nbsp;</td>
+          </tr> 
+           <tr>
+           <td align="center">
+               &nbsp;<asp:ImageButton ID="btnLogout" runat="server" ImageUrl="../Temp/images/logout.gif"
+                   OnClick="btnLogout_Click" /></td>
+           </tr>
+
+           </table>
+
+        </div>
+    
+        </td>
+       
+<!--end left menu-->
+    
+        <td  class="part2"> 
+            
+            <br />
+            <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+            </asp:contentplaceholder>
+            <br /><br /><br />
+        </td>
+     </tr>
+
+    </table>
+    </form>
+</body>
+</html>

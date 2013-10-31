@@ -1,0 +1,7 @@
+﻿<browsers>
+	<browser refID="Default" >
+		<controlAdapters>
+			<adapter controlType="ADMIN_ReportStudentReportCard" adapterType="NursingLibrary.Presenters.StateManagement.ViewStateAdapter" />
+		</controlAdapters>
+	</browser>
+</browsers>
