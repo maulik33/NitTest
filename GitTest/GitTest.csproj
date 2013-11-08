@@ -41,9 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DevBranch_Dev.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="DevBranch.cs" />
+    <Compile Include="DevBranch_Dev.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
