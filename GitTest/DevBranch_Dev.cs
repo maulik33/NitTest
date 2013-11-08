@@ -8,5 +8,17 @@ namespace GitTest
 {
     public class DevBranch_Dev
     {
+        private void getmeCode()
+        {
+            CheckStatus();
+        }
+
+        private void CheckStatus()
+        {
+           
+        }
     }
+
+   
+
 }
