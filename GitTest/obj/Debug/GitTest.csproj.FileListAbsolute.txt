@@ -1,0 +1,7 @@
+D:\MyWork\MyLab\Github\Testing\GitTest\GitTest\bin\Debug\GitTest.exe.config
+D:\MyWork\MyLab\Github\GitTest\GitTest\bin\Debug\GitTest.exe.config
+D:\MyWork\MyLab\Github\GitTest\GitTest\obj\Debug\GitTest.csprojResolveAssemblyReference.cache
+D:\MyWork\MyLab\Github\GitTest\GitTest\bin\Debug\GitTest.exe
+D:\MyWork\MyLab\Github\GitTest\GitTest\bin\Debug\GitTest.pdb
+D:\MyWork\MyLab\Github\GitTest\GitTest\obj\Debug\GitTest.exe
+D:\MyWork\MyLab\Github\GitTest\GitTest\obj\Debug\GitTest.pdb
