@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace GitTest
 {
-    class DevBranch_Dev
+    public class DevBranch_Dev
     {
+        private void getmeCode()
+        {
+            CheckStatus();
+        }
+
+        private void CheckStatus()
+        {
+           
+        }
     }
+
+   
+
 }
