@@ -15,7 +15,7 @@ namespace GitTest
 
         private void CheckStatus()
         {
-           
+            string image = null;
         }
     }
 
