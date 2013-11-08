@@ -1,1 +1,2 @@
 D:\MyWork\MyLab\Github\Testing\GitTest\GitTest\bin\Debug\GitTest.exe.config
+D:\MyWork\MyLab\Github\GitTest\GitTest\bin\Debug\GitTest.exe.config
