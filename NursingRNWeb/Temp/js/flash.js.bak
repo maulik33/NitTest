@@ -1,0 +1,31 @@
+
+function updateInteractionState(interactionStateXML)
+{
+
+
+    var code="orderingAnswerSet=%3CorderingAnswerSet%20width%3D%22740%22%20height%3D%22250%22%20%3E %3CorderAnswer%20initialPos%3D%222%22%20%3E Auscultate heart and lungs.  %3C/orderAnswer%3E %3CorderAnswer%20initialPos%3D%224%22%20%3E Record heart and respiratory rates.  %3C/orderAnswer%3E %3CorderAnswer%20initialPos%3D%225%22%20%3E Palpate and percuss the abdomen.  %3C/orderAnswer%3E %3CorderAnswer%20initialPos%3D%223%22%20%3E Examine eyes, ears, and mouth.  %3C/orderAnswer%3E %3CorderAnswer%20initialPos%3D%221%22%20%3E Elicit the Moro reflex. %3C/orderAnswer%3E  %3C/orderingAnswerSet%3E &amp;mediaPrefix=/content/media/90/81390.5.&amp;mode=review&amp;interactionState=%3CorderMatch%20orderedIndexes%3D%225,2,4,1,3%22%20correct%3D%220%22%20/%3E"
+
+	var code=unescape(code);
+	
+	//var oFlashInteractionXML = document.getElementById("flashInteractionXML");
+	//var oFlashInteractionXML.value = escape(interactionStateXML) ;
+	var test =interactionStateXML;
+	alert(test);
+
+	//var oRequireResponse = document.getElementById("requireResponse");
+	//var requireResponse = false ;
+	//if( oRequireResponse != null && oRequireResponse.value == "true" )
+		//requireResponse = true ;
+	
+	//if( requireResponse)
+	//{
+	//	showControl('nextPosition',true);
+	//}
+    document.getElementById("requireResponse").innerText=code;
+
+
+
+
+}
+
+

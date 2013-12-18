@@ -1,0 +1,32 @@
+﻿/*
+ * SimpleModal Confirm Modal Dialog
+ * http://www.ericmmartin.com/projects/simplemodal/
+ * http://code.google.com/p/simplemodal/
+ *
+ * Copyright (c) 2008 Eric Martin - http://ericmmartin.com
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Revision: $Id$
+ *
+ */
+
+body {padding:0; margin:0; height:100%; width:100%;}
+
+/* Overlay */
+#confirmModalOverlay {background-color:Gray; cursor:wait;}
+
+/* Container */
+#confirmModalContainer {height:150px; width:420px; left:50%; top:15%; font-family:Calibri, Verdana, Arial; font-size:16px; text-align:left; background:#fff; border:2px solid #989898; padding:0px;}
+#confirmModalContainer .ui-widget-header {width:100%; background:url(../Temp/images/bar_purple_re.jpg) repeat-x 0px 0px; color:#333355; font-weight:bold;padding:0px;border-radius:0px;}
+#confirmModalContainer .ui-widget-header span {padding-left:8px;}
+#confirmModalContainer #confirmCustom{width:100%}
+#confirmModalContainer #confirmCustom .message {color:#333; text-align:center; margin:0; padding:2px 4px; font-size:1em;}
+#confirmModalContainer .ui-dialog-buttonpane {width:96%; float:right; padding:10px 8px 0;} 
+#confirmModalContainer .ui-dialog-buttonpane .ui-dialog-buttonset .ui-button{float:left; margin-left:10px; width:135px; height:22px; color:#333355; font-weight:bold; text-align:center; background:url(../Temp/images/bar_purple_re.jpg) repeat-x; border:1px solid #bbb; cursor:pointer;padding:0px;} 
+#confirmModalContainer .ui-dialog-buttonpane .ui-dialog-buttonset .ui-button .ui-button-text{ padding:0px;font-family:Calibri, Verdana, Arial; font-size:16px;}
+#confirmModalContainer a.modalCloseX,
+#confirmModalContainer a.modalCloseX:link,
+#confirmModalContainer a.modalCloseX:active,
+#confirmModalContainer a.modalCloseX:visited {text-decoration:none; font-weight:bold; font-size:1.1em; position:absolute; top:-1px; left:400px; color:#800000;}

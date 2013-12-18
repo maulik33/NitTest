@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NursingRNWeb", "NursingRNWeb\NursingRNWeb.csproj", "{EFCDE0A2-036E-4247-B575-8B9981BA6E40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NursingLibrary", "NursingLibrary\NursingLibrary.csproj", "{EC660BC3-B368-44FB-9739-A39ECF046A63}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = NursingRNWeb\\NursingRNWeb.csproj
+		SccLocalPath1 = NursingRNWeb
+		SccProjectUniqueName2 = NursingLibrary\\NursingLibrary.csproj
+		SccLocalPath2 = NursingLibrary
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFCDE0A2-036E-4247-B575-8B9981BA6E40}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{EFCDE0A2-036E-4247-B575-8B9981BA6E40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFCDE0A2-036E-4247-B575-8B9981BA6E40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFCDE0A2-036E-4247-B575-8B9981BA6E40}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EFCDE0A2-036E-4247-B575-8B9981BA6E40}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EFCDE0A2-036E-4247-B575-8B9981BA6E40}.Release|.NET.ActiveCfg = Release|Any CPU
+		{EFCDE0A2-036E-4247-B575-8B9981BA6E40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFCDE0A2-036E-4247-B575-8B9981BA6E40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFCDE0A2-036E-4247-B575-8B9981BA6E40}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EFCDE0A2-036E-4247-B575-8B9981BA6E40}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EC660BC3-B368-44FB-9739-A39ECF046A63}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{EC660BC3-B368-44FB-9739-A39ECF046A63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC660BC3-B368-44FB-9739-A39ECF046A63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC660BC3-B368-44FB-9739-A39ECF046A63}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EC660BC3-B368-44FB-9739-A39ECF046A63}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EC660BC3-B368-44FB-9739-A39ECF046A63}.Release|.NET.ActiveCfg = Release|Any CPU
+		{EC660BC3-B368-44FB-9739-A39ECF046A63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC660BC3-B368-44FB-9739-A39ECF046A63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC660BC3-B368-44FB-9739-A39ECF046A63}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EC660BC3-B368-44FB-9739-A39ECF046A63}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

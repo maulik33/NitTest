@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CohortComparisons" targetNamespace="http:/uri.org/CohortComparisons.xsd" xmlns:mstns="http:/uri.org/CohortComparisons.xsd" xmlns="http:/uri.org/CohortComparisons.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CohortComparisons" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Head">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HeadID" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ReportName" type="xs:string" minOccurs="0" />
+              <xs:element name="TestTypes" msdata:Caption="TestType" type="xs:string" minOccurs="0" />
+              <xs:element name="TestNames" msdata:Caption="TestName" type="xs:string" minOccurs="0" />
+              <xs:element name="InstitutionName" type="xs:string" minOccurs="0" />
+              <xs:element name="CohortNames" msdata:Caption="CohortName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Group">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GroupID" msdata:AutoIncrement="true" msdata:Caption="CategoryID" type="xs:int" />
+              <xs:element name="HeadID" type="xs:int" minOccurs="0" />
+              <xs:element name="CategoryName" msdata:Caption="LastName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Detail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DetailID" msdata:AutoIncrement="true" msdata:Caption="SubCategoryID" type="xs:int" />
+              <xs:element name="GroupID" msdata:Caption="CategoryID" type="xs:int" minOccurs="0" />
+              <xs:element name="SubCategoryName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Head" />
+      <xs:field xpath="mstns:HeadID" />
+    </xs:unique>
+    <xs:unique name="Group_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Group" />
+      <xs:field xpath="mstns:GroupID" />
+    </xs:unique>
+    <xs:unique name="Detail_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Detail" />
+      <xs:field xpath="mstns:DetailID" />
+    </xs:unique>
+    <xs:keyref name="FK_Group_Detail" refer="Group_Constraint1">
+      <xs:selector xpath=".//mstns:Detail" />
+      <xs:field xpath="mstns:GroupID" />
+    </xs:keyref>
+    <xs:keyref name="FK_Head_Group" refer="Constraint1">
+      <xs:selector xpath=".//mstns:Group" />
+      <xs:field xpath="mstns:HeadID" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

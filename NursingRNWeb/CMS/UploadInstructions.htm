@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../JS/jquery-1.4.3.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        #QuestionInstruction li
+        {
+            list-style-type: decimal;
+        }
+        
+        #QuestionInstruction li img
+        {
+            width: 843px;
+            height: 380px;
+        }
+        
+        #TopicInstruction li
+        {
+            list-style-type: decimal;
+        }
+        
+        #TopicInstruction li img
+        {
+            width: 843px;
+            height: 380px;
+        }
+        
+        #TopicInstruction li ul li
+        {
+            list-style-type: lower-alpha;
+        }
+        
+        #QuestionInstruction li ul li
+        {
+            list-style-type: lower-alpha;
+        }
+    </style>
+</head>
+<body>
+    <div id="Question">
+        Instructions for Uploading Questions:
+        <ul id="QuestionInstruction">
+            <li>If this is the first time you are using this tool, or if you do not have the latest
+                template on your machine, please click the link to Download the Question Template,
+                indicated by the #1 in the following screenshot. NOTE: YOU MUST BE USING WORD 2007.
+                <p>
+                    <img alt="" src="../Images/UploadQuestionInstruction1.jpg" />
+                </p>
+            </li>
+            <li>Once the template is downloaded, enter valid question information
+                <ul>
+                    <li>Each question needs its own file. Please do not combine multiple questions in the
+                        same document.</li>
+                    <li>Enter relevant categories. Any additional categories you need are at the bottom
+                        of the template. These are simply the most commonly used categories. You do not
+                        have to fill any categories that are irrelevant to the question.</li>
+                    <li>Enter the q.id, stimulus, stem, alt text, answer choices, correct answer, and explanation.</li>
+                    <li>If there is a pre-existing Topic that exists, you can type it in the appropriate
+                        location in the document. This will be case sensitive. If there is no pre-existing
+                        topic, you will need to enter the new one through the CMS system and map it to the
+                        question through there.</li>
+                    <li>Review the filled in template and save it with the q.id in the title.</li>
+                </ul>
+            </li>
+            <li>Copy the template for EACH question. Ensure you are changing the q.id in the document,
+                and saving it with a different file name. </li>
+            <li>After finishing all questions, create a zip file.</li>
+            <li>To upload the completed documents, click on Choose File indicated by the #2 on the
+                following screen. The file must be either a .zip file containing .docx files, or
+                a single docx file itself. After the selection is successful, Click on Upload Completed
+                Templates, indicated by the #3 in the screenshot.
+                <p>
+                    <img alt="" src="../Images/UploadQuestionInstruction2.jpg" height="280px" />
+                </p>
+            </li>
+            <li>If the upload is successful, a success screen will display. Click on Save at the
+                bottom of the page.
+                <p>
+                    <img alt="" src="../Images/UploadQuestionInstruction3.jpg" />
+                </p>
+            </li>
+            <li>If there are any errors, they will show in an error screen. If there is an error
+                in one of the items in the zip file, NONE of the questions will upload. </li>
+            <li>To re-submit in case of errors you must follow these steps:
+                <ul>
+                    <li>Correct the error(s)that were indicated in the message in the appropriate file(s).</li>
+                    <li>Re-Zip ALL the documents into a zip file.</li>
+                    <li>Proceed with the steps in Step 5.</li>
+                </ul>
+            </li>
+            <li>Once the upload is successful, you will be able to review and edit the questions
+                as usual in the CMS, and release when ready, through the Release screen.</li>
+        </ul>
+    </div>
+    <div id="TopicInstruction">
+        Instructions for Uploading Topics:
+        <ul id="Ul1">
+            <li>If this is the first time you are using this tool, or if you do not have the latest
+                template on your machine, please click the link to download the Topic Template,
+                indicated by the #1 in the following screenshot. NOTE: YOU MUST BE USING EXCEL 2007.
+                <p>
+                    <img alt="" src="../Images/UploadTopicInstruction1.jpg" />
+                </p>
+            </li>
+            <li>Please do not change the Template Heading contents (Title and Description).</li>
+            <li>Once the template is downloaded enter the valid topic title and Description/Content.</li>
+            <li>To upload the completed documents, click on Choose File indicated by the #2 on the
+                following screen. After the selection is successful, click on Upload Completed Templates,
+                indicated by the #3 in the screenshot.
+                <p>
+                    <img alt="" src="../Images/UploadTopicInstruction2.jpg" />
+                </p>
+            </li>
+            <li>If the upload is successful, a success screen will display. Click on Save at the
+                bottom of the page.
+                <p>
+                    <img alt="" src="../Images/UploadTopicInstruction3.jpg" />
+                </p>
+            </li>
+            <li>If there are any errors, they will be shown in an error screen. In case of an error,
+                NONE of the topics will uploaded.</li>
+            <li>To re-submit in case of errors you must follow these steps:
+                <ul>
+                    <li>Correct the error(s) that were indicated in the message.</li>
+                    <li>Proceed with the steps in Step 4.</li>
+                </ul>
+            </li>
+            <li>Once the upload is successful, you will be able to review and edit the topics as
+                usual in the CMS, and release when ready, through the Release screen.</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var id = getParameterByName('Id');
+
+        if (id == "1") {
+            $('#Question').show();
+            $('#TopicInstruction').hide();
+        }
+        else if (id == "2") {
+            $('#TopicInstruction').show();
+            $('#Question').hide();
+        }
+
+        function getParameterByName(name) {
+            var match = RegExp('[?&]' + name + '=([^&]*)')
+                    .exec(window.location.search);
+            return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+        }
+
+    </script>
+</body>
+</html>

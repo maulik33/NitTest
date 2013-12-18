@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head id="Head1">
+
+        <title>Verificient Window</title>
+        	<meta http-equiv="content-type" 
+		content="text/html;charset=utf-8" />
+        <script src="../JS/porthole.min.js" type="text/javascript"></script>
+        <script src="../JS/jquery.js" type="text/javascript"></script>
+    </head>
+<body>
+  <div id="iframe"></div>
+
+
+    <script type="text/javascript">
+        var windowProxy;
+
+        function launchVerificientIFrame(verificientUrl, userId, testId) {
+            var finalUrl = verificientUrl + '&user_id=' + userId + "&test_id=" + testId;
+            var proxyUrl;
+            var parser = document.createElement('a');
+            parser.href = verificientUrl;
+            proxyUrl = parser.protocol + "://" + parser.host;
+            proxyUrl = proxyUrl + "/proxy.html";
+            $('<iframe " src="' + finalUrl + '" id="guestFrame" name="remotedContentFrame" style = "height:700px;width:1200px;" ><\/iframe>')
+                .appendTo('#iframe');
+            windowProxy = new Porthole.WindowProxy(proxyUrl, 'remotedContentFrame');
+            windowProxy.addEventListener(onMessage1);
+        }
+
+        
+        function ReceiveSubmitMessage() {
+            windowProxy.post({ 'Source': "NursingIT", 'Action': 'submit' });
+        }
+
+        var actions = {
+//actions that are accepted
+            'hide': function (e) {
+                console.log("hide called");
+            },
+            'kill': function(e) {
+                var frame = document.getElementById('guestFrame');
+                frame.parentNode.removeChild(frame);
+                window.close();
+            },
+            'validation_complete': function(e) {
+                if (!window.opener.closed) {
+                    window.opener.focus();
+                    window.opener.validationComplete();
+                }
+            },
+            'nop': function(e) {
+                alert(e.data.msg);
+            }
+        };
+        
+        function onMessage1(messageEvent) {
+            console.log(messageEvent);
+            if (messageEvent.origin == "http://staging.verificient.com:8000") { //to do figure out dynamically
+                if (actions.hasOwnProperty(messageEvent.data['Action'])) {
+                    actions[messageEvent.data['Action']](messageEvent); // This calles the relevent action in actions
+                } else {
+                    console.log("ERR: Remote passed invalid action");
+                    console.log(messageEvent);
+                }
+
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,898 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EC660BC3-B368-44FB-9739-A39ECF046A63}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NursingLibrary</RootNamespace>
+    <AssemblyName>NursingLibrary</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BlowfishNET, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\BlowfishNET.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\Binaries\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="LtiLibrary">
+      <HintPath>..\Binaries\LtiLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="OAuth.Net.Common">
+      <HintPath>..\Binaries\OAuth.Net.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="OAuth.Net.Components, Version=0.8.1.1, Culture=neutral, PublicKeyToken=32209861c86e8a0d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\OAuth.Net.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\ExecutionContext.cs" />
+    <Compile Include="Common\GridViewTemplate.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\ImpersonateUser.cs" />
+    <Compile Include="Common\ImpersonateUserBase.cs" />
+    <Compile Include="Common\KTPApp.cs" />
+    <Compile Include="Common\LogHelper.cs" />
+    <Compile Include="Common\LogInfo.cs" />
+    <Compile Include="Common\ReportParamConstants.cs" />
+    <Compile Include="Common\ReportParameter.cs" />
+    <Compile Include="Common\ServiceHelper.cs" />
+    <Compile Include="Common\SortInfo.cs" />
+    <Compile Include="Common\StringFunctions.cs" />
+    <Compile Include="DAO\AdminRepository.cs" />
+    <Compile Include="DAO\CMSRepository.cs" />
+    <Compile Include="DAO\LippincottComparer.cs" />
+    <Compile Include="DAO\QuestionRepository.cs" />
+    <Compile Include="DAO\ReportRepository.cs" />
+    <Compile Include="DAO\TestRepository.cs" />
+    <Compile Include="DAO\StudentRepository.cs" />
+    <Compile Include="DAO\DataContext.cs" />
+    <Compile Include="DAO\UnitOfWork.cs" />
+    <Compile Include="BusinessLayer\CustomFRLookupSyncManager.cs" />
+    <Compile Include="DomainServices\LookupService.cs" />
+    <Compile Include="Entity\Address.cs" />
+    <Compile Include="Entity\AdhocGroup.cs" />
+    <Compile Include="Entity\AdhocGroupTestDetails.cs" />
+    <Compile Include="Entity\Admin.cs" />
+    <Compile Include="Entity\AnswerChoice.cs" />
+    <Compile Include="Entity\Asset.cs" />
+    <Compile Include="Entity\AssetDetail.cs" />
+    <Compile Include="Entity\AssetGroup.cs" />
+    <Compile Include="Entity\AuditTrail.cs" />
+    <Compile Include="Entity\AvpContent.cs" />
+    <Compile Include="Entity\CaseByCohortResult.cs" />
+    <Compile Include="Entity\CaseModuleScore.cs" />
+    <Compile Include="Entity\CaseStudies.cs" />
+    <Compile Include="Entity\CaseSubCategory.cs" />
+    <Compile Include="Entity\CategoryDetail.cs" />
+    <Compile Include="Entity\Category.cs" />
+    <Compile Include="Entity\ClientNeeds.cs" />
+    <Compile Include="Entity\ClientNeedsCategory.cs" />
+    <Compile Include="Entity\Cohort.cs" />
+    <Compile Include="Entity\CohortByTest.cs" />
+    <Compile Include="Entity\CohortResultsByModule.cs" />
+    <Compile Include="Entity\CohortTestDates.cs" />
+    <Compile Include="Entity\Country.cs" />
+    <Compile Include="Entity\CreateFRBankEventArgs.cs" />
+    <Compile Include="Entity\CustomFRLookupData.cs" />
+    <Compile Include="Entity\CustomFRQuestion.cs" />
+    <Compile Include="Entity\Email.cs" />
+    <Compile Include="Entity\EmailMission.cs" />
+    <Compile Include="Entity\EnglishForNursingTracking.cs" />
+    <Compile Include="Entity\HelpfulDocument.cs" />
+    <Compile Include="Entity\Group.cs" />
+    <Compile Include="Entity\GroupTestDates.cs" />
+    <Compile Include="Entity\Institution.cs" />
+    <Compile Include="Entity\InstitutionContact.cs" />
+    <Compile Include="Entity\LoginContent.cs" />
+    <Compile Include="Entity\Lookup.cs" />
+    <Compile Include="Entity\LookupMapping.cs" />
+    <Compile Include="Entity\LTI.cs" />
+    <Compile Include="Entity\Module.cs" />
+    <Compile Include="Entity\MultiCampusReportDetails.cs" />
+    <Compile Include="Entity\Norm.cs" />
+    <Compile Include="Entity\Norming.cs" />
+    <Compile Include="Entity\NurInstitution.cs" />
+    <Compile Include="Entity\NurProgram.cs" />
+    <Compile Include="Entity\ProgramofStudy.cs" />
+    <Compile Include="Entity\Program.cs" />
+    <Compile Include="Entity\ProgramTestDates.cs" />
+    <Compile Include="Entity\QBankGraph.cs" />
+    <Compile Include="Entity\QuestionCriteria.cs" />
+    <Compile Include="Entity\QuestionExhibit.cs" />
+    <Compile Include="Entity\FinishedTest.cs" />
+    <Compile Include="Entity\Lippincott.cs" />
+    <Compile Include="Entity\Question.cs" />
+    <Compile Include="Entity\Product.cs" />
+    <Compile Include="Entity\ProgramResults.cs" />
+    <Compile Include="Entity\QuestionLippincott.cs" />
+    <Compile Include="Entity\QuestionResult.cs" />
+    <Compile Include="Entity\Remediation.cs" />
+    <Compile Include="Entity\ReportStudentSummaryByQuestionDetails.cs" />
+    <Compile Include="Entity\ReportTestsScheduledbyDate.cs" />
+    <Compile Include="Entity\ResultsForStudentReportCardByModule.cs" />
+    <Compile Include="Entity\ResultsFromTheCohortForChart.cs" />
+    <Compile Include="Entity\ResultsFromTheProgram.cs" />
+    <Compile Include="Entity\ResultsFromTheProgramForChart.cs" />
+    <Compile Include="Entity\ReviewRemediation.cs" />
+    <Compile Include="Entity\SaveInstitutionContactEventArgs.cs" />
+    <Compile Include="Entity\SearchQuestionEventArgs.cs" />
+    <Compile Include="Entity\SkillsModuleVideos.cs" />
+    <Compile Include="Entity\SMTest.cs" />
+    <Compile Include="Entity\SMUserTransaction.cs" />
+    <Compile Include="Entity\SMUserVideoTransaction.cs" />
+    <Compile Include="Entity\State.cs" />
+    <Compile Include="Entity\Student.cs" />
+    <Compile Include="Entity\StudentEntity.cs" />
+    <Compile Include="Entity\StudentReportCardDetails.cs" />
+    <Compile Include="Entity\StudentSummaryByQuestionDetails.cs" />
+    <Compile Include="Entity\StudentTestDates.cs" />
+    <Compile Include="Entity\SummaryPerformanceByQuestionResult.cs" />
+    <Compile Include="Entity\Systems.cs" />
+    <Compile Include="Entity\Test.cs" />
+    <Compile Include="Entity\ProductTest.cs" />
+    <Compile Include="Entity\TestByInstitutionResults.cs" />
+    <Compile Include="Entity\TestCategory.cs" />
+    <Compile Include="Entity\TestQuestion.cs" />
+    <Compile Include="Entity\TestRemediationExplainationDetails.cs" />
+    <Compile Include="Entity\TestRemediationTimeDetails.cs" />
+    <Compile Include="Entity\TestSubGroup.cs" />
+    <Compile Include="Entity\TimeZones.cs" />
+    <Compile Include="Entity\Topic.cs" />
+    <Compile Include="Entity\TraceInfo.cs" />
+    <Compile Include="Entity\TraceToken.cs" />
+    <Compile Include="Entity\UploadQuestion.cs" />
+    <Compile Include="Entity\UploadQuestionError.cs" />
+    <Compile Include="Entity\UserAnswer.cs" />
+    <Compile Include="Entity\UserAuthentication.cs" />
+    <Compile Include="Entity\UserDetails.cs" />
+    <Compile Include="Entity\UserQuestion.cs" />
+    <Compile Include="Entity\UserTest.cs" />
+    <Compile Include="Entity\ValidateNursingParams.cs" />
+    <Compile Include="Entity\ValidateUser.cs" />
+    <Compile Include="Interfaces\AuthenticateRequest.cs" />
+    <Compile Include="Interfaces\BoolResponse.cs" />
+    <Compile Include="Interfaces\CollectionResponse.cs" />
+    <Compile Include="Interfaces\IAdminHomeView.cs" />
+    <Compile Include="Interfaces\IAdminLogin.cs" />
+    <Compile Include="Interfaces\IAuditTrailView.cs" />
+    <Compile Include="Interfaces\ICaseStudyResultView.cs" />
+    <Compile Include="Interfaces\ICustomTestView.cs" />
+    <Compile Include="Interfaces\IEmailReceiverView.cs" />
+    <Compile Include="Interfaces\IErrorView.cs" />
+    <Compile Include="Interfaces\IHelpfulDocumentView.cs" />
+    <Compile Include="Interfaces\ILoginContentReleaseView.cs" />
+    <Compile Include="Interfaces\ILtiProviderView.cs" />
+    <Compile Include="Interfaces\IOverrideView.cs" />
+    <Compile Include="Interfaces\IQuestionCustomTestView.cs" />
+    <Compile Include="Interfaces\IReleaseView.cs" />
+    <Compile Include="Interfaces\IReportCaseComparisonsView.cs" />
+    <Compile Include="Interfaces\IReportCohortPerformanceView.cs" />
+    <Compile Include="Interfaces\IReportEnglishForNursingTrackingView.cs" />
+    <Compile Include="Interfaces\IReportGraph2View.cs" />
+    <Compile Include="Interfaces\IReportGraphCaseComparisonView.cs" />
+    <Compile Include="Interfaces\IReportInstitutionPerformanceView.cs" />
+    <Compile Include="Interfaces\IReportInstitutionTestByQuestionView.cs" />
+    <Compile Include="Interfaces\IReportMultiCampusReportCardView.cs" />
+    <Compile Include="Interfaces\IReportTestResultByQuestionView.cs" />
+    <Compile Include="Interfaces\IReportCohortResultsByModuleView.cs" />
+    <Compile Include="Interfaces\IAdminView.cs" />
+    <Compile Include="Interfaces\IReportCohortComparisonView.cs" />
+    <Compile Include="Interfaces\IReportGraphCView.cs" />
+    <Compile Include="Interfaces\IReportGraphView.cs" />
+    <Compile Include="Interfaces\IRemediationView.cs" />
+    <Compile Include="Interfaces\IReportCaseByCohortView.cs" />
+    <Compile Include="Interfaces\IReportLaunchDxrView.cs" />
+    <Compile Include="Interfaces\IReportPerformanceByQuestionToExcelView.cs" />
+    <Compile Include="Interfaces\Enums.cs" />
+    <Compile Include="Interfaces\Exceptions.cs" />
+    <Compile Include="Interfaces\IAdminRepository.cs" />
+    <Compile Include="Interfaces\IAdminService.cs" />
+    <Compile Include="Interfaces\IAVPItemView.cs" />
+    <Compile Include="Interfaces\ICMSRepository.cs" />
+    <Compile Include="Interfaces\ICMSService.cs" />
+    <Compile Include="Interfaces\ICohortView.cs" />
+    <Compile Include="Interfaces\IGroupView.cs" />
+    <Compile Include="Interfaces\IInstitutionView.cs" />
+    <Compile Include="Interfaces\ILaunchDxrView.cs" />
+    <Compile Include="Interfaces\ILippincottView.cs" />
+    <Compile Include="Interfaces\INormView.cs" />
+    <Compile Include="Interfaces\IPercentileView.cs" />
+    <Compile Include="Interfaces\IProgramView.cs" />
+    <Compile Include="Interfaces\IQBankPView.cs" />
+    <Compile Include="Interfaces\IQuestionView.cs" />
+    <Compile Include="Interfaces\IReportByCohortView.cs" />
+    <Compile Include="Interfaces\IReportCohortByTestView.cs" />
+    <Compile Include="Interfaces\IReportCohortTestByQuestionView.cs" />
+    <Compile Include="Interfaces\IReportPerformanceByQuestionView.cs" />
+    <Compile Include="Interfaces\IReportRemediationByTestView.cs" />
+    <Compile Include="Interfaces\IReportRepository.cs" />
+    <Compile Include="Interfaces\IReportDataService.cs" />
+    <Compile Include="Interfaces\IReportStudentPerformanceView.cs" />
+    <Compile Include="Interfaces\IReportStudentReportCardByModuleView.cs" />
+    <Compile Include="Interfaces\IReportStudentReportCardView.cs" />
+    <Compile Include="Interfaces\IReportStudentResultByCaseView.cs" />
+    <Compile Include="Interfaces\IReportStudentSummaryByAnswerChoiceView.cs" />
+    <Compile Include="Interfaces\IReportStudentSummaryByQuestionView.cs" />
+    <Compile Include="Interfaces\IReportTestsScheduledbyDateView.cs" />
+    <Compile Include="Interfaces\IReportView.cs" />
+    <Compile Include="Interfaces\ISkillModulePopUpView.cs" />
+    <Compile Include="Interfaces\ISkillModulesView.cs" />
+    <Compile Include="Interfaces\IStudentCaseStudyResultView.cs" />
+    <Compile Include="Interfaces\IStudentFRQBankView.cs" />
+    <Compile Include="Interfaces\IStudentFRRemediationView.cs" />
+    <Compile Include="Interfaces\IStudentGraphView.cs" />
+    <Compile Include="Interfaces\IStudentLoginRepository.cs" />
+    <Compile Include="Interfaces\IStudentPayView.cs" />
+    <Compile Include="Interfaces\IStudentQBankGraphView.cs" />
+    <Compile Include="Interfaces\IQuestionRepository.cs" />
+    <Compile Include="Interfaces\IStudentAnalysisView.cs" />
+    <Compile Include="Interfaces\IStudentChangePassword.cs" />
+    <Compile Include="Interfaces\IStudentCaseStudiesView.cs" />
+    <Compile Include="Interfaces\IStudentIntroView.cs" />
+    <Compile Include="Interfaces\IStudentQBankRDetailsView.cs" />
+    <Compile Include="Interfaces\IStudentQBankRView.cs" />
+    <Compile Include="Interfaces\IStudentQBankView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\IStudentIntView.cs" />
+    <Compile Include="Interfaces\IStudentShowImagesView.cs" />
+    <Compile Include="Interfaces\IStudentTestHttpCaseStudyView.cs" />
+    <Compile Include="Interfaces\ISysAdminView.cs" />
+    <Compile Include="Interfaces\ITestCategoryView.cs" />
+    <Compile Include="Interfaces\ITestRepository.cs" />
+    <Compile Include="Interfaces\IStudentHomeView.cs" />
+    <Compile Include="Interfaces\IStudentListOfReviewsView.cs" />
+    <Compile Include="Interfaces\IStudentRepository.cs" />
+    <Compile Include="Interfaces\IDataContext.cs" />
+    <Compile Include="Interfaces\IStudentNclexView.cs" />
+    <Compile Include="Interfaces\IStudentTestReviewView.cs" />
+    <Compile Include="Interfaces\IStudentHeaderView.cs" />
+    <Compile Include="Interfaces\ITransaction.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Interfaces\IuserDetailsView.cs" />
+    <Compile Include="Interfaces\IUserListView.cs" />
+    <Compile Include="Interfaces\IValidateKaplanView.cs" />
+    <Compile Include="Interfaces\IValidateNursingView.cs" />
+    <Compile Include="Interfaces\IWebView.cs" />
+    <Compile Include="Interfaces\IReportStudentQuestionsView.cs" />
+    <Compile Include="Interfaces\Request.cs" />
+    <Compile Include="Interfaces\Response.cs" />
+    <Compile Include="Interfaces\SaveQuestionRequest.cs" />
+    <Compile Include="Interfaces\UserException.cs" />
+    <Compile Include="Presenters\AdminHomePresenter.cs" />
+    <Compile Include="Presenters\AdminLoginPresenter.cs" />
+    <Compile Include="Presenters\AdminPresenter.cs" />
+    <Compile Include="Presenters\AuditTrailPresenter.cs" />
+    <Compile Include="Presenters\AuthenticatedPresenterBase.cs" />
+    <Compile Include="Presenters\AVPItemPresenter.cs" />
+    <Compile Include="Presenters\CaseStudyResultPresenter.cs" />
+    <Compile Include="Presenters\CohortPresenter.cs" />
+    <Compile Include="Presenters\Controller\IStudentAppController.cs" />
+    <Compile Include="Presenters\Controller\StudentAppController.cs" />
+    <Compile Include="Presenters\CustomTestPresenter.cs" />
+    <Compile Include="Presenters\EmailReceiverPresenter.cs" />
+    <Compile Include="Presenters\ErrorPresenter.cs" />
+    <Compile Include="Presenters\HelpfulDocumentPresenter.cs" />
+    <Compile Include="Presenters\LoginContentReleasePresenter.cs" />
+    <Compile Include="Presenters\LtiProviderPresenter.cs" />
+    <Compile Include="Presenters\OverridePresenter.cs" />
+    <Compile Include="Presenters\PresenterAttribute.cs" />
+    <Compile Include="Presenters\QuestionCustomTestPresenter.cs" />
+    <Compile Include="Presenters\ReleasePresenter.cs" />
+    <Compile Include="Presenters\ReportCaseComparisonsPresenter.cs" />
+    <Compile Include="Presenters\ReportCohortPerformancePresenter.cs" />
+    <Compile Include="Presenters\ReportEnglishForNursingTrackingPresenter.cs" />
+    <Compile Include="Presenters\ReportGraph2Presenter.cs" />
+    <Compile Include="Presenters\ReportGraphCaseComparisonPresentor.cs" />
+    <Compile Include="Presenters\ReportInstitutionPerformancePresenter.cs" />
+    <Compile Include="Presenters\ReportInstitutionTestByQuestionPresenter.cs" />
+    <Compile Include="Presenters\ReportMultiCampusReportCardPresenter.cs" />
+    <Compile Include="Presenters\ReportTestResultByQuestionPresenter.cs" />
+    <Compile Include="Presenters\ReportCohortResultsByModulePresenter.cs" />
+    <Compile Include="Presenters\ReportCohortComparisonPresenter.cs" />
+    <Compile Include="Presenters\ReportGraphCPresenter.cs" />
+    <Compile Include="Presenters\ReportGraphPresenter.cs" />
+    <Compile Include="Presenters\RemediationPresenter.cs" />
+    <Compile Include="Presenters\ReportCaseByCohortPresenter.cs" />
+    <Compile Include="Presenters\ReportLaunchDxrPresenter.cs" />
+    <Compile Include="Presenters\ReportStudentReportCardByModulePresenter.cs" />
+    <Compile Include="Presenters\ReportPerformanceByQuestionToExcelPresenter.cs" />
+    <Compile Include="Presenters\GroupPresenter.cs" />
+    <Compile Include="Presenters\InstitutionPresenter.cs" />
+    <Compile Include="Presenters\LippioncottPresenter.cs" />
+    <Compile Include="Presenters\NormPresenter.cs" />
+    <Compile Include="Presenters\PercentilePresenter.cs" />
+    <Compile Include="Presenters\PresenterBase.cs" />
+    <Compile Include="Presenters\Enums.cs" />
+    <Compile Include="Presenters\ProgramPresenter.cs" />
+    <Compile Include="Presenters\QuestionPresenter.cs" />
+    <Compile Include="Presenters\ReportByCohortPresenter.cs" />
+    <Compile Include="Presenters\ReportCohortByTestPresenter.cs" />
+    <Compile Include="Presenters\ReportCohortTestByQuestionPresenter.cs" />
+    <Compile Include="Presenters\ReportPerformanceByQuestionPresenter.cs" />
+    <Compile Include="Presenters\ReportPresenterBase.cs" />
+    <Compile Include="Presenters\ReportRemediationByTestPresenter.cs" />
+    <Compile Include="Presenters\ReportStudentPerformancePresenter.cs" />
+    <Compile Include="Presenters\ReportStudentQuestionsPresenter.cs" />
+    <Compile Include="Presenters\ReportStudentReportCardPresenter.cs" />
+    <Compile Include="Presenters\ReportStudentResultByCasePresenter.cs" />
+    <Compile Include="Presenters\ReportStudentSummaryByAnswerChoicePresenter.cs" />
+    <Compile Include="Presenters\ReportStudentSummaryByQuestionPresenter.cs" />
+    <Compile Include="Presenters\ReportTestsScheduledbyDatePresenter.cs" />
+    <Compile Include="Presenters\SkillModulePopUpPresenter.cs" />
+    <Compile Include="Presenters\SkillModulesPresenter.cs" />
+    <Compile Include="Presenters\StateManagement\ViewStateAdapter.cs" />
+    <Compile Include="Presenters\StudentCaseStudyResultPresenter.cs" />
+    <Compile Include="Presenters\StudentFRQBankPresenter.cs" />
+    <Compile Include="Presenters\StudentFRRemediationPresenter.cs" />
+    <Compile Include="Presenters\StudentGraphPresenter.cs" />
+    <Compile Include="Presenters\StudentPayPresenter.cs" />
+    <Compile Include="Presenters\StudentQBankGraphPresenter.cs" />
+    <Compile Include="Presenters\StudentAnalysisPresenter.cs" />
+    <Compile Include="Presenters\StudentCaseStudiesPresenter.cs" />
+    <Compile Include="Presenters\StudentChangePasswordPresenter.cs" />
+    <Compile Include="Presenters\StudentHeaderPresenter.cs" />
+    <Compile Include="Presenters\StudentHomePresenter.cs" />
+    <Compile Include="Presenters\StudentIntroPresenter.cs" />
+    <Compile Include="Presenters\StudentLaunchDxrPresenter.cs" />
+    <Compile Include="Presenters\StudentListOfReviewsPresenter.cs" />
+    <Compile Include="Presenters\StudentLoginPresenter.cs" />
+    <Compile Include="Presenters\Navigation\IPageNavigator.cs" />
+    <Compile Include="Presenters\Navigation\PageNavigator.cs" />
+    <Compile Include="Presenters\StudentNclexPresenter.cs" />
+    <Compile Include="Presenters\StudentPresenter.cs" />
+    <Compile Include="Presenters\StudentQBankPPresenter.cs" />
+    <Compile Include="Presenters\StudentQBankPresenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presenters\StudentQBankRDetailsPresenter.cs" />
+    <Compile Include="Presenters\StudentQbankRPresenter.cs" />
+    <Compile Include="Presenters\StudentShowImagesPresenter.cs" />
+    <Compile Include="Presenters\StudentTestHttpCaseStudyPresenter.cs" />
+    <Compile Include="Presenters\StudentTestReviewPresenter.cs" />
+    <Compile Include="Presenters\StudentIntPresenter.cs" />
+    <Compile Include="Presenters\SysAdminPresenter.cs" />
+    <Compile Include="Presenters\TestCategoryPresenter.cs" />
+    <Compile Include="Presenters\UnAuthenticatedPresenterBase.cs" />
+    <Compile Include="Presenters\UserDetailsPresenter.cs" />
+    <Compile Include="Presenters\UserListPresenter.cs" />
+    <Compile Include="Presenters\ValidateKaplanPresenter.cs" />
+    <Compile Include="Presenters\ValidateNursingPresenter.cs" />
+    <Compile Include="Presenters\ValidateRegistrationPresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\IStudentService.cs" />
+    <Compile Include="Services\AdminService.cs" />
+    <Compile Include="Services\CMSService.cs" />
+    <Compile Include="Services\ProgramService.cs" />
+    <Compile Include="Services\ReportDataService.cs" />
+    <Compile Include="Services\StudentService.cs" />
+    <Compile Include="Presenters\StateManagement\CacheManagement.cs" />
+    <Compile Include="Presenters\StateManagement\CookieManagement.cs" />
+    <Compile Include="Interfaces\ICacheManagement.cs" />
+    <Compile Include="Interfaces\ILogManagement.cs" />
+    <Compile Include="Interfaces\ICookieManagement.cs" />
+    <Compile Include="Interfaces\ISessionManagement.cs" />
+    <Compile Include="Presenters\StateManagement\SessionManagement.cs" />
+    <Compile Include="Utilities\BlowFishCipherHelper.cs" />
+    <Compile Include="Utilities\CollectionHelper.cs" />
+    <Compile Include="Utilities\CustomServerHeaderModule.cs" />
+    <Compile Include="Utilities\EmailHelper.cs" />
+    <Compile Include="Utilities\FileHelper.cs" />
+    <Compile Include="Utilities\LtiRequestForm.cs" />
+    <Compile Include="Utilities\LtiUtility.cs" />
+    <Compile Include="Utilities\PresentationHelper.cs" />
+    <Compile Include="Utilities\DTC.cs" />
+    <Compile Include="Utilities\EnumHelper.cs" />
+    <Compile Include="Utilities\ErrorAggregator.cs" />
+    <Compile Include="Utilities\ExceptionHelper.cs" />
+    <Compile Include="Utilities\Logger.cs" />
+    <Compile Include="Utilities\QuestionHelper.cs" />
+    <Compile Include="Utilities\TraceDataParser.cs" />
+    <Compile Include="Utilities\TraceHelper.cs" />
+    <Compile Include="Utilities\UserTypeHelper.cs" />
+    <Compile Include="Utilities\SortHelper.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
+    <Compile Include="Utilities\LogManagement.cs" />
+    <Compile Include="Interfaces\ILoginView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\Functions\dbo.fn_Split.sql" />
+    <Content Include="Database\Functions\dbo.funcListToTableInt.sql" />
+    <Content Include="Database\Functions\dbo.funcListToTableIntForReport.sql" />
+    <Content Include="Database\Functions\dbo.ReturnAllQCountByClientNeedCategoryID.sql" />
+    <Content Include="Database\Functions\dbo.ReturnGetTestTimeUsed.sql" />
+    <Content Include="Database\Functions\dbo.ReturnIncorrectQCountByClientNeedCategoryID.sql" />
+    <Content Include="Database\Functions\dbo.ReturnUnUsedIncorrectQCountByClientNeedCategoryID.sql" />
+    <Content Include="Database\Functions\dbo.ReturnUnUsedQCountByClientNeedCategoryID.sql" />
+    <Content Include="Database\Functions\dbo.UFNCheckPercentileRankExistForTest.sql" />
+    <Content Include="Database\Functions\dbo.UFNGetLastQuestionAnswer.sql" />
+    <Content Include="Database\Functions\dbo.UFNReturnAnsweredQuestionCount.sql" />
+    <Content Include="Database\Functions\dbo.UFNReturnPercentileRankByTestIDNumberCorrect.sql" />
+    <Content Include="Database\Functions\dbo.UFNReturnTotalCorrectPercentByUserIDTestID.sql" />
+    <Content Include="Database\Functions\dbo.UFNReturnTotalPercentByUserIDTestID.sql" />
+    <Content Include="Database\LiveDBUpdate.sql" />
+    <Content Include="Database\SchemaAndDataChanges.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspChangeLtiProviderStatus.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteQuestionMappingByQId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetConceptsCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetInstitutionIDByFacilityIdOrCohortDescription.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetStudentByUserName.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetUniqueUserName.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLtiProviders.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspIsMultipleProgramofStudyAssignedToAdmin.sql" />
+    <Content Include="Database\StoredProcedures\dbo.USPAssignAssetsToProgram.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCheckQbankExists.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCreateSkillsModulesDetails.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCreateSMTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteLookup.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteLookupMapping.sql" />
+    <Content Include="Database\StoredProcedures\dbo.UspGetAccreditationCategoriesCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAdminMissionRecipientsEmailIdDetails.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAllInstitutions.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAssetGroupByProgramId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAssetGroups.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAssets.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCustomFRLookupMappings.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetDashBoardLinks.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetDetailsForEnglishNursingTracking.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLookup.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLookupByOriginalId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLookupByText.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLookupMappings.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetMultiCampusReportCardDetails.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetOriginalSMTestId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetProgramofStudies.sql" />
+    <Content Include="Database\StoredProcedures\dbo.USPGetProgramsByProgramofStudyId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetQbankTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.UspGetQSENKSACompetenciesCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetResultsByInstitutionCohortQuestions.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetSkillModuleUserVideos.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetSMTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetSMTests.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetSMTestsByUserId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetStudentByUserNameEmailId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetStudentMissionRecipientMailIdDetails.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestPrograms.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestsByProdCohortId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspInsertLookup.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspInsertLookupMapping.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspResetSkillsModuleStatus.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspResumeTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCheckSystem.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspActiveTests.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspAssignAdhocStudentTestDates.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspAssignCohortProgram.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspAssignInstitutionsToAdmin.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspAssignQuestion.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspAssignStudents.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspAssignStudentToGroup.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspAssignTestDateToCohort.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspAssignTestDateToGroup.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspAssignTestDateToStudent.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspAssignTestsToProgram.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspAuthenticateAdminUser.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspChangePassword.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCheckExistCaseModuleStudent.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCheckPercentileRankExist.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCheckPercentileRankExists.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCheckProbabilityExist.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCheckProbabilityExists.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCheckTestExists.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCopyCustomTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCreateCustomEmailToCohort.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCreateCustomEmailToGroup.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCreateCustomEmailToInstitution.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCreateCustomEmailToPerson.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCreateFRQBankTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCreateFRQBankTestRepeat.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCreateFRRemediations.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCreateQBankTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCreateTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspCreateUserAnswers.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteAdmin.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteAnswer.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteAnswerChoices.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteCohort.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteCustomTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteGroup.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteHelpfulDoc.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteInstitution.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteLippinCott.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteNormingById.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteProgram.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteProgramFromProduct.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteQuestion.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteQuestionLippinCott.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteReleaseQuestionLippinCott.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteRemediation.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteRemediationReview.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteTestById.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteTestChildTableRows.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteTestQuestion.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspDeleteUser.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAddress.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAdhocGroupStudentDetail.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAdhocGroupTests.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAdminAuthorizationRules.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAdminByInstitution.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAdminMissionRecipients.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAdmins.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAllCategories.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAllProducts.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAllTests.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAnswerChoices.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAppSettings.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAssignedStudentforCohort.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAssignedStudentforGroup.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAvailableCFRQuestions.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetAvpItems.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCaseByCohortResult.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCaseStudies.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCaseStudyResultModuleScore.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCaseStudyResultSubCategoryScore.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCaseSubCategories.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCaseSubCategoryResultbyCohortModule.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCFRTopics.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetClientNeedCategoryCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetClientNeedsCategories.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetClientNeedsCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetClientNeedsCategoryInfo.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetClientNeedsSummary.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetClinicalConceptCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCognitiveLevelCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCohortIdByCohortDesc.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCohortProgram.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCohortResultbyModule.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCohorts.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCohortsByStudentID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCountries.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCriticalThinkingCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCustomEmailDefinition.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCustomizedFRTests.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetCustomTests.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetDatesForCohort.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetDeletedTestListForStudents.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetDemographicCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetDetailsForCohortByTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetEmailMissionDetails.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetEmails.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetExhibitByID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetFinishedTests.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetFRRemediations.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetFutureTests.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetGroup.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetGroupByInstitutionIdAndCohortId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetGroupsList.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetHelpfulDocuments.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetHotSpotAnswerByID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetInstitutionByStudentID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetInstitutionContacts.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetInstitutionDetailsById.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetInstitutionIDByFacilityID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetInstitutionIdForCohort.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetInstitutions.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLevelOfDifficultyCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLippincottAssignedInQuestion.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLippincottById.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLippincottByRemediationId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLippincottForReviewRemediation.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLippincottRemediationById.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLippincotts.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetListOfInstitution.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetListOfItemsForTestForUserI.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetListOfQuestionsShowUnique.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetListOfRem.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetListOfStudents.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetListOfStudentsByCohortID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetListOfTestQuestions.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLocalInstitution.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetLookupData.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetModule.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetNormForTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetNormings.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetNorms.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetNounAdjForPassword.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetNumberOfCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetNursingProcessCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetPercentileRank.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetPerformanceDetailsByProductIDChartType.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetPerformanceOverviewByProductIDChartType.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetPrevNextItemInTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetPrevNextRemediations.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetProbability.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetProductByTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetProgram.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetProgramResults.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetProgramResultsByNorm.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetPrograms.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetQuestionByTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetQuestionLippincottByIds.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetQuestionResultsForCohort.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetQuestionResultsForInstitution.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetQuestions.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetQuestionsAndLippincotts.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetQuestionsByUserTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetQuestionsInTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetQuestionsToCreateTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetQueuedMissions.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetReleaseLippinCots.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetReleaseQuestions.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetReleaseTests.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetRemediationExplainationByID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetRemediationExplanations.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetRemediations.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetRemediationsForTheUser.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetRemediationTimeByTestId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetRemediationTimeForNCLEX.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetResultsByCohortQuestions.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetResultsForStudentReportCardByModule.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetResultsFromInstitutionForChart.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetResultsFromInstitutions.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetResultsFromTheCohortForChart.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetResultsFromTheCohortsForChart.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetResultsFromTheProgram.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetResultsFromTheProgramForChart.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetSessionId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetSpecialtyAreaCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetStates.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetStudentListForSetOverride.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetStudentMissionRecipients.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetStudentNumberByCohortTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetStudentReportCardDetails.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetStudents.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetStudentsForCohort.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetStudentsInInstitutionByCohortAndGroups.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetStudentTestCharacteristics.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetSystemsCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestAssignment.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestByInstitutionResults.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestByUserAndTestID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestCategories.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestCategoriesForTestQuestion.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestName.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestQuestionCount.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestQuestionCountByFileTypeId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestQuestions.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestQuestionsQbank.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestRank.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTests.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestsByCohortIDAndProductIDs.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestsByProdCohortUserIds.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestsByProductUser.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestsByUserIDProductID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestsByUserProductSubGroup.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestScheduleByDate.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestsForCohort.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestsForCohortAndProduct.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestsForGroup.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestsForProgram.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestsForQuestion.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTestsForStudent.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetTimeZones.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetUntakenTests.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetUser.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetUserAnswerByID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetUserAnswers.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetUserID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetUserInfo.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetUserTestByID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspGetUserTests.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspInsertCaseModuleScore.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspInsertQuestionLippinCott.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspInsertSubCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspInsertTestQuestion.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspInsertUpdateQuestion.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspLoginUser.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReleaseAnswerChoiceToProduction.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReleaseLippincotToProduction.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReleaseNormingToProduction.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReleaseNormToProduction.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReleaseQuestionLippincotToProduction.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReleaseQuestionsToProduction.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReleaseRemediationToProduction.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReleaseTestCategoryToProduction.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReleaseTestQuestionsToProduction.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReleaseTestsToProduction.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspResultsFromTheCohortsBySubCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReturnNextQuestion.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReturnPercentileRank.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReturnPreviousQuestion.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReturnProbability.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReturnStudentSummaryByAnswerChoice.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReturnStudentSummaryByQuestion.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReturnStudentSummaryByQuestionHeader.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReturnSummaryPerformanceByQuestionReport.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReturnTestCharacteristicsForUserAdminByTestID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReturnTestCharacteristicsForUserAdminByUserTestID.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReturnTestsByProductAndUser.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspReturnTitles.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveAddress.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveAdhocGroup.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveAdhocGroupStudent.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveAdhocGroupTestDate.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveAdmin.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveAnswer.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveAppSettings.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveAVPItems.sql" />
+    <Content Include="Database\StoredProcedures\dbo.UspSaveBulkmodifiedPrograms.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveCohort.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveCustomTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveEmail.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveGroup.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveHelpfulDocuments.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveInstitution.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveInstitutionContact.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveLippinCott.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveLtiProvider.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveNorm.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveNorming.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveProgram.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveQuestion.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveRemediation.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveSessionId.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveTestCategory.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveTestQuestion.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSaveUser.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchAdmin.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchAdmins.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchAVPItems.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchCohortProgram.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchCohorts.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchCustomTests.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchGroups.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchHelpfulDocs.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchInstitutions.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchLippincotts.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchPrograms.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchStudent.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchStudentForEmail.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchStudentForTest.sql" />
+    <Content Include="Database\StoredProcedures\dbo.USPSearchUnAssignedAdmins.sql" />
+    <Content Include="Database\StoredProcedures\dbo.USPSearchUnAssignedUserDetails.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspSearchUserDetails.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspTestsExistsByTestIDCohortIDHour.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspTestsExistsByTestIDGroupIDHour.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspTestsExistsByTestIDUserIDHour.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateEmailStatus.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateIntegratedusers.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateLoginContent.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateQuestionExplanation.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateQuestionRemediation.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateReleaseStatus.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateReviewRemediation.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateReviewRemediationTotalTime.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateScrambledAnswerChoice.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateSkillsModuleStatus.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateSkillsModuleVideoStatus.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateStudentsADA.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateTestCompleted.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateTestsReleaseStatusById.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateTestStatus.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateTestStatusOnExpiry.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateUserQuestions.sql" />
+    <Content Include="Database\StoredProcedures\dbo.uspUpdateUserTest.sql" />
+    <Content Include="Database\StoredProcedures\uspGetGroupsByInstitutionIdsAndCohortIds.sql" />
+    <Content Include="Database\StoredProcedures\uspGetRemediationByTest.sql" />
+    <Content Include="Database\StoredProcedures\uspGetTestsForStudentReportCard.sql" />
+    <Content Include="Database\StoredProcedures\UspIsQuestionidExist.SQL" />
+    <Content Include="Database\StoredProcedures\uspSaveUploadedQuestionDetails.SQL" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Database\MergeScripts.bat" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\Binaries\StyleCop4.5\StyleCop.Targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AdministratorSearchInfo" targetNamespace="http://tempuri.org/AdministratorSearchInfo.xsd" xmlns:mstns="http://tempuri.org/AdministratorSearchInfo.xsd" xmlns="http://tempuri.org/AdministratorSearchInfo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AdministratorSearchInfo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AdministratorSearchInfo" msprop:Generator_UserDSName="AdministratorSearchInfo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AdministratorSearchInfo" msprop:Generator_TableClassName="AdministratorSearchInfoDataTable" msprop:Generator_TableVarName="tableAdministratorSearchInfo" msprop:Generator_TablePropName="_AdministratorSearchInfo" msprop:Generator_RowDeletingName="AdministratorSearchInfoRowDeleting" msprop:Generator_UserTableName="AdministratorSearchInfo" msprop:Generator_RowChangingName="AdministratorSearchInfoRowChanging" msprop:Generator_RowEvHandlerName="AdministratorSearchInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="AdministratorSearchInfoRowDeleted" msprop:Generator_RowEvArgName="AdministratorSearchInfoRowChangeEvent" msprop:Generator_RowChangedName="AdministratorSearchInfoRowChanged" msprop:Generator_RowClassName="AdministratorSearchInfoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="HeadId" msprop:Generator_ColumnVarNameInTable="columnHeadId" msprop:Generator_ColumnPropNameInRow="HeadId" msprop:Generator_ColumnPropNameInTable="HeadIdColumn" msprop:Generator_UserColumnName="HeadId" type="xs:int" minOccurs="0" />
+              <xs:element name="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId" type="xs:string" minOccurs="0" />
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="InstitutionName" msprop:Generator_ColumnVarNameInTable="columnInstitutionName" msprop:Generator_ColumnPropNameInRow="InstitutionName" msprop:Generator_ColumnPropNameInTable="InstitutionNameColumn" msprop:Generator_UserColumnName="InstitutionName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Head" msprop:Generator_TableClassName="HeadDataTable" msprop:Generator_TableVarName="tableHead" msprop:Generator_TablePropName="Head" msprop:Generator_RowDeletingName="HeadRowDeleting" msprop:Generator_UserTableName="Head" msprop:Generator_RowChangingName="HeadRowChanging" msprop:Generator_RowEvHandlerName="HeadRowChangeEventHandler" msprop:Generator_RowDeletedName="HeadRowDeleted" msprop:Generator_RowEvArgName="HeadRowChangeEvent" msprop:Generator_RowChangedName="HeadRowChanged" msprop:Generator_RowClassName="HeadRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HeadId" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnHeadId" msprop:Generator_ColumnPropNameInRow="HeadId" msprop:Generator_ColumnPropNameInTable="HeadIdColumn" msprop:Generator_UserColumnName="HeadId" type="xs:int" />
+              <xs:element name="SearchCriteria" msprop:Generator_ColumnVarNameInTable="columnSearchCriteria" msprop:Generator_ColumnPropNameInRow="SearchCriteria" msprop:Generator_ColumnPropNameInTable="SearchCriteriaColumn" msprop:Generator_UserColumnName="SearchCriteria" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AdministratorSearchInfo" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="Head_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Head" />
+      <xs:field xpath="mstns:HeadId" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Head_AdministratorSearchInfo" msdata:parent="Head" msdata:child="AdministratorSearchInfo" msdata:parentkey="HeadId" msdata:childkey="HeadId" msprop:Generator_UserChildTable="AdministratorSearchInfo" msprop:Generator_ChildPropName="GetAdministratorSearchInfoRows" msprop:Generator_UserParentTable="Head" msprop:Generator_UserRelationName="Head_AdministratorSearchInfo" msprop:Generator_RelationVarName="relationHead_AdministratorSearchInfo" msprop:Generator_ParentPropName="HeadRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

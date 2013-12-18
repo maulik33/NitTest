@@ -1,0 +1,3828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EFCDE0A2-036E-4247-B575-8B9981BA6E40}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NursingRNWeb</RootNamespace>
+    <AssemblyName>NursingRNWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Elmah, Version=1.0.9414.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN\AdminAssignInstitution.aspx" />
+    <Content Include="ADMIN\AdminEdit.aspx" />
+    <Content Include="ADMIN\AdminHome.aspx" />
+    <Content Include="ADMIN\AdminList.aspx" />
+    <Content Include="ADMIN\AdminView.aspx" />
+    <Content Include="ADMIN\AssignStudentTest.aspx" />
+    <Content Include="ADMIN\AuditTrailView.aspx" />
+    <Content Include="ADMIN\AVPItems.aspx" />
+    <Content Include="ADMIN\BulkModifyProgram.aspx" />
+    <Content Include="ADMIN\CalendarPopUp.aspx" />
+    <Content Include="ADMIN\Calender.ascx" />
+    <Content Include="ADMIN\Charts\FC_2_3_Area2D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_Bar2D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_Candlestick.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_Column2D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_Column3D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_Doughnut2D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_Line.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_MSArea2D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_MSBar2D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_MSBubble.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_MSColumn2D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_MSColumn3D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_MSColumnLine_3D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_MSColumnLine_DY_2D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_MSColumnLine_DY_3D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_MSLine.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_MSLine_2.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_MSScatter.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_Pie2D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_Pie3D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_Radar.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_SSGrid.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_StackedArea_MSLine_DY_2D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_StckdArea.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_StckdBar2D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_StckdColumn2D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_StckdColumn3D.swf" />
+    <Content Include="ADMIN\Charts\FC_2_3_StckdColumn_MSLine_DY_2D.swf" />
+    <Content Include="ADMIN\CohortEdit.aspx" />
+    <Content Include="ADMIN\CohortList.aspx" />
+    <Content Include="ADMIN\CohortProgramAssign.aspx" />
+    <Content Include="ADMIN\CohortTestDates.aspx" />
+    <Content Include="ADMIN\CohortView.aspx" />
+    <Content Include="ADMIN\Controls\Address.ascx" />
+    <Content Include="ADMIN\Controls\AdminAccountMenu.ascx" />
+    <Content Include="ADMIN\Controls\AdminContentManagementMenu.ascx" />
+    <Content Include="ADMIN\Controls\AdminMainLeftMenu.ascx" />
+    <Content Include="ADMIN\Controls\AdminMainRightMenu.ascx" />
+    <Content Include="ADMIN\Controls\AdminMenu.ascx" />
+    <Content Include="ADMIN\Controls\AdminSendMailMenu.ascx" />
+    <Content Include="ADMIN\Controls\AdminViewReportsMenu.ascx" />
+    <Content Include="ADMIN\Controls\InstitutionContacts.ascx" />
+    <Content Include="ADMIN\EmailEdit.aspx" />
+    <Content Include="ADMIN\EmailReceiver1.aspx" />
+    <Content Include="ADMIN\EmptyMaster.master.vb" />
+    <Content Include="ADMIN\Graph.aspx" />
+    <Content Include="ADMIN\Graph2.aspx" />
+    <Content Include="ADMIN\Graph_C.aspx" />
+    <Content Include="ADMIN\Graph_CaseComparation.aspx" />
+    <Content Include="ADMIN\GroupEdit.aspx" />
+    <Content Include="ADMIN\GroupList.aspx" />
+    <Content Include="ADMIN\GroupTestDates.aspx" />
+    <Content Include="ADMIN\GroupView.aspx" />
+    <Content Include="ADMIN\head.ascx" />
+    <Content Include="ADMIN\InstitutionEdit.aspx" />
+    <Content Include="ADMIN\InstitutionList.aspx" />
+    <Content Include="ADMIN\InstitutionView.aspx" />
+    <Content Include="ADMIN\LTIProviders.aspx" />
+    <Content Include="ADMIN\ReportInstitutionTestByQuestion.aspx" />
+    <Content Include="ADMIN\ReportMultiCampusReportCard.aspx" />
+    <Content Include="ADMIN\StudentRepeat.aspx" />
+    <Content Include="ADMIN\UserDetails.aspx" />
+    <Content Include="CMS\Controls\SubCategories.ascx" />
+    <Content Include="CMS\LoginContentRelease.aspx" />
+    <Content Include="ADMIN\NewAVPItems.aspx" />
+    <Content Include="ADMIN\ReportEnglishForNursingTracking.aspx" />
+    <Content Include="ADMIN\ReportTestsScheduledbyDate.aspx" />
+    <Content Include="ADMIN\StudentListForTest.aspx" />
+    <Content Include="ADMIN\SysAdmin.aspx" />
+    <Content Include="ADMIN\UploadHelpfulDocument.aspx" />
+    <Content Include="ADMIN\OpenHelpfulDoc.aspx" />
+    <Content Include="ADMIN\Norm.aspx" />
+    <Content Include="ADMIN\Percentile.aspx" />
+    <Content Include="ADMIN\PopUpC.aspx" />
+    <Content Include="ADMIN\ProgramAddAssign.aspx" />
+    <Content Include="ADMIN\ProgramEdit.aspx" />
+    <Content Include="ADMIN\ProgramList.aspx" />
+    <Content Include="ADMIN\ProgramView.aspx" />
+    <Content Include="ADMIN\ReportByInstitution.aspx" />
+    <Content Include="ADMIN\ReportCaseByCohort.aspx" />
+    <Content Include="ADMIN\ReportCaseComparisonByModule.aspx" />
+    <Content Include="ADMIN\ReportCohortByTest.aspx" />
+    <Content Include="ADMIN\ReportCohortComparisons.aspx" />
+    <Content Include="ADMIN\ReportCohortPerformance.aspx" />
+    <Content Include="ADMIN\ReportCohortResultByModule.aspx" />
+    <Content Include="ADMIN\ReportCohortTestByQuestion.aspx" />
+    <Content Include="ADMIN\ReportInstitutionPerformance.aspx" />
+    <Content Include="ADMIN\ReportPerformanceByQuestion.aspx" />
+    <Content Include="ADMIN\ReportPerformanceByQuestionToExcel.aspx" />
+    <Content Include="ADMIN\ReportRemediationByTest.aspx" />
+    <Content Include="ADMIN\ReportStudentQuestion.aspx" />
+    <Content Include="ADMIN\ReportStudentReportCard.aspx" />
+    <Content Include="ADMIN\ReportStudentReportCardByModule.aspx" />
+    <Content Include="ADMIN\ReportStudentResultByCase.aspx" />
+    <Content Include="ADMIN\ReportStudentSummaryByAnswerChoice.aspx" />
+    <Content Include="ADMIN\ReportStudentSummaryByQuestion.aspx" />
+    <Content Include="ADMIN\ReportTestStudent.aspx" />
+    <Content Include="ADMIN\SetOverride.aspx" />
+    <Content Include="ADMIN\StudentListForGroup.aspx" />
+    <Content Include="ADMIN\StudentsInCohort.aspx" />
+    <Content Include="ADMIN\StudentTestDates.aspx" />
+    <Content Include="ADMIN\UserEdit.aspx" />
+    <Content Include="ADMIN\UserList.aspx" />
+    <Content Include="ADMIN\UserListXML.aspx" />
+    <Content Include="ADMIN\UserView.aspx" />
+    <Content Include="ADMIN\ValidateKaplan.aspx" />
+    <Content Include="ADMIN\SearchHelpfulDocuments.aspx" />
+    <Content Include="ADMIN\ViewAnnotation.aspx" />
+    <Content Include="ADMIN\ViewHelpfulDocument.aspx" />
+    <Content Include="A_Login.aspx" />
+    <Content Include="CMS\BackupData.aspx" />
+    <Content Include="CMS\Controls\AlternateEditQuestion.ascx" />
+    <Content Include="CMS\Controls\SearchQuestionCriteria.ascx" />
+    <Content Include="CMS\CopyCustomTest.aspx" />
+    <Content Include="CMS\CustomTest.aspx" />
+    <Content Include="CMS\EditQuestion.aspx" />
+    <Content Include="CMS\EditR.aspx" />
+    <Content Include="CMS\Lippincott.aspx" />
+    <Content Include="CMS\NewCustomTest.aspx" />
+    <Content Include="CMS\NewLippincott.aspx" />
+    <Content Include="CMS\QuestionCustomTset.aspx" />
+    <Content Include="CMS\ReadLippincottTemplate.aspx" />
+    <Content Include="CMS\ReleaseChoice.aspx" />
+    <Content Include="CMS\ReleaseReview.aspx" />
+    <Content Include="CMS\SearchQuestion.aspx" />
+    <Content Include="CMS\TestCategories.aspx" />
+    <Content Include="CMS\UploadInstructions.htm" />
+    <Content Include="CMS\UploadQuestions.aspx" />
+    <Content Include="CMS\UploadTopics.aspx" />
+    <Content Include="CMS\ViewQuestion.aspx" />
+    <Content Include="CMS\ViewRemediation.aspx" />
+    <Content Include="Content\62073.0.ND053g01.gif" />
+    <Content Include="Content\62215.0.nr008.gif" />
+    <Content Include="Content\62346.0.nr139.gif" />
+    <Content Include="Content\62610.1.nd098g01.gif" />
+    <Content Include="Content\68140.5.ped016e01.gif" />
+    <Content Include="Content\75394.1.n002028e01.gif" />
+    <Content Include="Content\75399.8.n002033.jpg" />
+    <Content Include="Content\77476.7.n003060a.jpg" />
+    <Content Include="Content\77476.7.n003060b.jpg" />
+    <Content Include="Content\77476.7.n003060c.jpg" />
+    <Content Include="Content\77476.7.n003060d.jpg" />
+    <Content Include="Content\79450.1.NCQ0994.jpg" />
+    <Content Include="Content\n001456e01.gif" />
+    <Content Include="Content\n002028e01.gif" />
+    <Content Include="Content\n002033.jpg" />
+    <Content Include="Content\n003060.jpg" />
+    <Content Include="Content\n003060a.jpg" />
+    <Content Include="Content\n003060b.jpg" />
+    <Content Include="Content\n003060c.jpg" />
+    <Content Include="Content\n003060d.jpg" />
+    <Content Include="Content\n009346.gif" />
+    <Content Include="Content\n009347.gif" />
+    <Content Include="Content\n009348.gif" />
+    <Content Include="Content\n009349.gif" />
+    <Content Include="Content\n009350.gif" />
+    <Content Include="Content\NCQ0819.gif" />
+    <Content Include="Content\ncq0934x01.gif" />
+    <Content Include="Content\ncq0935x01.gif" />
+    <Content Include="Content\ncq0936x01.gif" />
+    <Content Include="Content\ncq0937x01.gif" />
+    <Content Include="Content\ncq0938x01.gif" />
+    <Content Include="Content\ncq0939x01.gif" />
+    <Content Include="Content\ncq0940x01.gif" />
+    <Content Include="Content\ncq0941x01.gif" />
+    <Content Include="Content\ncq0942x01.gif" />
+    <Content Include="Content\ncq0948x01.gif" />
+    <Content Include="Content\ncq0949x01.gif" />
+    <Content Include="Content\ncq0950x01.gif" />
+    <Content Include="Content\ncq0951x01.gif" />
+    <Content Include="Content\ncq0952x01.gif" />
+    <Content Include="Content\ncq0953x01.gif" />
+    <Content Include="Content\ncq0954x01.gif" />
+    <Content Include="Content\ncq0955x01.gif" />
+    <Content Include="Content\ncq0956x01.gif" />
+    <Content Include="Content\ncq0957x01.gif" />
+    <Content Include="Content\ncq0958x01.gif" />
+    <Content Include="Content\ncq0959x01.gif" />
+    <Content Include="Content\ncq0960x01.gif" />
+    <Content Include="Content\NCQ0961.gif" />
+    <Content Include="Content\NCQ0994-1001-blank.jpg" />
+    <Content Include="Content\NCQ0994.jpg" />
+    <Content Include="Content\NCQ1002.jpg" />
+    <Content Include="Content\NCQ1007.jpg" />
+    <Content Include="Content\NCQ1008.jpg" />
+    <Content Include="Content\NCQ1009.jpg" />
+    <Content Include="Content\NCQ1011.jpg" />
+    <Content Include="Content\ND053g01.gif" />
+    <Content Include="Content\nd098g01.gif" />
+    <Content Include="Content\nr008.gif" />
+    <Content Include="Content\nr139.gif" />
+    <Content Include="Content\ped016e01.gif" />
+    <Content Include="ControlSupport\Calendar\calendar-setup.js" />
+    <Content Include="ControlSupport\Calendar\calendar-win2k-cold-1.css" />
+    <Content Include="ControlSupport\Calendar\calendar.js" />
+    <Content Include="ControlSupport\Calendar\cal_16.gif" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-af.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-al.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-bg.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-big5-utf8.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-big5.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-br.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-ca.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-cs-utf8.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-cs-win.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-da.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-de.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-du.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-el.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-en.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-es.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-fi.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-fr.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-he-utf8.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-hr-utf8.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-hr.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-hu.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-it.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-jp.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-ko-utf8.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-ko.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-lt-utf8.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-lt.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-lv.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-nl.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-no.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-pl-utf8.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-pl.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-pt.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-ro.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-ru.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-ru_win_.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-si.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-sk.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-sp.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-sv.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-tr.js" />
+    <Content Include="ControlSupport\Calendar\lang\calendar-zh.js" />
+    <Content Include="ControlSupport\Calendar\lang\cn_utf8.js" />
+    <Content Include="CSS\baseStyle.css" />
+    <Content Include="CSS\basic.css" />
+    <Content Include="CSS\basic1.css" />
+    <Content Include="CSS\confirmStyle.css" />
+    <Content Include="CSS\front.css" />
+    <Content Include="CSS\front_PN.css" />
+    <Content Include="CSS\gridStyle.css" />
+    <Content Include="CSS\homeStyle.css" />
+    <Content Include="CSS\jquery-ui-1.css" />
+    <Content Include="CSS\jquery-ui.css" />
+    <Content Include="CSS\not_ie.css" />
+    <Content Include="CSS\ui_002.css" />
+    <Content Include="Error.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="global.asax" />
+    <Content Include="Images\0out2.gif" />
+    <Content Include="Images\0out4.gif" />
+    <Content Include="Images\1out2.gif" />
+    <Content Include="Images\1out4.gif" />
+    <Content Include="Images\2out2.gif" />
+    <Content Include="Images\2out4.gif" />
+    <Content Include="Images\3out4.gif" />
+    <Content Include="Images\4out4.gif" />
+    <Content Include="Images\accountRecords.gif" />
+    <Content Include="Images\accountRecords_over.gif" />
+    <Content Include="Images\active-down.png" />
+    <Content Include="Images\active-left.png" />
+    <Content Include="Images\active-right.png" />
+    <Content Include="Images\active-up.png" />
+    <Content Include="Images\add.gif" />
+    <Content Include="Images\addStudent.gif" />
+    <Content Include="Images\addStudent_over.gif" />
+    <Content Include="Images\add_over.gif" />
+    <Content Include="Images\add_question.gif" />
+    <Content Include="Images\add_question_over.gif" />
+    <Content Include="Images\add_userAccount.gif" />
+    <Content Include="Images\add_userAccount_over.gif" />
+    <Content Include="Images\adminacntlady.bmp" />
+    <Content Include="Images\anatest.gif" />
+    <Content Include="Images\anatest_over.gif" />
+    <Content Include="Images\ar.gif" />
+    <Content Include="Images\arrow.gif" />
+    <Content Include="Images\arrow_mousein.bmp" />
+    <Content Include="Images\arrow_mouseout.bmp" />
+    <Content Include="Images\arrow_mouseout_1.bmp" />
+    <Content Include="Images\arrow_p.gif" />
+    <Content Include="Images\arw_down.gif" />
+    <Content Include="Images\arw_first.gif" />
+    <Content Include="Images\arw_last.gif" />
+    <Content Include="Images\arw_lft.gif" />
+    <Content Include="Images\arw_rt.gif" />
+    <Content Include="Images\arw_up.gif" />
+    <Content Include="Images\assign.gif" />
+    <Content Include="Images\assign_over.gif" />
+    <Content Include="Images\back.gif" />
+    <Content Include="Images\back1.jpg" />
+    <Content Include="Images\back1New.jpg" />
+    <Content Include="Images\back1_PN.JPG" />
+    <Content Include="Images\back2.jpg" />
+    <Content Include="Images\back3.jpg" />
+    <Content Include="Images\back3old.jpg" />
+    <Content Include="Images\back4.jpg" />
+    <Content Include="Images\backNav.gif" />
+    <Content Include="Images\backNav_new.gif" />
+    <Content Include="Images\backNav_new_over.gif" />
+    <Content Include="Images\backNav_over.gif" />
+    <Content Include="Images\backNav_over_over.gif" />
+    <Content Include="Images\backs.gif" />
+    <Content Include="Images\backs_over.gif" />
+    <Content Include="Images\backtograde.gif" />
+    <Content Include="Images\backtograde_over.gif" />
+    <Content Include="Images\backtohistory.gif" />
+    <Content Include="Images\backtohistory_over.gif" />
+    <Content Include="Images\backtohome.gif" />
+    <Content Include="Images\backtohome_over.gif" />
+    <Content Include="Images\backtohome_over_over.gif" />
+    <Content Include="Images\backtolist.gif" />
+    <Content Include="Images\backtolist_over.gif" />
+    <Content Include="Images\back_over.gif" />
+    <Content Include="Images\bar.gif" />
+    <Content Include="Images\barh.gif" />
+    <Content Include="Images\barhb.gif" />
+    <Content Include="Images\barhb1.gif" />
+    <Content Include="Images\baricon.gif" />
+    <Content Include="Images\baricon1.gif" />
+    <Content Include="Images\baricon2.gif" />
+    <Content Include="Images\barv.gif" />
+    <Content Include="Images\barv1.gif" />
+    <Content Include="Images\barv2.gif" />
+    <Content Include="Images\barv3.gif" />
+    <Content Include="Images\barv4.gif" />
+    <Content Include="Images\bar_blue_left.jpg" />
+    <Content Include="Images\bar_list.jpg" />
+    <Content Include="Images\bar_list1.gif" />
+    <Content Include="Images\bar_list1.jpg" />
+    <Content Include="Images\bar_list2.jpg" />
+    <Content Include="Images\bar_list3.jpg" />
+    <Content Include="Images\bar_list4.jpg" />
+    <Content Include="Images\bar_list5.jpg" />
+    <Content Include="Images\bar_list6.jpg" />
+    <Content Include="Images\bar_list7.jpg" />
+    <Content Include="Images\bar_list8.jpg" />
+    <Content Include="Images\bar_list_top.jpg" />
+    <Content Include="Images\bar_list_top1.jpg" />
+    <Content Include="Images\bar_purple.jpg" />
+    <Content Include="Images\bar_purple_long.jpg" />
+    <Content Include="Images\bar_purple_re.jpg" />
+    <Content Include="Images\bar_yellow.jpg" />
+    <Content Include="Images\bar_yellow_r.jpg" />
+    <Content Include="Images\bar_yellow_rea.jpg" />
+    <Content Include="Images\bar_yellow_side.jpg" />
+    <Content Include="Images\base_exclamationmark_16.png" />
+    <Content Include="Images\blank.gif" />
+    <Content Include="Images\blank.jpg" />
+    <Content Include="Images\blanka.gif" />
+    <Content Include="Images\bluear.gif" />
+    <Content Include="Images\blue_arr.gif" />
+    <Content Include="Images\book_reportHS.png" />
+    <Content Include="Images\Book_StackOfReportsHS.png" />
+    <Content Include="Images\border.gif" />
+    <Content Include="Images\bot_med.jpg" />
+    <Content Include="Images\bot_med1.gif" />
+    <Content Include="Images\bot_med1.jpg" />
+    <Content Include="Images\bot_med_q.gif" />
+    <Content Include="Images\bot_med_q.jpg" />
+    <Content Include="Images\box_checked.gif" />
+    <Content Include="Images\box_unchecked.gif" />
+    <Content Include="Images\btn_btr.gif" />
+    <Content Include="Images\btn_btr_over.gif" />
+    <Content Include="Images\btn_ct.gif" />
+    <Content Include="Images\btn_ct_create.gif" />
+    <Content Include="Images\btn_ct_create_over.gif" />
+    <Content Include="Images\btn_ct_over.gif" />
+    <Content Include="Images\btn_del.gif" />
+    <Content Include="Images\btn_del_over.gif" />
+    <Content Include="Images\btn_dis.gif" />
+    <Content Include="Images\btn_dis_over.gif" />
+    <Content Include="Images\btn_end.gif" />
+    <Content Include="Images\btn_endtest.gif" />
+    <Content Include="Images\btn_endtest_over.gif" />
+    <Content Include="Images\btn_end_over.gif" />
+    <Content Include="Images\btn_excel.gif" />
+    <Content Include="Images\btn_excel_over.gif" />
+    <Content Include="Images\btn_exhibit.gif" />
+    <Content Include="Images\btn_go.gif" />
+    <Content Include="Images\btn_inside_close.gif" />
+    <Content Include="Images\btn_inside_close_over.gif" />
+    <Content Include="Images\btn_inside_ex.gif" />
+    <Content Include="Images\btn_inside_ex_over.gif" />
+    <Content Include="Images\btn_inside_tile.gif" />
+    <Content Include="Images\btn_inside_tile_over.gif" />
+    <Content Include="Images\btn_inside_untile.gif" />
+    <Content Include="Images\btn_inside_untile_over.gif" />
+    <Content Include="Images\btn_login.gif" />
+    <Content Include="Images\btn_login_over.gif" />
+    <Content Include="Images\btn_pfv.gif" />
+    <Content Include="Images\btn_remove.gif" />
+    <Content Include="Images\btn_remove_over.gif" />
+    <Content Include="Images\btn_save.gif" />
+    <Content Include="Images\btn_save_over.gif" />
+    <Content Include="Images\btn_search.gif" />
+    <Content Include="Images\btn_search_over.gif" />
+    <Content Include="Images\btn_skip.gif" />
+    <Content Include="Images\btn_skip_over.gif" />
+    <Content Include="Images\btn_start.gif" />
+    <Content Include="Images\btn_start_over.gif" />
+    <Content Include="Images\btn_submit.gif" />
+    <Content Include="Images\btn_submit_over.gif" />
+    <Content Include="Images\btn_toexcel.gif" />
+    <Content Include="Images\btn_toexceldata.gif" />
+    <Content Include="Images\bull.gif" />
+    <Content Include="Images\bullet.gif" />
+    <Content Include="Images\bull_on.gif" />
+    <Content Include="Images\button.png" />
+    <Content Include="Images\buttons.html" />
+    <Content Include="Images\button_2.png" />
+    <Content Include="Images\button_2_over.png" />
+    <Content Include="Images\button_btr.gif" />
+    <Content Include="Images\button_tbq.gif" />
+    <Content Include="Images\cal.gif" />
+    <Content Include="Images\cal_16.gif" />
+    <Content Include="Images\cal_header.gif" />
+    <Content Include="Images\cal_min.JPG" />
+    <Content Include="Images\cal_over.gif" />
+    <Content Include="Images\chdemo.jpg" />
+    <Content Include="Images\chdemo1.jpg" />
+    <Content Include="Images\chdemo2.jpg" />
+    <Content Include="Images\chdemo3.jpg" />
+    <Content Include="Images\chdemo4.jpg" />
+    <Content Include="Images\chdemo5.jpg" />
+    <Content Include="Images\Close.png" />
+    <Content Include="Images\closeAlert.gif" />
+    <Content Include="Images\closeAlert_over.gif" />
+    <Content Include="Images\clr.gif" />
+    <Content Include="Images\confirm.gif" />
+    <Content Include="Images\confirm_off.gif" />
+    <Content Include="Images\confirm_over.gif" />
+    <Content Include="Images\contentlady.bmp" />
+    <Content Include="Images\corner_1.gif" />
+    <Content Include="Images\corner_2.gif" />
+    <Content Include="Images\correct.gif" />
+    <Content Include="Images\creat_qu.gif" />
+    <Content Include="Images\creat_qu_over.gif" />
+    <Content Include="Images\cross.gif" />
+    <Content Include="Images\demo_bar1.gif" />
+    <Content Include="Images\demo_cri.gif" />
+    <Content Include="Images\demo_cri1.gif" />
+    <Content Include="Images\display_transcripts.gif" />
+    <Content Include="Images\display_transcripts_over.gif" />
+    <Content Include="Images\DocumentHS.png" />
+    <Content Include="Images\dot.gif" />
+    <Content Include="Images\edit.gif" />
+    <Content Include="Images\excellent.gif" />
+    <Content Include="Images\exhibit.gif" />
+    <Content Include="Images\exit.gif" />
+    <Content Include="Images\exit_over.gif" />
+    <Content Include="Images\exp01.gif" />
+    <Content Include="Images\exp02.gif" />
+    <Content Include="Images\exp03.gif" />
+    <Content Include="Images\fair.gif" />
+    <Content Include="Images\finish.jpg" />
+    <Content Include="Images\flash.gif" />
+    <Content Include="Images\go.gif" />
+    <Content Include="Images\good.gif" />
+    <Content Include="Images\goRead.gif" />
+    <Content Include="Images\goRead_over.gif" />
+    <Content Include="Images\go_over.gif" />
+    <Content Include="Images\graybg.bmp" />
+    <Content Include="Images\green.jpg" />
+    <Content Include="Images\grid\asc.gif" />
+    <Content Include="Images\grid\blue_bg.gif" />
+    <Content Include="Images\grid\desc.gif" />
+    <Content Include="Images\grid\lines\dash.gif" />
+    <Content Include="Images\grid\lines\dashminus.gif" />
+    <Content Include="Images\grid\lines\dashplus.gif" />
+    <Content Include="Images\grid\lines\i.gif" />
+    <Content Include="Images\grid\lines\l.gif" />
+    <Content Include="Images\grid\lines\lminus.gif" />
+    <Content Include="Images\grid\lines\lplus.gif" />
+    <Content Include="Images\grid\lines\minus.gif" />
+    <Content Include="Images\grid\lines\noexpand.gif" />
+    <Content Include="Images\grid\lines\plus.gif" />
+    <Content Include="Images\grid\lines\r.gif" />
+    <Content Include="Images\grid\lines\rminus.gif" />
+    <Content Include="Images\grid\lines\rplus.gif" />
+    <Content Include="Images\grid\lines\t.gif" />
+    <Content Include="Images\grid\lines\tminus.gif" />
+    <Content Include="Images\grid\lines\tplus.gif" />
+    <Content Include="Images\grid\lines_backup\dash.gif" />
+    <Content Include="Images\grid\lines_backup\dashminus.gif" />
+    <Content Include="Images\grid\lines_backup\dashplus.gif" />
+    <Content Include="Images\grid\lines_backup\i.gif" />
+    <Content Include="Images\grid\lines_backup\l.gif" />
+    <Content Include="Images\grid\lines_backup\lminus.gif" />
+    <Content Include="Images\grid\lines_backup\lplus.gif" />
+    <Content Include="Images\grid\lines_backup\minus.gif" />
+    <Content Include="Images\grid\lines_backup\noexpand.gif" />
+    <Content Include="Images\grid\lines_backup\plus.gif" />
+    <Content Include="Images\grid\lines_backup\r.gif" />
+    <Content Include="Images\grid\lines_backup\rminus.gif" />
+    <Content Include="Images\grid\lines_backup\rplus.gif" />
+    <Content Include="Images\grid\lines_backup\t.gif" />
+    <Content Include="Images\grid\lines_backup\tminus.gif" />
+    <Content Include="Images\grid\lines_backup\tplus.gif" />
+    <Content Include="Images\grid\selector.gif" />
+    <Content Include="Images\header_bar.jpg" />
+    <Content Include="Images\header_med.jpg" />
+    <Content Include="Images\header_menu.jpg" />
+    <Content Include="Images\header_menu_q.jpg" />
+    <Content Include="Images\header_nur.gif" />
+    <Content Include="Images\header_nur.jpg" />
+    <Content Include="Images\header_nur1.gif" />
+    <Content Include="Images\header_nur1.jpg" />
+    <Content Include="Images\header_nur2.JPG" />
+    <Content Include="Images\header_nur_new.jpg" />
+    <Content Include="Images\header_nur_q.jpg" />
+    <Content Include="Images\header_print.jpg" />
+    <Content Include="Images\headphones.gif" />
+    <Content Include="Images\help.gif" />
+    <Content Include="Images\helps.gif" />
+    <Content Include="Images\helps_over.gif" />
+    <Content Include="Images\help_f.gif" />
+    <Content Include="Images\help_f_over.gif" />
+    <Content Include="Images\help_local1.gif" />
+    <Content Include="Images\help_local2.gif" />
+    <Content Include="Images\help_local3.gif" />
+    <Content Include="Images\help_local4.gif" />
+    <Content Include="Images\help_local5.gif" />
+    <Content Include="Images\help_local6.gif" />
+    <Content Include="Images\help_local7.gif" />
+    <Content Include="Images\help_local8.gif" />
+    <Content Include="Images\help_local_add.gif" />
+    <Content Include="Images\help_local_view.gif" />
+    <Content Include="Images\help_over.gif" />
+    <Content Include="Images\help_super1.gif" />
+    <Content Include="Images\help_super2.gif" />
+    <Content Include="Images\icon_adm.gif" />
+    <Content Include="Images\icon_book.gif" />
+    <Content Include="Images\icon_book1.gif" />
+    <Content Include="Images\icon_cla.gif" />
+    <Content Include="Images\icon_coh.gif" />
+    <Content Include="Images\icon_color.gif" />
+    <Content Include="Images\icon_corr.gif" />
+    <Content Include="Images\icon_cus.gif" />
+    <Content Include="Images\icon_gra.gif" />
+    <Content Include="Images\icon_inco.gif" />
+    <Content Include="Images\icon_info.gif" />
+    <Content Include="Images\icon_loc.gif" />
+    <Content Include="Images\icon_spe.gif" />
+    <Content Include="Images\icon_stu.gif" />
+    <Content Include="Images\icon_stu1.gif" />
+    <Content Include="Images\icon_tea.gif" />
+    <Content Include="Images\icon_toe.gif" />
+    <Content Include="Images\icon_type1.gif" />
+    <Content Include="Images\icon_type2.gif" />
+    <Content Include="Images\icon_type3.gif" />
+    <Content Include="Images\icon_type4.gif" />
+    <Content Include="Images\icon_type5.gif" />
+    <Content Include="Images\icon_type6.gif" />
+    <Content Include="Images\icon_video.gif" />
+    <Content Include="Images\icon_wri.gif" />
+    <Content Include="Images\inactive-down.png" />
+    <Content Include="Images\inactive-left.png" />
+    <Content Include="Images\inactive-right.png" />
+    <Content Include="Images\inactive-up.png" />
+    <Content Include="Images\incorrect.gif" />
+    <Content Include="Images\item.gif" />
+    <Content Include="Images\kapintl_logo.gif" />
+    <Content Include="Images\key.gif" />
+    <Content Include="Images\key_blu.gif" />
+    <Content Include="Images\layerbg.bmp" />
+    <Content Include="Images\limited.gif" />
+    <Content Include="Images\ln-bullet-on.gif" />
+    <Content Include="Images\ln-bullet.gif" />
+    <Content Include="Images\logo.gif" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\logout.bmp" />
+    <Content Include="Images\logout.gif" />
+    <Content Include="Images\logout_over.gif" />
+    <Content Include="Images\logo_nu.gif" />
+    <Content Include="Images\logo_OLD.gif" />
+    <Content Include="Images\logo_print.jpg" />
+    <Content Include="Images\longlayerbg.bmp" />
+    <Content Include="Images\lwww.jpg" />
+    <Content Include="Images\mainmenu.bmp" />
+    <Content Include="Images\menubar.gif" />
+    <Content Include="Images\menubar1.gif" />
+    <Content Include="Images\menubara.gif" />
+    <Content Include="Images\menu_sep.jpg" />
+    <Content Include="Images\mih.jpg" />
+    <Content Include="Images\min.jpg" />
+    <Content Include="Images\mouseover-down.png" />
+    <Content Include="Images\mouseover-left.png" />
+    <Content Include="Images\mouseover-right.png" />
+    <Content Include="Images\mouseover-up.png" />
+    <Content Include="Images\next.gif" />
+    <Content Include="Images\nextcal.gif" />
+    <Content Include="Images\next_dis.gif" />
+    <Content Include="Images\next_inc.gif" />
+    <Content Include="Images\next_inc_over.gif" />
+    <Content Include="Images\next_new.gif" />
+    <Content Include="Images\next_new_over.gif" />
+    <Content Include="Images\next_new_over.jpg" />
+    <Content Include="Images\next_off.gif" />
+    <Content Include="Images\next_over.gif" />
+    <Content Include="Images\next_year.gif" />
+    <Content Include="Images\noanswer.gif" />
+    <Content Include="Images\none.gif" />
+    <Content Include="Images\norelevantresponse.gif" />
+    <Content Include="Images\notscorable.gif" />
+    <Content Include="Images\nur1.jpg" />
+    <Content Include="Images\nur2a.jpg" />
+    <Content Include="Images\nur2b.jpg" />
+    <Content Include="Images\nur2c.jpg" />
+    <Content Include="Images\nur2d.jpg" />
+    <Content Include="Images\NursingLogo.png" />
+    <Content Include="Images\ongo.jpg" />
+    <Content Include="Images\p.gif" />
+    <Content Include="Images\pending.gif" />
+    <Content Include="Images\performance.gif" />
+    <Content Include="Images\plu.jpg" />
+    <Content Include="Images\plus.jpg" />
+    <Content Include="Images\point1_a.gif" />
+    <Content Include="Images\point1_b.gif" />
+    <Content Include="Images\point1_c.gif" />
+    <Content Include="Images\point2_a.gif" />
+    <Content Include="Images\point2_b.gif" />
+    <Content Include="Images\point2_c.gif" />
+    <Content Include="Images\point3_a.gif" />
+    <Content Include="Images\point3_b.gif" />
+    <Content Include="Images\point3_c.gif" />
+    <Content Include="Images\point_back1.gif" />
+    <Content Include="Images\point_back2.gif" />
+    <Content Include="Images\prevcal.gif" />
+    <Content Include="Images\prev_year.gif" />
+    <Content Include="Images\pre_inc.gif" />
+    <Content Include="Images\pre_inc_over.gif" />
+    <Content Include="Images\print.gif" />
+    <Content Include="Images\printbtn.gif" />
+    <Content Include="Images\printbtn_over.gif" />
+    <Content Include="Images\printbtn_over_over.gif" />
+    <Content Include="Images\print_over.gif" />
+    <Content Include="Images\purpleline.bmp" />
+    <Content Include="Images\quit.gif" />
+    <Content Include="Images\quit_new.gif" />
+    <Content Include="Images\quit_new_over.gif" />
+    <Content Include="Images\quit_over.gif" />
+    <Content Include="Images\radio_down.gif" />
+    <Content Include="Images\radio_up.gif" />
+    <Content Include="Images\realeasebtn.bmp" />
+    <Content Include="Images\red.jpg" />
+    <Content Include="Images\reportslady.bmp" />
+    <Content Include="Images\resend.gif" />
+    <Content Include="Images\resend_over.gif" />
+    <Content Include="Images\reset.gif" />
+    <Content Include="Images\reset_over.gif" />
+    <Content Include="Images\review.gif" />
+    <Content Include="Images\reviewAudio.gif" />
+    <Content Include="Images\reviewAudio_over.gif" />
+    <Content Include="Images\reviewpassage.gif" />
+    <Content Include="Images\reviewpassage_over.gif" />
+    <Content Include="Images\reviewQues.gif" />
+    <Content Include="Images\reviewQuesSample.gif" />
+    <Content Include="Images\reviewQuesSample_over.gif" />
+    <Content Include="Images\reviewQues_over.gif" />
+    <Content Include="Images\reviewSample.gif" />
+    <Content Include="Images\reviewSample_over.gif" />
+    <Content Include="Images\reviewtest.gif" />
+    <Content Include="Images\reviewtest_over.gif" />
+    <Content Include="Images\reviewtran.gif" />
+    <Content Include="Images\reviewtran_over.gif" />
+    <Content Include="Images\review_over.gif" />
+    <Content Include="Images\Rpt_Header.JPG" />
+    <Content Include="Images\sample_ad.jpg" />
+    <Content Include="Images\sample_ad1.jpg" />
+    <Content Include="Images\school_back.jpg" />
+    <Content Include="Images\selector.jpg" />
+    <Content Include="Images\sendemail.bmp" />
+    <Content Include="Images\show_calendar.gif" />
+    <Content Include="Images\show_calendar1.gif" />
+    <Content Include="Images\si.gif" />
+    <Content Include="Images\skip.gif" />
+    <Content Include="Images\sm_next.jpg" />
+    <Content Include="Images\sm_nextdisabled.jpg" />
+    <Content Include="Images\sm_previous.jpg" />
+    <Content Include="Images\spacer.gif" />
+    <Content Include="Images\startar.gif" />
+    <Content Include="Images\studentRecords.gif" />
+    <Content Include="Images\studentRecords_over.gif" />
+    <Content Include="Images\student_r1_c1.jpg" />
+    <Content Include="Images\student_r2_c2.jpg" />
+    <Content Include="Images\stu_home.jpg" />
+    <Content Include="Images\stu_home_n.jpg" />
+    <Content Include="Images\stu_home_old.jpg" />
+    <Content Include="Images\stu_teststu.gif" />
+    <Content Include="Images\stu_teststu1.jpg" />
+    <Content Include="Images\stu_teststu2.gif" />
+    <Content Include="Images\stu_teststu3.gif" />
+    <Content Include="Images\stu_teststu4.gif" />
+    <Content Include="Images\stu_teststu5.gif" />
+    <Content Include="Images\st_history.gif" />
+    <Content Include="Images\st_history_over.gif" />
+    <Content Include="Images\st_logout.gif" />
+    <Content Include="Images\st_logout_over.gif" />
+    <Content Include="Images\submit.gif" />
+    <Content Include="Images\submit_over.gif" />
+    <Content Include="Images\suspend.gif" />
+    <Content Include="Images\suspend_over.gif" />
+    <Content Include="Images\tab_close.gif" />
+    <Content Include="Images\tab_close_btn.gif" />
+    <Content Include="Images\tab_close_btn_over.gif" />
+    <Content Include="Images\tab_ex.gif" />
+    <Content Include="Images\tick.gif" />
+    <Content Include="Images\tick_clr.gif" />
+    <Content Include="Images\timer.gif" />
+    <Content Include="Images\title_accountSetup.gif" />
+    <Content Include="Images\title_account_management.gif" />
+    <Content Include="Images\title_adminAccount.gif" />
+    <Content Include="Images\title_adminlogin.gif" />
+    <Content Include="Images\title_adminRecords.gif" />
+    <Content Include="Images\title_studentLogin.gif" />
+    <Content Include="Images\title_studentPrograms.GIF" />
+    <Content Include="Images\title_student_management.gif" />
+    <Content Include="Images\title_student_records.gif" />
+    <Content Include="Images\toefl.gif" />
+    <Content Include="Images\toefl_over.gif" />
+    <Content Include="Images\toeic.gif" />
+    <Content Include="Images\toeic_over.gif" />
+    <Content Include="Images\top_menu.jpg" />
+    <Content Include="Images\top_menu_cs.jpg" />
+    <Content Include="Images\top_menu_csnew.jpg" />
+    <Content Include="Images\top_menu_cs_on.jpg" />
+    <Content Include="Images\top_menu_cs_over.jpg" />
+    <Content Include="Images\top_menu_cs_overnew.jpg" />
+    <Content Include="Images\top_menu_frt.jpg" />
+    <Content Include="Images\top_menu_frtnew.jpg" />
+    <Content Include="Images\top_menu_frt_on.jpg" />
+    <Content Include="Images\top_menu_frt_over.jpg" />
+    <Content Include="Images\top_menu_frt_overnew.jpg" />
+    <Content Include="Images\top_menu_home.jpg" />
+    <Content Include="Images\top_menu_homenew.jpg" />
+    <Content Include="Images\top_menu_home_on.jpg" />
+    <Content Include="Images\top_menu_home_over.jpg" />
+    <Content Include="Images\top_menu_home_overnew.jpg" />
+    <Content Include="Images\top_menu_it.jpg" />
+    <Content Include="Images\top_menu_itnew.jpg" />
+    <Content Include="Images\top_menu_it_on.jpg" />
+    <Content Include="Images\top_menu_it_over.jpg" />
+    <Content Include="Images\top_menu_it_overnew.jpg" />
+    <Content Include="Images\top_menu_matrix.jpg" />
+    <Content Include="Images\top_menu_matrix_on.jpg" />
+    <Content Include="Images\top_menu_matrix_over.jpg" />
+    <Content Include="Images\top_menu_np.jpg" />
+    <Content Include="Images\top_menu_npnew.jpg" />
+    <Content Include="Images\top_menu_np_on.jpg" />
+    <Content Include="Images\top_menu_np_over.jpg" />
+    <Content Include="Images\top_menu_np_overnew.jpg" />
+    <Content Include="Images\top_menu_report.jpg" />
+    <Content Include="Images\top_menu_report_on.jpg" />
+    <Content Include="Images\top_menu_report_over.jpg" />
+    <Content Include="Images\top_menu_sm.jpg" />
+    <Content Include="Images\top_menu_smnew.jpg" />
+    <Content Include="Images\top_menu_sm_over.jpg" />
+    <Content Include="Images\top_menu_sm_overnew.jpg" />
+    <Content Include="Images\top_menu_syll.jpg" />
+    <Content Include="Images\top_menu_syll_on.jpg" />
+    <Content Include="Images\top_menu_syll_over.jpg" />
+    <Content Include="Images\top_menu_tr.jpg" />
+    <Content Include="Images\top_menu_trnew.jpg" />
+    <Content Include="Images\top_menu_tr_on.jpg" />
+    <Content Include="Images\top_menu_tr_over.jpg" />
+    <Content Include="Images\top_menu_tr_overnew.jpg" />
+    <Content Include="Images\tsa.gif" />
+    <Content Include="Images\tsa_over.gif" />
+    <Content Include="Images\unfinish.jpg" />
+    <Content Include="Images\UploadQuestionInstruction1.jpg" />
+    <Content Include="Images\UploadQuestionInstruction2.jpg" />
+    <Content Include="Images\UploadQuestionInstruction3.jpg" />
+    <Content Include="Images\UploadTopicInstruction1.jpg" />
+    <Content Include="Images\UploadTopicInstruction2.jpg" />
+    <Content Include="Images\UploadTopicInstruction3.jpg" />
+    <Content Include="Images\User.png" />
+    <Content Include="Images\verygood.gif" />
+    <Content Include="Images\view.gif" />
+    <Content Include="Images\viewall.gif" />
+    <Content Include="Images\viewall_over.gif" />
+    <Content Include="Images\viewQues.gif" />
+    <Content Include="Images\viewQues_over.gif" />
+    <Content Include="Images\viewText.gif" />
+    <Content Include="Images\viewText_over.gif" />
+    <Content Include="Images\view_questions.gif" />
+    <Content Include="Images\view_questions_over.gif" />
+    <Content Include="Images\volume.gif" />
+    <Content Include="Images\w_copy.gif" />
+    <Content Include="Images\w_cut.gif" />
+    <Content Include="Images\w_paste.gif" />
+    <Content Include="Images\yellow.jpg" />
+    <Content Include="Images\yellow_line.gif" />
+    <Content Include="JS\button_control.js" />
+    <Content Include="JS\button_control_listen.js" />
+    <Content Include="JS\CheckDate.js" />
+    <Content Include="JS\create.js" />
+    <Content Include="JS\csshover3.htc" />
+    <Content Include="JS\cut_paste.js" />
+    <Content Include="JS\drag_choose_two.js" />
+    <Content Include="JS\elements.js" />
+    <Content Include="JS\flashobject.js" />
+    <Content Include="JS\flashobject_justin.js" />
+    <Content Include="JS\google.js" />
+    <Content Include="JS\jquery-1.4.3.min.js" />
+    <Content Include="JS\jquery-1.9.1.min.js" />
+    <Content Include="JS\jquery-ui-1.8.1.custom.min.js" />
+    <Content Include="JS\jquery-ui.js" />
+    <Content Include="JS\jquery.js" />
+    <Content Include="JS\jquery.MultiFile.js" />
+    <Content Include="JS\jquery.simplemodal.js" />
+    <Content Include="JS\jquery.tooltip.min.js" />
+    <Content Include="JS\jquery.ui.touch-punch.min.js" />
+    <Content Include="JS\js-security.js" />
+    <Content Include="JS\main.js" />
+    <Content Include="JS\main1.js" />
+    <Content Include="JS\menu.js" />
+    <Content Include="JS\nursing_main.js" />
+    <Content Include="JS\replace.js" />
+    <Content Include="JS\testEngine.js" />
+    <Content Include="JS\timer.js" />
+    <Content Include="JS\timerW.js" />
+    <Content Include="JS\toefl_listening.js" />
+    <Content Include="JS\ts_picker.js" />
+    <Content Include="JS\ts_picker_old.js" />
+    <Content Include="JS\window.js" />
+    <Content Include="JS\wz_dragdrop.js" />
+    <Content Include="LogAdmin.aspx" />
+    <Content Include="PasswordConfirmation.aspx" />
+    <Content Include="Service\CaseStudyResult.aspx" />
+    <Content Include="Service\Launchdxr.aspx" />
+    <Content Include="STUDENT\AccessDenied.aspx" />
+    <Content Include="STUDENT\Analysis.aspx" />
+    <Content Include="STUDENT\ASCX\AlternateIntro.ascx" />
+    <Content Include="STUDENT\ASCX\FRBank.ascx" />
+    <Content Include="STUDENT\ASCX\head.ascx" />
+    <Content Include="STUDENT\cal.html" />
+    <Content Include="STUDENT\CaseStudies.aspx" />
+    <Content Include="STUDENT\CaseStudyResult.aspx" />
+    <Content Include="STUDENT\ChangePassword.aspx" />
+    <Content Include="STUDENT\Charts\FC_2_3_Area2D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_Bar2D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_Candlestick.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_Column2D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_Column3D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_Doughnut2D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_Line.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_MSArea2D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_MSBar2D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_MSBubble.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_MSColumn2D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_MSColumn3D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_MSColumnLine_3D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_MSColumnLine_DY_2D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_MSColumnLine_DY_3D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_MSLine.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_MSLine_2.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_MSScatter.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_Pie2D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_Pie3D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_Radar.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_SSGrid.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_StackedArea_MSLine_DY_2D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_StckdArea.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_StckdBar2D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_StckdColumn2D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_StckdColumn3D.swf" />
+    <Content Include="STUDENT\Charts\FC_2_3_StckdColumn_MSLine_DY_2D.swf" />
+    <Content Include="STUDENT\flash\hotSpotComp.swf" />
+    <Content Include="STUDENT\flash\hotSpotMaker.swf" />
+    <Content Include="STUDENT\flash\n002028e01.gif" />
+    <Content Include="STUDENT\flash\n002033.jpg" />
+    <Content Include="STUDENT\flash\n003060a.jpg" />
+    <Content Include="STUDENT\flash\n003060b.jpg" />
+    <Content Include="STUDENT\flash\n003060c.jpg" />
+    <Content Include="STUDENT\flash\n003060d.jpg" />
+    <Content Include="STUDENT\flash\NCQ0994.jpg" />
+    <Content Include="STUDENT\flash\NCQ1002.jpg" />
+    <Content Include="STUDENT\flash\NCQ1007.jpg" />
+    <Content Include="STUDENT\flash\NCQ1008.jpg" />
+    <Content Include="STUDENT\flash\NCQ1009.jpg" />
+    <Content Include="STUDENT\flash\NCQ1011.jpg" />
+    <Content Include="STUDENT\flash\ND053g01.gif" />
+    <Content Include="STUDENT\flash\nd098g01.gif" />
+    <Content Include="STUDENT\flash\nr008.gif" />
+    <Content Include="STUDENT\flash\nr139.gif" />
+    <Content Include="STUDENT\flash\orderingInteraction.swf" />
+    <Content Include="STUDENT\flash\ped016e01.gif" />
+    <Content Include="STUDENT\flash\PlayBack.swf" />
+    <Content Include="STUDENT\flash\Watch Me First.htm" />
+    <Content Include="STUDENT\flash\Watch Me First.swf" />
+    <Content Include="STUDENT\FRQBank.aspx" />
+    <Content Include="STUDENT\FRRemediation.aspx" />
+    <Content Include="STUDENT\FRRemediationReview.aspx" />
+    <Content Include="STUDENT\Graph.aspx" />
+    <Content Include="STUDENT\help.html" />
+    <Content Include="STUDENT\Intro.aspx" />
+    <Content Include="STUDENT\IntroError.aspx" />
+    <Content Include="STUDENT\launchTest.aspx" />
+    <Content Include="STUDENT\ListOfReviews.aspx" />
+    <Content Include="STUDENT\NCLEX.aspx" />
+    <Content Include="STUDENT\qbank.aspx" />
+    <Content Include="STUDENT\QBank_graph.aspx" />
+    <Content Include="STUDENT\QBank_P.aspx" />
+    <Content Include="STUDENT\QBank_R.aspx" />
+    <Content Include="STUDENT\QBank_R_Details.aspx" />
+    <Content Include="STUDENT\RemediationIntro.aspx" />
+    <Content Include="STUDENT\ShowImages.aspx" />
+    <Content Include="STUDENT\SkillModulePopUp.aspx" />
+    <Content Include="STUDENT\SkillsModule.aspx" />
+    <Content Include="STUDENT\StudentPay.aspx" />
+    <Content Include="STUDENT\student_int.aspx" />
+    <Content Include="STUDENT\testhttpCaseStudy.aspx" />
+    <Content Include="STUDENT\TestReview.aspx" />
+    <Content Include="STUDENT\user_home.aspx" />
+    <Content Include="S_Login.aspx" />
+    <Content Include="Temp\css\baseStyle.css" />
+    <Content Include="Temp\css\basic.css" />
+    <Content Include="Temp\css\front.css" />
+    <Content Include="Temp\css\front_PN.css" />
+    <Content Include="Temp\css\gridStyle.css" />
+    <Content Include="Temp\css\homeStyle.css" />
+    <Content Include="Temp\css\jquery-ui-1.css" />
+    <Content Include="Temp\css\ui_002.css" />
+    <Content Include="Temp\flash\FC_2_3_Column3D.swf" />
+    <Content Include="Temp\flash\hotSpotComp.swf" />
+    <Content Include="Temp\flash\NCQ0994.jpg" />
+    <Content Include="Temp\flash\orderingInteraction.swf" />
+    <Content Include="Temp\images\0out2.gif" />
+    <Content Include="Temp\images\0out4.gif" />
+    <Content Include="Temp\images\1out2.gif" />
+    <Content Include="Temp\images\1out4.gif" />
+    <Content Include="Temp\images\2out2.gif" />
+    <Content Include="Temp\images\2out4.gif" />
+    <Content Include="Temp\images\3out4.gif" />
+    <Content Include="Temp\images\4out4.gif" />
+    <Content Include="Temp\images\accountRecords.gif" />
+    <Content Include="Temp\images\accountRecords_over.gif" />
+    <Content Include="Temp\images\add.gif" />
+    <Content Include="Temp\images\addStudent.gif" />
+    <Content Include="Temp\images\addStudent_over.gif" />
+    <Content Include="Temp\images\add_over.gif" />
+    <Content Include="Temp\images\add_question.gif" />
+    <Content Include="Temp\images\add_question_over.gif" />
+    <Content Include="Temp\images\add_userAccount.gif" />
+    <Content Include="Temp\images\add_userAccount_over.gif" />
+    <Content Include="Temp\images\anatest.gif" />
+    <Content Include="Temp\images\anatest_over.gif" />
+    <Content Include="Temp\images\ar.gif" />
+    <Content Include="Temp\images\arrow.gif" />
+    <Content Include="Temp\images\arrow_p.gif" />
+    <Content Include="Temp\images\arw_down.gif" />
+    <Content Include="Temp\images\arw_first.gif" />
+    <Content Include="Temp\images\arw_last.gif" />
+    <Content Include="Temp\images\arw_lft.gif" />
+    <Content Include="Temp\images\arw_rt.gif" />
+    <Content Include="Temp\images\arw_up.gif" />
+    <Content Include="Temp\images\assign.gif" />
+    <Content Include="Temp\images\assign_over.gif" />
+    <Content Include="Temp\images\back.gif" />
+    <Content Include="Temp\images\back1.jpg" />
+    <Content Include="Temp\images\back1_PN.JPG" />
+    <Content Include="Temp\images\back2.jpg" />
+    <Content Include="Temp\images\back3.jpg" />
+    <Content Include="Temp\images\back3New.jpg" />
+    <Content Include="Temp\images\back4.jpg" />
+    <Content Include="Temp\images\backNav.gif" />
+    <Content Include="Temp\images\backNav_over.gif" />
+    <Content Include="Temp\images\backNav_over_over.gif" />
+    <Content Include="Temp\images\backs.gif" />
+    <Content Include="Temp\images\backs_over.gif" />
+    <Content Include="Temp\images\backtograde.gif" />
+    <Content Include="Temp\images\backtograde_over.gif" />
+    <Content Include="Temp\images\backtohistory.gif" />
+    <Content Include="Temp\images\backtohistory_over.gif" />
+    <Content Include="Temp\images\backtohome.gif" />
+    <Content Include="Temp\images\backtohome_over.gif" />
+    <Content Include="Temp\images\backtohome_over_over.gif" />
+    <Content Include="Temp\images\backtolist.gif" />
+    <Content Include="Temp\images\backtolist_over.gif" />
+    <Content Include="Temp\images\back_over.gif" />
+    <Content Include="Temp\images\bar.gif" />
+    <Content Include="Temp\images\barh.gif" />
+    <Content Include="Temp\images\barhb.gif" />
+    <Content Include="Temp\images\barhb1.gif" />
+    <Content Include="Temp\images\baricon.gif" />
+    <Content Include="Temp\images\baricon1.gif" />
+    <Content Include="Temp\images\baricon2.gif" />
+    <Content Include="Temp\images\barv.gif" />
+    <Content Include="Temp\images\barv1.gif" />
+    <Content Include="Temp\images\barv2.gif" />
+    <Content Include="Temp\images\barv3.gif" />
+    <Content Include="Temp\images\barv4.gif" />
+    <Content Include="Temp\images\bar_blue_left.jpg" />
+    <Content Include="Temp\images\bar_list.jpg" />
+    <Content Include="Temp\images\bar_list1.gif" />
+    <Content Include="Temp\images\bar_list1.jpg" />
+    <Content Include="Temp\images\bar_list2.jpg" />
+    <Content Include="Temp\images\bar_list3.jpg" />
+    <Content Include="Temp\images\bar_list4.jpg" />
+    <Content Include="Temp\images\bar_list5.jpg" />
+    <Content Include="Temp\images\bar_list6.jpg" />
+    <Content Include="Temp\images\bar_list7.jpg" />
+    <Content Include="Temp\images\bar_list8.jpg" />
+    <Content Include="Temp\images\bar_list_top.jpg" />
+    <Content Include="Temp\images\bar_list_top1.jpg" />
+    <Content Include="Temp\images\bar_purple.jpg" />
+    <Content Include="Temp\images\bar_purple_long.jpg" />
+    <Content Include="Temp\images\bar_purple_re.jpg" />
+    <Content Include="Temp\images\bar_yellow.jpg" />
+    <Content Include="Temp\images\bar_yellow_r.jpg" />
+    <Content Include="Temp\images\bar_yellow_rea.jpg" />
+    <Content Include="Temp\images\bar_yellow_side.jpg" />
+    <Content Include="Temp\images\blank.gif" />
+    <Content Include="Temp\images\blanka.gif" />
+    <Content Include="Temp\images\blank_button.JPG" />
+    <Content Include="Temp\images\bluear.gif" />
+    <Content Include="Temp\images\blue_arr.gif" />
+    <Content Include="Temp\images\border.gif" />
+    <Content Include="Temp\images\bot_med.jpg" />
+    <Content Include="Temp\images\bot_med1.gif" />
+    <Content Include="Temp\images\bot_med1.jpg" />
+    <Content Include="Temp\images\bot_med_q.gif" />
+    <Content Include="Temp\images\bot_med_q.jpg" />
+    <Content Include="Temp\images\box_checked.gif" />
+    <Content Include="Temp\images\box_unchecked.gif" />
+    <Content Include="Temp\images\btn_btr.gif" />
+    <Content Include="Temp\images\btn_ct.gif" />
+    <Content Include="Temp\images\btn_ct_over.gif" />
+    <Content Include="Temp\images\btn_del.gif" />
+    <Content Include="Temp\images\btn_del_over.gif" />
+    <Content Include="Temp\images\btn_dis.gif" />
+    <Content Include="Temp\images\btn_dis_over.gif" />
+    <Content Include="Temp\images\btn_endtest.gif" />
+    <Content Include="Temp\images\btn_endtest_over.gif" />
+    <Content Include="Temp\images\btn_excel.gif" />
+    <Content Include="Temp\images\btn_excel_over.gif" />
+    <Content Include="Temp\images\btn_go.gif" />
+    <Content Include="Temp\images\btn_remove.gif" />
+    <Content Include="Temp\images\btn_remove_over.gif" />
+    <Content Include="Temp\images\btn_save.gif" />
+    <Content Include="Temp\images\btn_save_over.gif" />
+    <Content Include="Temp\images\btn_search.gif" />
+    <Content Include="Temp\images\btn_search_over.gif" />
+    <Content Include="Temp\images\btn_skip.gif" />
+    <Content Include="Temp\images\btn_skip_over.gif" />
+    <Content Include="Temp\images\btn_start.gif" />
+    <Content Include="Temp\images\btn_start_over.gif" />
+    <Content Include="Temp\images\btn_submit.gif" />
+    <Content Include="Temp\images\btn_submit_over.gif" />
+    <Content Include="Temp\images\bull.gif" />
+    <Content Include="Temp\images\bullet.gif" />
+    <Content Include="Temp\images\bull_on.gif" />
+    <Content Include="Temp\images\button.png" />
+    <Content Include="Temp\images\buttons.html" />
+    <Content Include="Temp\images\button_2.png" />
+    <Content Include="Temp\images\button_2_over.png" />
+    <Content Include="Temp\images\button_btr.gif" />
+    <Content Include="Temp\images\button_tbq.gif" />
+    <Content Include="Temp\images\cal.gif" />
+    <Content Include="Temp\images\cal_header.gif" />
+    <Content Include="Temp\images\cal_over.gif" />
+    <Content Include="Temp\images\chdemo.jpg" />
+    <Content Include="Temp\images\chdemo1.jpg" />
+    <Content Include="Temp\images\chdemo2.jpg" />
+    <Content Include="Temp\images\chdemo3.jpg" />
+    <Content Include="Temp\images\chdemo4.jpg" />
+    <Content Include="Temp\images\chdemo5.jpg" />
+    <Content Include="Temp\images\closeAlert.gif" />
+    <Content Include="Temp\images\closeAlert_over.gif" />
+    <Content Include="Temp\images\clr.gif" />
+    <Content Include="Temp\images\confirm.gif" />
+    <Content Include="Temp\images\confirm_off.gif" />
+    <Content Include="Temp\images\confirm_over.gif" />
+    <Content Include="Temp\images\correct.gif" />
+    <Content Include="Temp\images\creat_qu.gif" />
+    <Content Include="Temp\images\creat_qu_over.gif" />
+    <Content Include="Temp\images\cross.gif" />
+    <Content Include="Temp\images\demo_bar1.gif" />
+    <Content Include="Temp\images\demo_cri.gif" />
+    <Content Include="Temp\images\demo_cri1.gif" />
+    <Content Include="Temp\images\display_transcripts.gif" />
+    <Content Include="Temp\images\display_transcripts_over.gif" />
+    <Content Include="Temp\images\dot.gif" />
+    <Content Include="Temp\images\edit.gif" />
+    <Content Include="Temp\images\excellent.gif" />
+    <Content Include="Temp\images\exit.gif" />
+    <Content Include="Temp\images\exit_over.gif" />
+    <Content Include="Temp\images\exp01.gif" />
+    <Content Include="Temp\images\exp02.gif" />
+    <Content Include="Temp\images\exp03.gif" />
+    <Content Include="Temp\images\fair.gif" />
+    <Content Include="Temp\images\finish.jpg" />
+    <Content Include="Temp\images\flash.gif" />
+    <Content Include="Temp\images\go.gif" />
+    <Content Include="Temp\images\good.gif" />
+    <Content Include="Temp\images\goRead.gif" />
+    <Content Include="Temp\images\goRead_over.gif" />
+    <Content Include="Temp\images\go_over.gif" />
+    <Content Include="Temp\images\green.jpg" />
+    <Content Include="Temp\images\grid\asc.gif" />
+    <Content Include="Temp\images\grid\blue_bg.gif" />
+    <Content Include="Temp\images\grid\desc.gif" />
+    <Content Include="Temp\images\grid\lines\dash.gif" />
+    <Content Include="Temp\images\grid\lines\dashminus.gif" />
+    <Content Include="Temp\images\grid\lines\dashplus.gif" />
+    <Content Include="Temp\images\grid\lines\i.gif" />
+    <Content Include="Temp\images\grid\lines\l.gif" />
+    <Content Include="Temp\images\grid\lines\lminus.gif" />
+    <Content Include="Temp\images\grid\lines\lplus.gif" />
+    <Content Include="Temp\images\grid\lines\minus.gif" />
+    <Content Include="Temp\images\grid\lines\noexpand.gif" />
+    <Content Include="Temp\images\grid\lines\plus.gif" />
+    <Content Include="Temp\images\grid\lines\r.gif" />
+    <Content Include="Temp\images\grid\lines\rminus.gif" />
+    <Content Include="Temp\images\grid\lines\rplus.gif" />
+    <Content Include="Temp\images\grid\lines\t.gif" />
+    <Content Include="Temp\images\grid\lines\tminus.gif" />
+    <Content Include="Temp\images\grid\lines\tplus.gif" />
+    <Content Include="Temp\images\grid\lines_backup\dash.gif" />
+    <Content Include="Temp\images\grid\lines_backup\dashminus.gif" />
+    <Content Include="Temp\images\grid\lines_backup\dashplus.gif" />
+    <Content Include="Temp\images\grid\lines_backup\i.gif" />
+    <Content Include="Temp\images\grid\lines_backup\l.gif" />
+    <Content Include="Temp\images\grid\lines_backup\lminus.gif" />
+    <Content Include="Temp\images\grid\lines_backup\lplus.gif" />
+    <Content Include="Temp\images\grid\lines_backup\minus.gif" />
+    <Content Include="Temp\images\grid\lines_backup\noexpand.gif" />
+    <Content Include="Temp\images\grid\lines_backup\plus.gif" />
+    <Content Include="Temp\images\grid\lines_backup\r.gif" />
+    <Content Include="Temp\images\grid\lines_backup\rminus.gif" />
+    <Content Include="Temp\images\grid\lines_backup\rplus.gif" />
+    <Content Include="Temp\images\grid\lines_backup\t.gif" />
+    <Content Include="Temp\images\grid\lines_backup\tminus.gif" />
+    <Content Include="Temp\images\grid\lines_backup\tplus.gif" />
+    <Content Include="Temp\images\grid\selector.gif" />
+    <Content Include="Temp\images\header_bar.jpg" />
+    <Content Include="Temp\images\header_med.jpg" />
+    <Content Include="Temp\images\header_menu.jpg" />
+    <Content Include="Temp\images\header_menu_q.jpg" />
+    <Content Include="Temp\images\header_nur.gif" />
+    <Content Include="Temp\images\header_nur.jpg" />
+    <Content Include="Temp\images\header_nur1.gif" />
+    <Content Include="Temp\images\header_nur1.jpg" />
+    <Content Include="Temp\images\header_nur2.JPG" />
+    <Content Include="Temp\images\header_nur_new.jpg" />
+    <Content Include="Temp\images\header_nur_q.jpg" />
+    <Content Include="Temp\images\header_print.jpg" />
+    <Content Include="Temp\images\headphones.gif" />
+    <Content Include="Temp\images\help.gif" />
+    <Content Include="Temp\images\helps.gif" />
+    <Content Include="Temp\images\helps_over.gif" />
+    <Content Include="Temp\images\help_f.gif" />
+    <Content Include="Temp\images\help_f_over.gif" />
+    <Content Include="Temp\images\help_local1.gif" />
+    <Content Include="Temp\images\help_local2.gif" />
+    <Content Include="Temp\images\help_local3.gif" />
+    <Content Include="Temp\images\help_local4.gif" />
+    <Content Include="Temp\images\help_local5.gif" />
+    <Content Include="Temp\images\help_local6.gif" />
+    <Content Include="Temp\images\help_local7.gif" />
+    <Content Include="Temp\images\help_local8.gif" />
+    <Content Include="Temp\images\help_local_add.gif" />
+    <Content Include="Temp\images\help_local_view.gif" />
+    <Content Include="Temp\images\help_over.gif" />
+    <Content Include="Temp\images\help_super1.gif" />
+    <Content Include="Temp\images\help_super2.gif" />
+    <Content Include="Temp\images\icon_adm.gif" />
+    <Content Include="Temp\images\icon_book.gif" />
+    <Content Include="Temp\images\icon_book1.gif" />
+    <Content Include="Temp\images\icon_cla.gif" />
+    <Content Include="Temp\images\icon_coh.gif" />
+    <Content Include="Temp\images\icon_color.gif" />
+    <Content Include="Temp\images\icon_corr.gif" />
+    <Content Include="Temp\images\icon_cus.gif" />
+    <Content Include="Temp\images\icon_gra.gif" />
+    <Content Include="Temp\images\icon_inco.gif" />
+    <Content Include="Temp\images\icon_info.gif" />
+    <Content Include="Temp\images\icon_loc.gif" />
+    <Content Include="Temp\images\icon_spe.gif" />
+    <Content Include="Temp\images\icon_stu.gif" />
+    <Content Include="Temp\images\icon_stu1.gif" />
+    <Content Include="Temp\images\icon_tea.gif" />
+    <Content Include="Temp\images\icon_toe.gif" />
+    <Content Include="Temp\images\icon_type1.gif" />
+    <Content Include="Temp\images\icon_type2.gif" />
+    <Content Include="Temp\images\icon_type3.gif" />
+    <Content Include="Temp\images\icon_type4.gif" />
+    <Content Include="Temp\images\icon_video.gif" />
+    <Content Include="Temp\images\icon_wri.gif" />
+    <Content Include="Temp\images\incorrect.gif" />
+    <Content Include="Temp\images\kapintl_logo.gif" />
+    <Content Include="Temp\images\key.gif" />
+    <Content Include="Temp\images\key_blu.gif" />
+    <Content Include="Temp\images\limited.gif" />
+    <Content Include="Temp\images\Lippincott\Accident_Prevention_a.gif" />
+    <Content Include="Temp\images\Lippincott\Accident_Prevention_b.gif" />
+    <Content Include="Temp\images\Lippincott\Accident_Prevention_c.gif" />
+    <Content Include="Temp\images\Lippincott\Accident_Prevention_d.gif" />
+    <Content Include="Temp\images\Lippincott\Accident_Prevention_e.gif" />
+    <Content Include="Temp\images\Lippincott\Addisonian_Crisis.gif" />
+    <Content Include="Temp\images\Lippincott\Addisons_Disease_1.gif" />
+    <Content Include="Temp\images\Lippincott\Addisons_Disease_2.gif" />
+    <Content Include="Temp\images\Lippincott\Administer_ear_medication_1.gif" />
+    <Content Include="Temp\images\Lippincott\Administer_Ear_Medication_2.gif" />
+    <Content Include="Temp\images\Lippincott\Administer_Insulin_1.gif" />
+    <Content Include="Temp\images\Lippincott\Administer_Insulin_2.gif" />
+    <Content Include="Temp\images\Lippincott\Administer_Insulin_3.gif" />
+    <Content Include="Temp\images\Lippincott\Administer_Insulin_4.gif" />
+    <Content Include="Temp\images\Lippincott\Administer_Insulin_5.gif" />
+    <Content Include="Temp\images\Lippincott\AIDS_1.gif" />
+    <Content Include="Temp\images\Lippincott\AIDS_2.gif" />
+    <Content Include="Temp\images\Lippincott\Ambulation_3.gif" />
+    <Content Include="Temp\images\Lippincott\Amputation.gif" />
+    <Content Include="Temp\images\Lippincott\Angina_Pectoris.gif" />
+    <Content Include="Temp\images\Lippincott\Appendicitis.gif" />
+    <Content Include="Temp\images\Lippincott\Arteriovenous_Fistula.gif" />
+    <Content Include="Temp\images\Lippincott\Aseptic_Technique_1.gif" />
+    <Content Include="Temp\images\Lippincott\Aseptic_Technique_2.gif" />
+    <Content Include="Temp\images\Lippincott\assess_liver1.gif" />
+    <Content Include="Temp\images\Lippincott\assess_liver2.gif" />
+    <Content Include="Temp\images\Lippincott\assess_liver3.gif" />
+    <Content Include="Temp\images\Lippincott\Bells_Palsy_1.gif" />
+    <Content Include="Temp\images\Lippincott\Bells_Palsy_2.gif" />
+    <Content Include="Temp\images\Lippincott\Benign_Prostatic_Hypertrophy.gif" />
+    <Content Include="Temp\images\Lippincott\Blood_Pressure_1.gif" />
+    <Content Include="Temp\images\Lippincott\Blood_Pressure_2.gif" />
+    <Content Include="Temp\images\Lippincott\Blood_Pressure_3.gif" />
+    <Content Include="Temp\images\Lippincott\Blood_Pressure_4.gif" />
+    <Content Include="Temp\images\Lippincott\Blood_Pressure_5.gif" />
+    <Content Include="Temp\images\Lippincott\Body_Mechanics_1.gif" />
+    <Content Include="Temp\images\Lippincott\Body_Mechanics_2.gif" />
+    <Content Include="Temp\images\Lippincott\Bone_Marrow_Biopsy.gif" />
+    <Content Include="Temp\images\Lippincott\Bronchoscopy.gif" />
+    <Content Include="Temp\images\Lippincott\Bucks_Traction.gif" />
+    <Content Include="Temp\images\Lippincott\Burns_1.gif" />
+    <Content Include="Temp\images\Lippincott\Burns_2.gif" />
+    <Content Include="Temp\images\Lippincott\Burn_Injury_First_Responder_1.gif" />
+    <Content Include="Temp\images\Lippincott\Burn_Injury_First_Responder_2.gif" />
+    <Content Include="Temp\images\Lippincott\Burn_Injury_Nursing_Care_1.gif" />
+    <Content Include="Temp\images\Lippincott\Burn_Injury_Nursing_Care_2.gif" />
+    <Content Include="Temp\images\Lippincott\Cardioversion.gif" />
+    <Content Include="Temp\images\Lippincott\Cataracts.gif" />
+    <Content Include="Temp\images\Lippincott\Central_Venous_Pressure.gif" />
+    <Content Include="Temp\images\Lippincott\Changing_Dressings_1.gif" />
+    <Content Include="Temp\images\Lippincott\Changing_Dressings_2.gif" />
+    <Content Include="Temp\images\Lippincott\Chemotherapy.gif" />
+    <Content Include="Temp\images\Lippincott\Chest_Tubes.gif" />
+    <Content Include="Temp\images\Lippincott\Cholecystectomy.gif" />
+    <Content Include="Temp\images\Lippincott\Cholecystitis.gif" />
+    <Content Include="Temp\images\Lippincott\Chronic_Obstructive_Pulmonary_Disease_1.gif" />
+    <Content Include="Temp\images\Lippincott\Chronic_Obstructive_Pulmonary_Disease_2.gif" />
+    <Content Include="Temp\images\Lippincott\Chronic_Obstructive_Pulmonary_Disease_3.gif" />
+    <Content Include="Temp\images\Lippincott\Cleft_Palate.gif" />
+    <Content Include="Temp\images\Lippincott\Coarctation-of-the-Aorta.gif" />
+    <Content Include="Temp\images\Lippincott\Colonoscopy.gif" />
+    <Content Include="Temp\images\Lippincott\Colostomy_Care_1.gif" />
+    <Content Include="Temp\images\Lippincott\Colostomy_Care_2.gif" />
+    <Content Include="Temp\images\Lippincott\Coma.gif" />
+    <Content Include="Temp\images\Lippincott\Contact_Lenses.gif" />
+    <Content Include="Temp\images\Lippincott\CPR_a.gif" />
+    <Content Include="Temp\images\Lippincott\CPR_b.gif" />
+    <Content Include="Temp\images\Lippincott\Cytoscopy.gif" />
+    <Content Include="Temp\images\Lippincott\Detached_Retina.gif" />
+    <Content Include="Temp\images\Lippincott\Dysphagia.gif" />
+    <Content Include="Temp\images\Lippincott\Ectopic_pregnancy.gif" />
+    <Content Include="Temp\images\Lippincott\Elastic_Stockings_1.gif" />
+    <Content Include="Temp\images\Lippincott\Elastic_Stockings_2.gif" />
+    <Content Include="Temp\images\Lippincott\Elevated_body_temperature_1.gif" />
+    <Content Include="Temp\images\Lippincott\Elevated_body_temperature_2.gif" />
+    <Content Include="Temp\images\Lippincott\Elevated_body_temperature_3.gif" />
+    <Content Include="Temp\images\Lippincott\Elevated_body_Temperature_4.gif" />
+    <Content Include="Temp\images\Lippincott\Enema_1.gif" />
+    <Content Include="Temp\images\Lippincott\Enema_2.gif" />
+    <Content Include="Temp\images\Lippincott\Enema_3.gif" />
+    <Content Include="Temp\images\Lippincott\Enema_4.gif" />
+    <Content Include="Temp\images\Lippincott\Epidural_anesthesia.gif" />
+    <Content Include="Temp\images\Lippincott\Fecal_Impaction_1.gif" />
+    <Content Include="Temp\images\Lippincott\Fecal_Impaction_2.gif" />
+    <Content Include="Temp\images\Lippincott\Feeding_A_Client_1.gif" />
+    <Content Include="Temp\images\Lippincott\Feeding_A_Client_2.gif" />
+    <Content Include="Temp\images\Lippincott\Glasgow_Coma_Scale.gif" />
+    <Content Include="Temp\images\Lippincott\Graves_Disease.gif" />
+    <Content Include="Temp\images\Lippincott\Hazards_of_Immobility_1.gif" />
+    <Content Include="Temp\images\Lippincott\Hazards_of_Immobility_1a.gif" />
+    <Content Include="Temp\images\Lippincott\Hazards_of_Immobility_1b.gif" />
+    <Content Include="Temp\images\Lippincott\Head_Injury.gif" />
+    <Content Include="Temp\images\Lippincott\Heart_Murmer.eps.gif" />
+    <Content Include="Temp\images\Lippincott\Heart_Murmer.gif" />
+    <Content Include="Temp\images\Lippincott\Herpes_Zoster.gif" />
+    <Content Include="Temp\images\Lippincott\Hip_Replacement.gif" />
+    <Content Include="Temp\images\Lippincott\Hip_Spica_Cast.gif" />
+    <Content Include="Temp\images\Lippincott\Hirschsprung_Disease.gif" />
+    <Content Include="Temp\images\Lippincott\Hypoxia_1.gif" />
+    <Content Include="Temp\images\Lippincott\Hypoxia_2.gif" />
+    <Content Include="Temp\images\Lippincott\Immunity.gif" />
+    <Content Include="Temp\images\Lippincott\Incentive_Spirometer.gif" />
+    <Content Include="Temp\images\Lippincott\Increased_Intracranial_Pres.gif" />
+    <Content Include="Temp\images\Lippincott\Inguinal_Hernia.gif" />
+    <Content Include="Temp\images\Lippincott\Instilling_Eye_Medication_1.gif" />
+    <Content Include="Temp\images\Lippincott\Instilling_Eye_Medication_3.gif" />
+    <Content Include="Temp\images\Lippincott\Internal_Radiation.gif" />
+    <Content Include="Temp\images\Lippincott\Intestinal_Obstruction.gif" />
+    <Content Include="Temp\images\Lippincott\Intilling_Eye_Medication_2.gif" />
+    <Content Include="Temp\images\Lippincott\Intracranial_Tumor.gif" />
+    <Content Include="Temp\images\Lippincott\Intramuscular_Injection_1.gif" />
+    <Content Include="Temp\images\Lippincott\Intramuscular_Injection_2.gif" />
+    <Content Include="Temp\images\Lippincott\Intussusception.gif" />
+    <Content Include="Temp\images\Lippincott\IV_Therapy_1.gif" />
+    <Content Include="Temp\images\Lippincott\IV_Therapy_2.gif" />
+    <Content Include="Temp\images\Lippincott\IV_Therapy_3.gif" />
+    <Content Include="Temp\images\Lippincott\IV_therapy_4.gif" />
+    <Content Include="Temp\images\Lippincott\Kidney_Transplant.gif" />
+    <Content Include="Temp\images\Lippincott\Laryngectomy.gif" />
+    <Content Include="Temp\images\Lippincott\Magnetic_Resonance_Image.gif" />
+    <Content Include="Temp\images\Lippincott\Making_Occupied_Bed_1.gif" />
+    <Content Include="Temp\images\Lippincott\Making_Occupied_Bed_2.gif" />
+    <Content Include="Temp\images\Lippincott\Maslow.gif" />
+    <Content Include="Temp\images\Lippincott\Medication_Administration.gif" />
+    <Content Include="Temp\images\Lippincott\Metered_Dose_Inhalant_1.gif" />
+    <Content Include="Temp\images\Lippincott\Metered_Dose_Inhalant_2.gif" />
+    <Content Include="Temp\images\Lippincott\Multiple_Sclerosis.gif" />
+    <Content Include="Temp\images\Lippincott\Myasthenia_Gravis.gif" />
+    <Content Include="Temp\images\Lippincott\Myocaredial_Infarction.gif" />
+    <Content Include="Temp\images\Lippincott\Myringotomy.gif" />
+    <Content Include="Temp\images\Lippincott\Nasogastric_Tube_Insertion_.gif" />
+    <Content Include="Temp\images\Lippincott\Nasogastric_Tube_Insertion_1.gif" />
+    <Content Include="Temp\images\Lippincott\Nasogastric_Tube_Insertion_2.gif" />
+    <Content Include="Temp\images\Lippincott\normal_breath_sounds1.gif" />
+    <Content Include="Temp\images\Lippincott\normal_breath_sounds2.gif" />
+    <Content Include="Temp\images\Lippincott\normal_breath_sounds_1.gif" />
+    <Content Include="Temp\images\Lippincott\Oral_Care_1.gif" />
+    <Content Include="Temp\images\Lippincott\Oral_Care_2.gif" />
+    <Content Include="Temp\images\Lippincott\Oral_Care_3.gif" />
+    <Content Include="Temp\images\Lippincott\Oral_Care_4.gif" />
+    <Content Include="Temp\images\Lippincott\Oral_Care_5.gif" />
+    <Content Include="Temp\images\Lippincott\Oral_Care_6.gif" />
+    <Content Include="Temp\images\Lippincott\Oral_Care_7.gif" />
+    <Content Include="Temp\images\Lippincott\Oral_Care_8.gif" />
+    <Content Include="Temp\images\Lippincott\Osteoarthritis.gif" />
+    <Content Include="Temp\images\Lippincott\Oxygen_Delivery_Systems.gif" />
+    <Content Include="Temp\images\Lippincott\Oxygen_Therapy_1.gif" />
+    <Content Include="Temp\images\Lippincott\Oxygen_Therapy_2.gif" />
+    <Content Include="Temp\images\Lippincott\Oxygen_Therapy_3.gif" />
+    <Content Include="Temp\images\Lippincott\Oxygen_Therapy_4.gif" />
+    <Content Include="Temp\images\Lippincott\Oxygen_Therapy_5.gif" />
+    <Content Include="Temp\images\Lippincott\Oxygen_Therapy_6a.gif" />
+    <Content Include="Temp\images\Lippincott\Oxygen_Therapy_6c.gif" />
+    <Content Include="Temp\images\Lippincott\Oxygen_Therapy_6d.gif" />
+    <Content Include="Temp\images\Lippincott\Oxygen_Therapy_6e.gif" />
+    <Content Include="Temp\images\Lippincott\Oxygen_Therapy_7.gif" />
+    <Content Include="Temp\images\Lippincott\Parkinsons_Disease1.gif" />
+    <Content Include="Temp\images\Lippincott\Parkinsons_Disease2.gif" />
+    <Content Include="Temp\images\Lippincott\Patent_Ductus_Arteriosus.gif" />
+    <Content Include="Temp\images\Lippincott\Peptic_Ulcer_Disease.gif" />
+    <Content Include="Temp\images\Lippincott\peripheral_pulses1.gif" />
+    <Content Include="Temp\images\Lippincott\peripheral_pulses2.gif" />
+    <Content Include="Temp\images\Lippincott\peripheral_pulses3.gif" />
+    <Content Include="Temp\images\Lippincott\peripheral_pulses4.gif" />
+    <Content Include="Temp\images\Lippincott\Peritoneal_Dialysis_1.gif" />
+    <Content Include="Temp\images\Lippincott\Peritoneal_Dialysis_2.gif" />
+    <Content Include="Temp\images\Lippincott\physical_assessment_chest.gif" />
+    <Content Include="Temp\images\Lippincott\physical_assessment_hands.gif" />
+    <Content Include="Temp\images\Lippincott\physical_assessment_palpation1.gif" />
+    <Content Include="Temp\images\Lippincott\physical_assessment_palpation2.gif" />
+    <Content Include="Temp\images\Lippincott\physical_assessment_percuss.gif" />
+    <Content Include="Temp\images\Lippincott\physical_assessment_percussion1.gif" />
+    <Content Include="Temp\images\Lippincott\physical_assessment_percussion2.gif" />
+    <Content Include="Temp\images\Lippincott\physical_assessment_percussion3.gif" />
+    <Content Include="Temp\images\Lippincott\Positioning_1.gif" />
+    <Content Include="Temp\images\Lippincott\Positioning_2.gif" />
+    <Content Include="Temp\images\Lippincott\Positioning_3.gif" />
+    <Content Include="Temp\images\Lippincott\Postural_Drainage.gif" />
+    <Content Include="Temp\images\Lippincott\Pressure_ulcer.gif" />
+    <Content Include="Temp\images\Lippincott\Pulmonary_Embolism.gif" />
+    <Content Include="Temp\images\Lippincott\Pulse_Oximetry.gif" />
+    <Content Include="Temp\images\Lippincott\Pulse_Sites_1.gif" />
+    <Content Include="Temp\images\Lippincott\Pulse_Sites_2.gif" />
+    <Content Include="Temp\images\Lippincott\Pyloric-Stenosis.gif" />
+    <Content Include="Temp\images\Lippincott\Radical_Pancreaticoduodenec.gif" />
+    <Content Include="Temp\images\Lippincott\Range_of_Mostion_1a.gif" />
+    <Content Include="Temp\images\Lippincott\Range_of_Motion_1b.gif" />
+    <Content Include="Temp\images\Lippincott\Range_of_Motion_1c.gif" />
+    <Content Include="Temp\images\Lippincott\Restraints.gif" />
+    <Content Include="Temp\images\Lippincott\Rheumatoid_Arthritis_1.gif" />
+    <Content Include="Temp\images\Lippincott\Rheumatoid_Arthritis_2.gif" />
+    <Content Include="Temp\images\Lippincott\Rheumatoid_Arthritis_3.gif" />
+    <Content Include="Temp\images\Lippincott\rinne_test.gif" />
+    <Content Include="Temp\images\Lippincott\Safety_Older_Adults_4.gif" />
+    <Content Include="Temp\images\Lippincott\Safety_Older_Adults_5.gif" />
+    <Content Include="Temp\images\Lippincott\Sickle_Cell_Anemia.gif" />
+    <Content Include="Temp\images\Lippincott\Sigmoidoscopy.gif" />
+    <Content Include="Temp\images\Lippincott\Spinal_Anesthesia.gif" />
+    <Content Include="Temp\images\Lippincott\Spinal_Cord_Injury.gif" />
+    <Content Include="Temp\images\Lippincott\Stapedectomy.gif" />
+    <Content Include="Temp\images\Lippincott\Strabismus_1.gif" />
+    <Content Include="Temp\images\Lippincott\Strabismus_2.gif" />
+    <Content Include="Temp\images\Lippincott\Strabismus_3.gif" />
+    <Content Include="Temp\images\Lippincott\Suctioning_1.gif" />
+    <Content Include="Temp\images\Lippincott\Suctioning_2.gif" />
+    <Content Include="Temp\images\Lippincott\Suctioning_3.gif" />
+    <Content Include="Temp\images\Lippincott\Tetralogy_of_Fallot.gif" />
+    <Content Include="Temp\images\Lippincott\Thyroidectomy.gif" />
+    <Content Include="Temp\images\Lippincott\Toileting_Bedpan_1.gif" />
+    <Content Include="Temp\images\Lippincott\Toileting_Bedpan_2.gif" />
+    <Content Include="Temp\images\Lippincott\Toileting_Bedpan_3.gif" />
+    <Content Include="Temp\images\Lippincott\Toileting_Bedpan_4.gif" />
+    <Content Include="Temp\images\Lippincott\Toileting_Bedpan_5.gif" />
+    <Content Include="Temp\images\Lippincott\Tonsillectomy.gif" />
+    <Content Include="Temp\images\Lippincott\Tracheostomy_Care_1.gif" />
+    <Content Include="Temp\images\Lippincott\Tracheostomy_Care_2.gif" />
+    <Content Include="Temp\images\Lippincott\Tracheostomy_Care_3.gif" />
+    <Content Include="Temp\images\Lippincott\Transfer_Techniques_1.gif" />
+    <Content Include="Temp\images\Lippincott\Transfer_Techniques_2.gif" />
+    <Content Include="Temp\images\Lippincott\Transfer_Techniques_3.gif" />
+    <Content Include="Temp\images\Lippincott\Transfer_Techniques_4.gif" />
+    <Content Include="Temp\images\Lippincott\Transfer_Techniques_5.gif" />
+    <Content Include="Temp\images\Lippincott\Transfer_Techniques_6.gif" />
+    <Content Include="Temp\images\Lippincott\Trigeminal_neuralgia.gif" />
+    <Content Include="Temp\images\Lippincott\Tuberculosis.gif" />
+    <Content Include="Temp\images\Lippincott\Type_2_Diabetes.gif" />
+    <Content Include="Temp\images\Lippincott\Urinalysis_a.gif" />
+    <Content Include="Temp\images\Lippincott\Urinalysis_b.gif" />
+    <Content Include="Temp\images\Lippincott\Urinalysis_c.gif" />
+    <Content Include="Temp\images\Lippincott\Urinary_Calculi.gif" />
+    <Content Include="Temp\images\Lippincott\Urolithiasis_same_as_Urinar.gif" />
+    <Content Include="Temp\images\Lippincott\Uterine_contraction.gif" />
+    <Content Include="Temp\images\Lippincott\Vesicoureteral_reflux.gif" />
+    <Content Include="Temp\images\ln-bullet-on.gif" />
+    <Content Include="Temp\images\ln-bullet.gif" />
+    <Content Include="Temp\images\logo.gif" />
+    <Content Include="Temp\images\logo.jpg" />
+    <Content Include="Temp\images\logout.gif" />
+    <Content Include="Temp\images\logout_over.gif" />
+    <Content Include="Temp\images\logo_nu.gif" />
+    <Content Include="Temp\images\logo_OLD.gif" />
+    <Content Include="Temp\images\lwww.jpg" />
+    <Content Include="Temp\images\menubar.gif" />
+    <Content Include="Temp\images\menubar1.gif" />
+    <Content Include="Temp\images\menubara.gif" />
+    <Content Include="Temp\images\menu_sep.jpg" />
+    <Content Include="Temp\images\mih.jpg" />
+    <Content Include="Temp\images\min.jpg" />
+    <Content Include="Temp\images\next.gif" />
+    <Content Include="Temp\images\nextcal.gif" />
+    <Content Include="Temp\images\next_off.gif" />
+    <Content Include="Temp\images\next_over.gif" />
+    <Content Include="Temp\images\next_year.gif" />
+    <Content Include="Temp\images\noanswer.gif" />
+    <Content Include="Temp\images\norelevantresponse.gif" />
+    <Content Include="Temp\images\notscorable.gif" />
+    <Content Include="Temp\images\nur1.jpg" />
+    <Content Include="Temp\images\nur2a.jpg" />
+    <Content Include="Temp\images\nur2b.jpg" />
+    <Content Include="Temp\images\nur2c.jpg" />
+    <Content Include="Temp\images\nur2d.jpg" />
+    <Content Include="Temp\images\nursing images\NCQ0819.gif" />
+    <Content Include="Temp\images\nursing images\ncq0934x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0935x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0936x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0937x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0938x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0939x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0940x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0941x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0942x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0948x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0949x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0950x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0951x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0952x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0953x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0954x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0955x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0956x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0957x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0958x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0959x01.gif" />
+    <Content Include="Temp\images\nursing images\ncq0960x01.gif" />
+    <Content Include="Temp\images\nursing images\NCQ0961.gif" />
+    <Content Include="Temp\images\nursing images\NCQ0994-1001-blank.jpg" />
+    <Content Include="Temp\images\nursing images\NCQ0994.jpg" />
+    <Content Include="Temp\images\nursing images\NCQ1002.jpg" />
+    <Content Include="Temp\images\nursing images\NCQ1007.jpg" />
+    <Content Include="Temp\images\nursing images\NCQ1008.jpg" />
+    <Content Include="Temp\images\nursing images\NCQ1009.jpg" />
+    <Content Include="Temp\images\nursing images\NCQ1011.jpg" />
+    <Content Include="Temp\images\ongo.jpg" />
+    <Content Include="Temp\images\p.gif" />
+    <Content Include="Temp\images\pending.gif" />
+    <Content Include="Temp\images\performance.gif" />
+    <Content Include="Temp\images\plu.jpg" />
+    <Content Include="Temp\images\plus.jpg" />
+    <Content Include="Temp\images\point1_a.gif" />
+    <Content Include="Temp\images\point1_b.gif" />
+    <Content Include="Temp\images\point1_c.gif" />
+    <Content Include="Temp\images\point2_a.gif" />
+    <Content Include="Temp\images\point2_b.gif" />
+    <Content Include="Temp\images\point2_c.gif" />
+    <Content Include="Temp\images\point3_a.gif" />
+    <Content Include="Temp\images\point3_b.gif" />
+    <Content Include="Temp\images\point3_c.gif" />
+    <Content Include="Temp\images\point_back1.gif" />
+    <Content Include="Temp\images\point_back2.gif" />
+    <Content Include="Temp\images\popupcloseIcon.png" />
+    <Content Include="Temp\images\popupcloseIconHover.png" />
+    <Content Include="Temp\images\popupHeader.png" />
+    <Content Include="Temp\images\prevcal.gif" />
+    <Content Include="Temp\images\prev_year.gif" />
+    <Content Include="Temp\images\print.gif" />
+    <Content Include="Temp\images\printbtn.gif" />
+    <Content Include="Temp\images\printbtn_over.gif" />
+    <Content Include="Temp\images\printbtn_over_over.gif" />
+    <Content Include="Temp\images\print_over.gif" />
+    <Content Include="Temp\images\progress.gif" />
+    <Content Include="Temp\images\quit.gif" />
+    <Content Include="Temp\images\quit_over.gif" />
+    <Content Include="Temp\images\radio_down.gif" />
+    <Content Include="Temp\images\radio_up.gif" />
+    <Content Include="Temp\images\red.jpg" />
+    <Content Include="Temp\images\resend.gif" />
+    <Content Include="Temp\images\resend_over.gif" />
+    <Content Include="Temp\images\reset.gif" />
+    <Content Include="Temp\images\reset_over.gif" />
+    <Content Include="Temp\images\review.gif" />
+    <Content Include="Temp\images\reviewAudio.gif" />
+    <Content Include="Temp\images\reviewAudio_over.gif" />
+    <Content Include="Temp\images\reviewpassage.gif" />
+    <Content Include="Temp\images\reviewpassage_over.gif" />
+    <Content Include="Temp\images\reviewQues.gif" />
+    <Content Include="Temp\images\reviewQuesSample.gif" />
+    <Content Include="Temp\images\reviewQuesSample_over.gif" />
+    <Content Include="Temp\images\reviewQues_over.gif" />
+    <Content Include="Temp\images\reviewSample.gif" />
+    <Content Include="Temp\images\reviewSample_over.gif" />
+    <Content Include="Temp\images\reviewtest.gif" />
+    <Content Include="Temp\images\reviewtest_over.gif" />
+    <Content Include="Temp\images\reviewtran.gif" />
+    <Content Include="Temp\images\reviewtran_over.gif" />
+    <Content Include="Temp\images\review_over.gif" />
+    <Content Include="Temp\images\Rpt_Header.JPG" />
+    <Content Include="Temp\images\sample_ad.jpg" />
+    <Content Include="Temp\images\sample_ad1.jpg" />
+    <Content Include="Temp\images\school_back.jpg" />
+    <Content Include="Temp\images\selector.jpg" />
+    <Content Include="Temp\images\show_calendar.gif" />
+    <Content Include="Temp\images\show_calendar1.gif" />
+    <Content Include="Temp\images\si.gif" />
+    <Content Include="Temp\images\skip.gif" />
+    <Content Include="Temp\images\spacer.gif" />
+    <Content Include="Temp\images\startar.gif" />
+    <Content Include="Temp\images\studentRecords.gif" />
+    <Content Include="Temp\images\studentRecords_over.gif" />
+    <Content Include="Temp\images\student_r1_c1.jpg" />
+    <Content Include="Temp\images\student_r2_c2.jpg" />
+    <Content Include="Temp\images\stu_home.jpg" />
+    <Content Include="Temp\images\stu_home_n.jpg" />
+    <Content Include="Temp\images\stu_home_old.jpg" />
+    <Content Include="Temp\images\stu_teststu.gif" />
+    <Content Include="Temp\images\stu_teststu1.jpg" />
+    <Content Include="Temp\images\stu_teststu2.gif" />
+    <Content Include="Temp\images\stu_teststu3.gif" />
+    <Content Include="Temp\images\stu_teststu4.gif" />
+    <Content Include="Temp\images\stu_teststu5.gif" />
+    <Content Include="Temp\images\st_history.gif" />
+    <Content Include="Temp\images\st_history_over.gif" />
+    <Content Include="Temp\images\st_logout.gif" />
+    <Content Include="Temp\images\st_logout_over.gif" />
+    <Content Include="Temp\images\submit.gif" />
+    <Content Include="Temp\images\submit_over.gif" />
+    <Content Include="Temp\images\suspend.gif" />
+    <Content Include="Temp\images\suspend_over.gif" />
+    <Content Include="Temp\images\tick.gif" />
+    <Content Include="Temp\images\tick_clr.gif" />
+    <Content Include="Temp\images\timer.gif" />
+    <Content Include="Temp\images\title_accountSetup.gif" />
+    <Content Include="Temp\images\title_account_management.gif" />
+    <Content Include="Temp\images\title_adminAccount.gif" />
+    <Content Include="Temp\images\title_adminlogin.gif" />
+    <Content Include="Temp\images\title_adminRecords.gif" />
+    <Content Include="Temp\images\title_studentLogin.gif" />
+    <Content Include="Temp\images\title_studentPrograms.GIF" />
+    <Content Include="Temp\images\title_student_management.gif" />
+    <Content Include="Temp\images\title_student_records.gif" />
+    <Content Include="Temp\images\toefl.gif" />
+    <Content Include="Temp\images\toefl_over.gif" />
+    <Content Include="Temp\images\toeic.gif" />
+    <Content Include="Temp\images\toeic_over.gif" />
+    <Content Include="Temp\images\top_menu.jpg" />
+    <Content Include="Temp\images\top_menu_frt.jpg" />
+    <Content Include="Temp\images\top_menu_frt_on.jpg" />
+    <Content Include="Temp\images\top_menu_frt_over.jpg" />
+    <Content Include="Temp\images\top_menu_home.jpg" />
+    <Content Include="Temp\images\top_menu_home_on.jpg" />
+    <Content Include="Temp\images\top_menu_home_over.jpg" />
+    <Content Include="Temp\images\top_menu_it.jpg" />
+    <Content Include="Temp\images\top_menu_it_on.jpg" />
+    <Content Include="Temp\images\top_menu_it_over.jpg" />
+    <Content Include="Temp\images\top_menu_matrix.jpg" />
+    <Content Include="Temp\images\top_menu_matrix_on.jpg" />
+    <Content Include="Temp\images\top_menu_matrix_over.jpg" />
+    <Content Include="Temp\images\top_menu_np.jpg" />
+    <Content Include="Temp\images\top_menu_np_on.jpg" />
+    <Content Include="Temp\images\top_menu_np_over.jpg" />
+    <Content Include="Temp\images\top_menu_report.jpg" />
+    <Content Include="Temp\images\top_menu_report_on.jpg" />
+    <Content Include="Temp\images\top_menu_report_over.jpg" />
+    <Content Include="Temp\images\top_menu_syll.jpg" />
+    <Content Include="Temp\images\top_menu_syll_on.jpg" />
+    <Content Include="Temp\images\top_menu_syll_over.jpg" />
+    <Content Include="Temp\images\top_menu_tr.jpg" />
+    <Content Include="Temp\images\top_menu_tr_on.jpg" />
+    <Content Include="Temp\images\top_menu_tr_over.jpg" />
+    <Content Include="Temp\images\tsa.gif" />
+    <Content Include="Temp\images\tsa_over.gif" />
+    <Content Include="Temp\images\unfinish.jpg" />
+    <Content Include="Temp\images\verygood.gif" />
+    <Content Include="Temp\images\view.gif" />
+    <Content Include="Temp\images\viewall.gif" />
+    <Content Include="Temp\images\viewall_over.gif" />
+    <Content Include="Temp\images\viewQues.gif" />
+    <Content Include="Temp\images\viewQues_over.gif" />
+    <Content Include="Temp\images\viewText.gif" />
+    <Content Include="Temp\images\viewText_over.gif" />
+    <Content Include="Temp\images\view_questions.gif" />
+    <Content Include="Temp\images\view_questions_over.gif" />
+    <Content Include="Temp\images\volume.gif" />
+    <Content Include="Temp\images\WizardLogo.jpg" />
+    <Content Include="Temp\images\w_copy.gif" />
+    <Content Include="Temp\images\w_cut.gif" />
+    <Content Include="Temp\images\w_paste.gif" />
+    <Content Include="Temp\images\yellow.jpg" />
+    <Content Include="Temp\images\yellow_line.gif" />
+    <Content Include="Temp\js\button_control.js" />
+    <Content Include="Temp\js\button_control_listen.js" />
+    <Content Include="Temp\js\CheckDate.js" />
+    <Content Include="Temp\js\create.js" />
+    <Content Include="Temp\js\cut_paste.js" />
+    <Content Include="Temp\js\drag_choose_two.js" />
+    <Content Include="Temp\js\elements.js" />
+    <Content Include="Temp\js\flash.js" />
+    <Content Include="Temp\js\flashobject.js" />
+    <Content Include="Temp\js\flashobject_justin.js" />
+    <Content Include="Temp\js\js-security.js" />
+    <Content Include="Temp\js\main.js" />
+    <Content Include="Temp\js\menu.js" />
+    <Content Include="Temp\js\replace.js" />
+    <Content Include="Temp\js\timer.js" />
+    <Content Include="Temp\js\timerW.js" />
+    <Content Include="Temp\js\toefl_listening.js" />
+    <Content Include="Temp\js\ts_picker.js" />
+    <Content Include="Temp\js\ts_picker_old.js" />
+    <Content Include="Temp\js\window.js" />
+    <Content Include="Temp\js\wz_dragdrop.js" />
+    <Content Include="UTILITIES\DbConnStr.aspx" />
+    <Content Include="Validate-Nursing.aspx" />
+    <Content Include="Validate-Registration.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADMIN\AdminAssignInstitution.aspx.cs">
+      <DependentUpon>AdminAssignInstitution.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\AdminAssignInstitution.aspx.designer.cs">
+      <DependentUpon>AdminAssignInstitution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\AdminEdit.aspx.cs">
+      <DependentUpon>AdminEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\AdminEdit.aspx.designer.cs">
+      <DependentUpon>AdminEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\AdminList.aspx.cs">
+      <DependentUpon>AdminList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\AdminList.aspx.designer.cs">
+      <DependentUpon>AdminList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\AdminMaster.master.cs">
+      <DependentUpon>AdminMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\AdminMaster.master.designer.cs">
+      <DependentUpon>AdminMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\AdminView.aspx.cs">
+      <DependentUpon>AdminView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\AdminView.aspx.designer.cs">
+      <DependentUpon>AdminView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\AssignStudentTest.aspx.cs">
+      <DependentUpon>AssignStudentTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\AssignStudentTest.aspx.designer.cs">
+      <DependentUpon>AssignStudentTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\AuditTrailView.aspx.cs">
+      <DependentUpon>AuditTrailView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\AuditTrailView.aspx.designer.cs">
+      <DependentUpon>AuditTrailView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\AVPItems.aspx.cs">
+      <DependentUpon>AVPItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\AVPItems.aspx.designer.cs">
+      <DependentUpon>AVPItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\BulkModifyProgram.aspx.cs">
+      <DependentUpon>BulkModifyProgram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\BulkModifyProgram.aspx.designer.cs">
+      <DependentUpon>BulkModifyProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\CalendarPopUp.aspx.cs">
+      <DependentUpon>CalendarPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\CalendarPopUp.aspx.designer.cs">
+      <DependentUpon>CalendarPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Calender.ascx.cs">
+      <DependentUpon>Calender.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Calender.ascx.designer.cs">
+      <DependentUpon>Calender.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\CohortEdit.aspx.cs">
+      <DependentUpon>CohortEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\CohortEdit.aspx.designer.cs">
+      <DependentUpon>CohortEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\CohortList.aspx.cs">
+      <DependentUpon>CohortList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\CohortList.aspx.designer.cs">
+      <DependentUpon>CohortList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\CohortProgramAssign.aspx.cs">
+      <DependentUpon>CohortProgramAssign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\CohortProgramAssign.aspx.designer.cs">
+      <DependentUpon>CohortProgramAssign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\CohortTestDates.aspx.cs">
+      <DependentUpon>CohortTestDates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\CohortTestDates.aspx.designer.cs">
+      <DependentUpon>CohortTestDates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\CohortView.aspx.cs">
+      <DependentUpon>CohortView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\CohortView.aspx.designer.cs">
+      <DependentUpon>CohortView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Controls\Address.ascx.cs">
+      <DependentUpon>Address.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Controls\Address.ascx.designer.cs">
+      <DependentUpon>Address.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminAccountMenu.ascx.cs">
+      <DependentUpon>AdminAccountMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminAccountMenu.ascx.designer.cs">
+      <DependentUpon>AdminAccountMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminContentManagementMenu.ascx.cs">
+      <DependentUpon>AdminContentManagementMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminContentManagementMenu.ascx.designer.cs">
+      <DependentUpon>AdminContentManagementMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminMainLeftMenu.ascx.cs">
+      <DependentUpon>AdminMainLeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminMainLeftMenu.ascx.designer.cs">
+      <DependentUpon>AdminMainLeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminMainRightMenu.ascx.cs">
+      <DependentUpon>AdminMainRightMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminMainRightMenu.ascx.designer.cs">
+      <DependentUpon>AdminMainRightMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminMenu.ascx.cs">
+      <DependentUpon>AdminMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminMenu.ascx.designer.cs">
+      <DependentUpon>AdminMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminSendMailMenu.ascx.cs">
+      <DependentUpon>AdminSendMailMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminSendMailMenu.ascx.designer.cs">
+      <DependentUpon>AdminSendMailMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminViewReportsMenu.ascx.cs">
+      <DependentUpon>AdminViewReportsMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Controls\AdminViewReportsMenu.ascx.designer.cs">
+      <DependentUpon>AdminViewReportsMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Controls\InstitutionContacts.ascx.cs">
+      <DependentUpon>InstitutionContacts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Controls\InstitutionContacts.ascx.designer.cs">
+      <DependentUpon>InstitutionContacts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\EmailEdit.aspx.cs">
+      <DependentUpon>EmailEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\EmailEdit.aspx.designer.cs">
+      <DependentUpon>EmailEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\EmailReceiver1.aspx.cs">
+      <DependentUpon>EmailReceiver1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\EmailReceiver1.aspx.designer.cs">
+      <DependentUpon>EmailReceiver1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\EmptyMaster.master.cs">
+      <DependentUpon>EmptyMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Graph.aspx.cs">
+      <DependentUpon>Graph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Graph.aspx.designer.cs">
+      <DependentUpon>Graph.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Graph2.aspx.cs">
+      <DependentUpon>Graph2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Graph2.aspx.designer.cs">
+      <DependentUpon>Graph2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Graph_C.aspx.cs">
+      <DependentUpon>Graph_C.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Graph_C.aspx.designer.cs">
+      <DependentUpon>Graph_C.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Graph_CaseComparation.aspx.cs">
+      <DependentUpon>Graph_CaseComparation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Graph_CaseComparation.aspx.designer.cs">
+      <DependentUpon>Graph_CaseComparation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\GroupEdit.aspx.cs">
+      <DependentUpon>GroupEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\GroupEdit.aspx.designer.cs">
+      <DependentUpon>GroupEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\GroupList.aspx.cs">
+      <DependentUpon>GroupList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\GroupList.aspx.designer.cs">
+      <DependentUpon>GroupList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\GroupTestDates.aspx.cs">
+      <DependentUpon>GroupTestDates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\GroupTestDates.aspx.designer.cs">
+      <DependentUpon>GroupTestDates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\GroupView.aspx.cs">
+      <DependentUpon>GroupView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\GroupView.aspx.designer.cs">
+      <DependentUpon>GroupView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\head.ascx.cs">
+      <DependentUpon>head.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\head.ascx.designer.cs">
+      <DependentUpon>head.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\InstitutionEdit.aspx.cs">
+      <DependentUpon>InstitutionEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\InstitutionEdit.aspx.designer.cs">
+      <DependentUpon>InstitutionEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\InstitutionList.aspx.cs">
+      <DependentUpon>InstitutionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\InstitutionList.aspx.designer.cs">
+      <DependentUpon>InstitutionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\InstitutionView.aspx.cs">
+      <DependentUpon>InstitutionView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\InstitutionView.aspx.designer.cs">
+      <DependentUpon>InstitutionView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\LTIProviders.aspx.cs">
+      <DependentUpon>LTIProviders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\LTIProviders.aspx.designer.cs">
+      <DependentUpon>LTIProviders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportInstitutionTestByQuestion.aspx.cs">
+      <DependentUpon>ReportInstitutionTestByQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportInstitutionTestByQuestion.aspx.designer.cs">
+      <DependentUpon>ReportInstitutionTestByQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportMultiCampusReportCard.aspx.cs">
+      <DependentUpon>ReportMultiCampusReportCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportMultiCampusReportCard.aspx.designer.cs">
+      <DependentUpon>ReportMultiCampusReportCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Report\MultiCampusReportCard.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MultiCampusReportCard.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\MultiCampusReportCardPdf.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MultiCampusReportCardPdf.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\StudentsinCohort.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentsinCohort.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\StudentRepeat.aspx.cs">
+      <DependentUpon>StudentRepeat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\StudentRepeat.aspx.designer.cs">
+      <DependentUpon>StudentRepeat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UserDetails.aspx.cs">
+      <DependentUpon>UserDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UserDetails.aspx.designer.cs">
+      <DependentUpon>UserDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\MultiCampusReportCard.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MultiCampusReportCard.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\StudentsInCohort.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentsInCohort.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Controls\SubCategories.ascx.cs">
+      <DependentUpon>SubCategories.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Controls\SubCategories.ascx.designer.cs">
+      <DependentUpon>SubCategories.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\LoginContentRelease.aspx.cs">
+      <DependentUpon>LoginContentRelease.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\LoginContentRelease.aspx.designer.cs">
+      <DependentUpon>LoginContentRelease.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\NewAVPItems.aspx.cs">
+      <DependentUpon>NewAVPItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\NewAVPItems.aspx.designer.cs">
+      <DependentUpon>NewAVPItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportEnglishForNursingTracking.aspx.cs">
+      <DependentUpon>ReportEnglishForNursingTracking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportEnglishForNursingTracking.aspx.designer.cs">
+      <DependentUpon>ReportEnglishForNursingTracking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportTestsScheduledbyDate.aspx.cs">
+      <DependentUpon>ReportTestsScheduledbyDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportTestsScheduledbyDate.aspx.designer.cs">
+      <DependentUpon>ReportTestsScheduledbyDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Report\Administrator.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administrator.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\Cohort.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cohort.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\Group.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Group.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\Institution.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Institution.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\ReportEnglishForNursingTracking.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportEnglishForNursingTracking.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\TestScheduleByDate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestScheduleByDate.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\StudentListForTest.aspx.cs">
+      <DependentUpon>StudentListForTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\StudentListForTest.aspx.designer.cs">
+      <DependentUpon>StudentListForTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\SysAdmin.aspx.cs">
+      <DependentUpon>SysAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\SysAdmin.aspx.designer.cs">
+      <DependentUpon>SysAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UploadHelpfulDocument.aspx.cs">
+      <DependentUpon>UploadHelpfulDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UploadHelpfulDocument.aspx.designer.cs">
+      <DependentUpon>UploadHelpfulDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\OpenHelpfulDoc.aspx.cs">
+      <DependentUpon>OpenHelpfulDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\OpenHelpfulDoc.aspx.designer.cs">
+      <DependentUpon>OpenHelpfulDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Norm.aspx.cs">
+      <DependentUpon>Norm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Norm.aspx.designer.cs">
+      <DependentUpon>Norm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Percentile.aspx.cs">
+      <DependentUpon>Percentile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Percentile.aspx.designer.cs">
+      <DependentUpon>Percentile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\PopUpC.aspx.cs">
+      <DependentUpon>PopUpC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\PopUpC.aspx.designer.cs">
+      <DependentUpon>PopUpC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ProgramAddAssign.aspx.cs">
+      <DependentUpon>ProgramAddAssign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ProgramAddAssign.aspx.designer.cs">
+      <DependentUpon>ProgramAddAssign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ProgramEdit.aspx.cs">
+      <DependentUpon>ProgramEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ProgramEdit.aspx.designer.cs">
+      <DependentUpon>ProgramEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ProgramList.aspx.cs">
+      <DependentUpon>ProgramList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ProgramList.aspx.designer.cs">
+      <DependentUpon>ProgramList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ProgramView.aspx.cs">
+      <DependentUpon>ProgramView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ProgramView.aspx.designer.cs">
+      <DependentUpon>ProgramView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportByInstitution.aspx.cs">
+      <DependentUpon>ReportByInstitution.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportByInstitution.aspx.designer.cs">
+      <DependentUpon>ReportByInstitution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportCaseByCohort.aspx.cs">
+      <DependentUpon>ReportCaseByCohort.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportCaseByCohort.aspx.designer.cs">
+      <DependentUpon>ReportCaseByCohort.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportCaseComparisonByModule.aspx.cs">
+      <DependentUpon>ReportCaseComparisonByModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportCaseComparisonByModule.aspx.designer.cs">
+      <DependentUpon>ReportCaseComparisonByModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportCohortByTest.aspx.cs">
+      <DependentUpon>ReportCohortByTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportCohortByTest.aspx.designer.cs">
+      <DependentUpon>ReportCohortByTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportCohortComparisons.aspx.cs">
+      <DependentUpon>ReportCohortComparisons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportCohortComparisons.aspx.designer.cs">
+      <DependentUpon>ReportCohortComparisons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportCohortPerformance.aspx.cs">
+      <DependentUpon>ReportCohortPerformance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportCohortPerformance.aspx.designer.cs">
+      <DependentUpon>ReportCohortPerformance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportCohortResultByModule.aspx.cs">
+      <DependentUpon>ReportCohortResultByModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportCohortResultByModule.aspx.designer.cs">
+      <DependentUpon>ReportCohortResultByModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportCohortTestByQuestion.aspx.cs">
+      <DependentUpon>ReportCohortTestByQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportCohortTestByQuestion.aspx.designer.cs">
+      <DependentUpon>ReportCohortTestByQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportInstitutionPerformance.aspx.cs">
+      <DependentUpon>ReportInstitutionPerformance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportInstitutionPerformance.aspx.designer.cs">
+      <DependentUpon>ReportInstitutionPerformance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportMaster.master.cs">
+      <DependentUpon>ReportMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportMaster.master.designer.cs">
+      <DependentUpon>ReportMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportPerformanceByQuestion.aspx.cs">
+      <DependentUpon>ReportPerformanceByQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportPerformanceByQuestion.aspx.designer.cs">
+      <DependentUpon>ReportPerformanceByQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportPerformanceByQuestionToExcel.aspx.cs">
+      <DependentUpon>ReportPerformanceByQuestionToExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportPerformanceByQuestionToExcel.aspx.designer.cs">
+      <DependentUpon>ReportPerformanceByQuestionToExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportRemediationByTest.aspx.cs">
+      <DependentUpon>ReportRemediationByTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportRemediationByTest.aspx.designer.cs">
+      <DependentUpon>ReportRemediationByTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportStudentQuestion.aspx.cs">
+      <DependentUpon>ReportStudentQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportStudentQuestion.aspx.designer.cs">
+      <DependentUpon>ReportStudentQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportStudentReportCard.aspx.cs">
+      <DependentUpon>ReportStudentReportCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportStudentReportCard.aspx.designer.cs">
+      <DependentUpon>ReportStudentReportCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportStudentReportCardByModule.aspx.cs">
+      <DependentUpon>ReportStudentReportCardByModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportStudentReportCardByModule.aspx.designer.cs">
+      <DependentUpon>ReportStudentReportCardByModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportStudentResultByCase.aspx.cs">
+      <DependentUpon>ReportStudentResultByCase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportStudentResultByCase.aspx.designer.cs">
+      <DependentUpon>ReportStudentResultByCase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportStudentSummaryByAnswerChoice.aspx.cs">
+      <DependentUpon>ReportStudentSummaryByAnswerChoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportStudentSummaryByAnswerChoice.aspx.designer.cs">
+      <DependentUpon>ReportStudentSummaryByAnswerChoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportStudentSummaryByQuestion.aspx.cs">
+      <DependentUpon>ReportStudentSummaryByQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportStudentSummaryByQuestion.aspx.designer.cs">
+      <DependentUpon>ReportStudentSummaryByQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ReportTestStudent.aspx.cs">
+      <DependentUpon>ReportTestStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ReportTestStudent.aspx.designer.cs">
+      <DependentUpon>ReportTestStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Report\ByCohort.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ByCohort.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\ByInstitution.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ByInstitution.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\CaseByCohort.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CaseByCohort.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\CaseCohortComparisons.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CaseCohortComparisons.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\CohortByStudent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortByStudent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\CohortByTest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortByTest.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\CohortComparisons.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortComparisons.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\CohortPerformance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortPerformance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\CohortPerformanceByQuestion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortPerformanceByQuestion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\CohortResultByModule.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortResultByModule.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\CrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\ExplanationByStudent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExplanationByStudent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\RemediationByStudent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemediationByStudent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\StudentInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentInfo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\StudentQuestion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentQuestion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\StudentReportCard.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentReportCard.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\StudentReportCardByModule.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentReportCardByModule.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\TestResultsbyQuestion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestResultsbyQuestion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\TestResultsbyQuestionForAllCohort.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestResultsbyQuestionForAllCohort.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\TestResultsbyQuestionForAllCohortForExcel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestResultsbyQuestionForAllCohortForExcel.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\TestsExplanationByStudent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestsExplanationByStudent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\TestsRemediationByStudent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestsRemediationByStudent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\TestStudent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestStudent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Report\TestStudent_Focused.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestStudent_Focused.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN\SetOverride.aspx.cs">
+      <DependentUpon>SetOverride.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\SetOverride.aspx.designer.cs">
+      <DependentUpon>SetOverride.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\StudentListForGroup.aspx.cs">
+      <DependentUpon>StudentListForGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\StudentListForGroup.aspx.designer.cs">
+      <DependentUpon>StudentListForGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\StudentsInCohort.aspx.cs">
+      <DependentUpon>StudentsInCohort.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\StudentsInCohort.aspx.designer.cs">
+      <DependentUpon>StudentsInCohort.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\StudentTestDates.aspx.cs">
+      <DependentUpon>StudentTestDates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\StudentTestDates.aspx.designer.cs">
+      <DependentUpon>StudentTestDates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UserEdit.aspx.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UserEdit.aspx.designer.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UserListXML.aspx.cs">
+      <DependentUpon>UserListXML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UserListXML.aspx.designer.cs">
+      <DependentUpon>UserListXML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UserView.aspx.cs">
+      <DependentUpon>UserView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UserView.aspx.designer.cs">
+      <DependentUpon>UserView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ValidateKaplan.aspx.cs">
+      <DependentUpon>ValidateKaplan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ValidateKaplan.aspx.designer.cs">
+      <DependentUpon>ValidateKaplan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\SearchHelpfulDocuments.aspx.cs">
+      <DependentUpon>SearchHelpfulDocuments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\SearchHelpfulDocuments.aspx.designer.cs">
+      <DependentUpon>SearchHelpfulDocuments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ViewAnnotation.aspx.cs">
+      <DependentUpon>ViewAnnotation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ViewAnnotation.aspx.designer.cs">
+      <DependentUpon>ViewAnnotation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ViewHelpfulDocument.aspx.cs">
+      <DependentUpon>ViewHelpfulDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ViewHelpfulDocument.aspx.designer.cs">
+      <DependentUpon>ViewHelpfulDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\App.cs" />
+    <Compile Include="AppCode\BootStrapper.cs" />
+    <Compile Include="AppCode\Calendar.cs" />
+    <Compile Include="AppCode\Constants.cs" />
+    <Compile Include="AppCode\ControlHelper.cs" />
+    <Compile Include="AppCode\DIHelper.cs" />
+    <Compile Include="AppCode\ElmahWrapper.cs" />
+    <Compile Include="AppCode\HttpRequestLifetimeManager.cs" />
+    <Compile Include="AppCode\HttpSessionLifeTimeManager.cs" />
+    <Compile Include="AppCode\IContainerAccessor.cs" />
+    <Compile Include="AppCode\IKTPWebList.cs" />
+    <Compile Include="AppCode\ItemSelectedEventArgs.cs" />
+    <Compile Include="AppCode\KTPDropDownList.cs" />
+    <Compile Include="AppCode\KTPHyperLinkField.cs" />
+    <Compile Include="AppCode\KTPListBox.cs" />
+    <Compile Include="AppCode\KTPSort.cs" />
+    <Compile Include="AppCode\KTPWebList.cs" />
+    <Compile Include="AppCode\LippincottCard.cs" />
+    <Compile Include="AppCode\LogData.cs" />
+    <Compile Include="AppCode\LoggingHandler.cs" />
+    <Compile Include="AppCode\MasterPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppCode\MessageItem.cs" />
+    <Compile Include="AppCode\Messenger.cs" />
+    <Compile Include="AppCode\Messenger_Design.cs" />
+    <Compile Include="AppCode\ObjectFactory.cs" />
+    <Compile Include="AppCode\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppCode\Profiler.cs" />
+    <Compile Include="AppCode\QuestionUploadHelper.cs" />
+    <Compile Include="AppCode\ReportHelper.cs" />
+    <Compile Include="AppCode\ReportPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\AdministratorSearchInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdministratorSearchInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\ByCohort.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ByCohort.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\ByInstitution.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ByInstitution.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\CaseByCohort.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CaseByCohort.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\CohortByState.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortByState.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\CohortByStudent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortByStudent.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\CohortByTest.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortByTest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\CohortComparisons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortComparisons.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\CohortPerformance.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortPerformance.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\CohortPerformanceByQuestion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortPerformanceByQuestion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\CohortResultByModule.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortResultByModule.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\CohortSearchInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CohortSearchInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\EnglishNursingTracking.cs">
+      <DependentUpon>EnglishNursingTracking.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\EnglishNursingTracking.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnglishNursingTracking.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\GroupSearchInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GroupSearchInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\InstitutionSearchInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InstitutionSearchInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\RemediationByStudent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemediationByStudent.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\ReportTestbyQuestionForAllCohort.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportTestbyQuestionForAllCohort.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\ReturnTestByCohort.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReturnTestByCohort.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\ReturnTestsRemediationByStudent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReturnTestsRemediationByStudent.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\StudentInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\StudentQuestion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentQuestion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\StudentReportCard.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentReportCard.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\StudentReportCardByModule.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentReportCardByModule.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\SummaryPerformanceByQuestionReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SummaryPerformanceByQuestionReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\TestRemediationByStudents.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestRemediationByStudents.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\TestResultsbyQuestion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestResultsbyQuestion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\TestScheduleByDate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestScheduleByDate.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\Report_Ds\TestStudent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestStudent.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\StudentBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppCode\StudentHeaderBaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppCode\StudentHeaderBaseControl_2.cs" />
+    <Compile Include="AppCode\TraceValuePath.cs" />
+    <Compile Include="AppCode\UserControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppCode\WebExtensions.cs" />
+    <Compile Include="AppCode\WebHelper.cs" />
+    <Compile Include="AppCode\ZipExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="A_Login.aspx.cs">
+      <DependentUpon>A_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A_Login.aspx.designer.cs">
+      <DependentUpon>A_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\BackupData.aspx.designer.cs">
+      <DependentUpon>BackupData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Controls\AlternateEditQuestion.ascx.cs">
+      <DependentUpon>AlternateEditQuestion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Controls\AlternateEditQuestion.ascx.designer.cs">
+      <DependentUpon>AlternateEditQuestion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Controls\SearchQuestionCriteria.ascx.designer.cs">
+      <DependentUpon>SearchQuestionCriteria.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\CopyCustomTest.aspx.designer.cs">
+      <DependentUpon>CopyCustomTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\CustomTest.aspx.designer.cs">
+      <DependentUpon>CustomTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\EditQuestion.aspx.designer.cs">
+      <DependentUpon>EditQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\EditR.aspx.designer.cs">
+      <DependentUpon>EditR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Lippincott.aspx.designer.cs">
+      <DependentUpon>Lippincott.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\NewCustomTest.aspx.designer.cs">
+      <DependentUpon>NewCustomTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\NewLippincott.aspx.designer.cs">
+      <DependentUpon>NewLippincott.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\QuestionCustomTset.aspx.cs">
+      <DependentUpon>QuestionCustomTset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\QuestionCustomTset.aspx.designer.cs">
+      <DependentUpon>QuestionCustomTset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ReadLippincottTemplate.aspx.designer.cs">
+      <DependentUpon>ReadLippincottTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ReleaseChoice.aspx.designer.cs">
+      <DependentUpon>ReleaseChoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ReleaseReview.aspx.designer.cs">
+      <DependentUpon>ReleaseReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\SearchQuestion.aspx.designer.cs">
+      <DependentUpon>SearchQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\TestCategories.aspx.designer.cs">
+      <DependentUpon>TestCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\UploadQuestions.aspx.cs">
+      <DependentUpon>UploadQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\UploadQuestions.aspx.designer.cs">
+      <DependentUpon>UploadQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\UploadTopics.aspx.cs">
+      <DependentUpon>UploadTopics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\UploadTopics.aspx.designer.cs">
+      <DependentUpon>UploadTopics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ViewQuestion.aspx.designer.cs">
+      <DependentUpon>ViewQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ViewRemediation.aspx.designer.cs">
+      <DependentUpon>ViewRemediation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LogAdmin.aspx.cs">
+      <DependentUpon>LogAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogAdmin.aspx.designer.cs">
+      <DependentUpon>LogAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordConfirmation.aspx.cs">
+      <DependentUpon>PasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>PasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\CaseStudyResult.aspx.cs">
+      <DependentUpon>CaseStudyResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\CaseStudyResult.aspx.designer.cs">
+      <DependentUpon>CaseStudyResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Launchdxr.aspx.cs">
+      <DependentUpon>Launchdxr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Launchdxr.aspx.designer.cs">
+      <DependentUpon>Launchdxr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\AccessDenied.aspx.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\AccessDenied.aspx.designer.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\Analysis.aspx.cs">
+      <DependentUpon>Analysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\Analysis.aspx.designer.cs">
+      <DependentUpon>Analysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\ASCX\AlternateIntro.ascx.cs">
+      <DependentUpon>AlternateIntro.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\ASCX\AlternateIntro.ascx.designer.cs">
+      <DependentUpon>AlternateIntro.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\ASCX\FRBank.ascx.cs">
+      <DependentUpon>FRBank.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\ASCX\FRBank.ascx.designer.cs">
+      <DependentUpon>FRBank.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\ASCX\head.ascx.cs">
+      <DependentUpon>head.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\ASCX\head.ascx.designer.cs">
+      <DependentUpon>head.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\CaseStudies.aspx.cs">
+      <DependentUpon>CaseStudies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\CaseStudies.aspx.designer.cs">
+      <DependentUpon>CaseStudies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\CaseStudyResult.aspx.cs">
+      <DependentUpon>CaseStudyResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\CaseStudyResult.aspx.designer.cs">
+      <DependentUpon>CaseStudyResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\FRQBank.aspx.cs">
+      <DependentUpon>FRQBank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\FRQBank.aspx.designer.cs">
+      <DependentUpon>FRQBank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\FRRemediation.aspx.cs">
+      <DependentUpon>FRRemediation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\FRRemediation.aspx.designer.cs">
+      <DependentUpon>FRRemediation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\FRRemediationReview.aspx.cs">
+      <DependentUpon>FRRemediationReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\FRRemediationReview.aspx.designer.cs">
+      <DependentUpon>FRRemediationReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\Graph.aspx.cs">
+      <DependentUpon>Graph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\Graph.aspx.designer.cs">
+      <DependentUpon>Graph.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\Intro.aspx.cs">
+      <DependentUpon>Intro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\Intro.aspx.designer.cs">
+      <DependentUpon>Intro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\IntroError.aspx.cs">
+      <DependentUpon>IntroError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\IntroError.aspx.designer.cs">
+      <DependentUpon>IntroError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\ListOfReviews.aspx.cs">
+      <DependentUpon>ListOfReviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\ListOfReviews.aspx.designer.cs">
+      <DependentUpon>ListOfReviews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\NCLEX.aspx.cs">
+      <DependentUpon>NCLEX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\NCLEX.aspx.designer.cs">
+      <DependentUpon>NCLEX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\qbank.aspx.cs">
+      <DependentUpon>qbank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\qbank.aspx.designer.cs">
+      <DependentUpon>qbank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\QBank_graph.aspx.cs">
+      <DependentUpon>QBank_graph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\QBank_graph.aspx.designer.cs">
+      <DependentUpon>QBank_graph.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\QBank_P.aspx.cs">
+      <DependentUpon>QBank_P.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\QBank_P.aspx.designer.cs">
+      <DependentUpon>QBank_P.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\QBank_R.aspx.cs">
+      <DependentUpon>QBank_R.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\QBank_R.aspx.designer.cs">
+      <DependentUpon>QBank_R.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\QBank_R_Details.aspx.cs">
+      <DependentUpon>QBank_R_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\QBank_R_Details.aspx.designer.cs">
+      <DependentUpon>QBank_R_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\RemediationIntro.aspx.cs">
+      <DependentUpon>RemediationIntro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\RemediationIntro.aspx.designer.cs">
+      <DependentUpon>RemediationIntro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\ShowImages.aspx.cs">
+      <DependentUpon>ShowImages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\ShowImages.aspx.designer.cs">
+      <DependentUpon>ShowImages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\SkillModulePopUp.aspx.cs">
+      <DependentUpon>SkillModulePopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\SkillModulePopUp.aspx.designer.cs">
+      <DependentUpon>SkillModulePopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\SkillsModule.aspx.cs">
+      <DependentUpon>SkillsModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\SkillsModule.aspx.designer.cs">
+      <DependentUpon>SkillsModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\StudentPay.aspx.cs">
+      <DependentUpon>StudentPay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\StudentPay.aspx.designer.cs">
+      <DependentUpon>StudentPay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\student_int.aspx.cs">
+      <DependentUpon>student_int.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\student_int.aspx.designer.cs">
+      <DependentUpon>student_int.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\SubmitToProctorTrackOnEndTest.ashx.cs">
+      <DependentUpon>SubmitToProctorTrackOnEndTest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\testhttpCaseStudy.aspx.cs">
+      <DependentUpon>testhttpCaseStudy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\testhttpCaseStudy.aspx.designer.cs">
+      <DependentUpon>testhttpCaseStudy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\TestReview.aspx.cs">
+      <DependentUpon>TestReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\TestReview.aspx.designer.cs">
+      <DependentUpon>TestReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENT\user_home.aspx.cs">
+      <DependentUpon>user_home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STUDENT\user_home.aspx.designer.cs">
+      <DependentUpon>user_home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S_Login.aspx.cs">
+      <DependentUpon>S_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S_Login.aspx.designer.cs">
+      <DependentUpon>S_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Validate-Registration.aspx.cs">
+      <DependentUpon>Validate-Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Validate-Registration.aspx.designer.cs">
+      <DependentUpon>Validate-Registration.aspx</DependentUpon>
+    </Compile>
+    <Content Include="UTILITIES\whereAmI.aspx" />
+    <Compile Include="UTILITIES\DbConnStr.aspx.cs">
+      <DependentUpon>DbConnStr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UTILITIES\DbConnStr.aspx.designer.cs">
+      <DependentUpon>DbConnStr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Validate-Nursing.aspx.cs">
+      <DependentUpon>Validate-Nursing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\BackupData.aspx.cs">
+      <DependentUpon>BackupData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Controls\SearchQuestionCriteria.ascx.cs">
+      <DependentUpon>SearchQuestionCriteria.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\CopyCustomTest.aspx.cs">
+      <DependentUpon>CopyCustomTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\CustomTest.aspx.cs">
+      <DependentUpon>CustomTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\EditQuestion.aspx.cs">
+      <DependentUpon>EditQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\EditR.aspx.cs">
+      <DependentUpon>EditR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Lippincott.aspx.cs">
+      <DependentUpon>Lippincott.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\NewCustomTest.aspx.cs">
+      <DependentUpon>NewCustomTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\NewLippincott.aspx.cs">
+      <DependentUpon>NewLippincott.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\ReadLippincottTemplate.aspx.cs">
+      <DependentUpon>ReadLippincottTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\ReleaseChoice.aspx.cs">
+      <DependentUpon>ReleaseChoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\ReleaseReview.aspx.cs">
+      <DependentUpon>ReleaseReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\SearchQuestion.aspx.cs">
+      <DependentUpon>SearchQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\TestCategories.aspx.cs">
+      <DependentUpon>TestCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\ViewQuestion.aspx.cs">
+      <DependentUpon>ViewQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\ViewRemediation.aspx.cs">
+      <DependentUpon>ViewRemediation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validate-Nursing.aspx.designer.cs">
+      <DependentUpon>Validate-Nursing.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN\AdminMaster.master" />
+    <Content Include="ADMIN\EmptyMaster.master" />
+    <Content Include="ADMIN\ReportMaster.master" />
+    <None Include="AppCode\Report_Ds\AdministratorSearchInfo.xsc">
+      <DependentUpon>AdministratorSearchInfo.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\AdministratorSearchInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdministratorSearchInfo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\AdministratorSearchInfo.xss">
+      <DependentUpon>AdministratorSearchInfo.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\ByCohort.xsc">
+      <DependentUpon>ByCohort.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\ByCohort.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ByCohort.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\ByCohort.xss">
+      <DependentUpon>ByCohort.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\ByInstitution.xsc">
+      <DependentUpon>ByInstitution.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\ByInstitution.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ByInstitution.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\ByInstitution.xss">
+      <DependentUpon>ByInstitution.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CaseByCohort.xsc">
+      <DependentUpon>CaseByCohort.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CaseByCohort.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CaseByCohort.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\CaseByCohort.xss">
+      <DependentUpon>CaseByCohort.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortByState.xsc">
+      <DependentUpon>CohortByState.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortByState.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CohortByState.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortByState.xss">
+      <DependentUpon>CohortByState.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortByStudent.xsc">
+      <DependentUpon>CohortByStudent.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortByStudent.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CohortByStudent.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortByStudent.xss">
+      <DependentUpon>CohortByStudent.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortByTest.xsc">
+      <DependentUpon>CohortByTest.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortByTest.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CohortByTest.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortByTest.xss">
+      <DependentUpon>CohortByTest.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortComparisons.xsc">
+      <DependentUpon>CohortComparisons.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortComparisons.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CohortComparisons.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortComparisons.xss">
+      <DependentUpon>CohortComparisons.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortPerformance.xsc">
+      <DependentUpon>CohortPerformance.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortPerformance.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CohortPerformance.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortPerformance.xss">
+      <DependentUpon>CohortPerformance.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortPerformanceByQuestion.xsc">
+      <DependentUpon>CohortPerformanceByQuestion.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortPerformanceByQuestion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CohortPerformanceByQuestion.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortPerformanceByQuestion.xss">
+      <DependentUpon>CohortPerformanceByQuestion.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortResultByModule.xsc">
+      <DependentUpon>CohortResultByModule.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortResultByModule.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CohortResultByModule.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortResultByModule.xss">
+      <DependentUpon>CohortResultByModule.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortSearchInfo.xsc">
+      <DependentUpon>CohortSearchInfo.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortSearchInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CohortSearchInfo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\CohortSearchInfo.xss">
+      <DependentUpon>CohortSearchInfo.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\EnglishNursingTracking.xsc">
+      <DependentUpon>EnglishNursingTracking.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\EnglishNursingTracking.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EnglishNursingTracking.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\EnglishNursingTracking.xss">
+      <DependentUpon>EnglishNursingTracking.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\GroupSearchInfo.xsc">
+      <DependentUpon>GroupSearchInfo.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\GroupSearchInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GroupSearchInfo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\GroupSearchInfo.xss">
+      <DependentUpon>GroupSearchInfo.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\InstitutionSearchInfo.xsc">
+      <DependentUpon>InstitutionSearchInfo.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\InstitutionSearchInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InstitutionSearchInfo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\InstitutionSearchInfo.xss">
+      <DependentUpon>InstitutionSearchInfo.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\MultiCampusReportCard.xsc">
+      <DependentUpon>MultiCampusReportCard.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\MultiCampusReportCard.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MultiCampusReportCard.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppCode\Report_Ds\MultiCampusReportCard.xss">
+      <DependentUpon>MultiCampusReportCard.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\RemediationByStudent.xsc">
+      <DependentUpon>RemediationByStudent.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\RemediationByStudent.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RemediationByStudent.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\RemediationByStudent.xss">
+      <DependentUpon>RemediationByStudent.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\ReportTestbyQuestionForAllCohort.xsc">
+      <DependentUpon>ReportTestbyQuestionForAllCohort.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\ReportTestbyQuestionForAllCohort.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportTestbyQuestionForAllCohort.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\ReportTestbyQuestionForAllCohort.xss">
+      <DependentUpon>ReportTestbyQuestionForAllCohort.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\ReturnTestByCohort.xsc">
+      <DependentUpon>ReturnTestByCohort.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\ReturnTestByCohort.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReturnTestByCohort.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\ReturnTestByCohort.xss">
+      <DependentUpon>ReturnTestByCohort.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\ReturnTestsRemediationByStudent.xsc">
+      <DependentUpon>ReturnTestsRemediationByStudent.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\ReturnTestsRemediationByStudent.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReturnTestsRemediationByStudent.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\ReturnTestsRemediationByStudent.xss">
+      <DependentUpon>ReturnTestsRemediationByStudent.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentInfo.xsc">
+      <DependentUpon>StudentInfo.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentInfo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentInfo.xss">
+      <DependentUpon>StudentInfo.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentQuestion.xsc">
+      <DependentUpon>StudentQuestion.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentQuestion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentQuestion.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentQuestion.xss">
+      <DependentUpon>StudentQuestion.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentReportCard.xsc">
+      <DependentUpon>StudentReportCard.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentReportCard.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentReportCard.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentReportCard.xss">
+      <DependentUpon>StudentReportCard.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentReportCardByModule.xsc">
+      <DependentUpon>StudentReportCardByModule.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentReportCardByModule.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentReportCardByModule.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentReportCardByModule.xss">
+      <DependentUpon>StudentReportCardByModule.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentsInCohort.xsc">
+      <DependentUpon>StudentsInCohort.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentsInCohort.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentsInCohort.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppCode\Report_Ds\StudentsInCohort.xss">
+      <DependentUpon>StudentsInCohort.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\SummaryPerformanceByQuestionReport.xsc">
+      <DependentUpon>SummaryPerformanceByQuestionReport.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\SummaryPerformanceByQuestionReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SummaryPerformanceByQuestionReport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\SummaryPerformanceByQuestionReport.xss">
+      <DependentUpon>SummaryPerformanceByQuestionReport.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\TestRemediationByStudents.xsc">
+      <DependentUpon>TestRemediationByStudents.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\TestRemediationByStudents.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestRemediationByStudents.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\TestRemediationByStudents.xss">
+      <DependentUpon>TestRemediationByStudents.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\TestResultsbyQuestion.xsc">
+      <DependentUpon>TestResultsbyQuestion.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\TestResultsbyQuestion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestResultsbyQuestion.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\TestResultsbyQuestion.xss">
+      <DependentUpon>TestResultsbyQuestion.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\TestScheduleByDate.xsc">
+      <DependentUpon>TestScheduleByDate.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\TestScheduleByDate.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestScheduleByDate.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\TestScheduleByDate.xss">
+      <DependentUpon>TestScheduleByDate.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\TestStudent.xsc">
+      <DependentUpon>TestStudent.xsd</DependentUpon>
+    </None>
+    <None Include="AppCode\Report_Ds\TestStudent.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestStudent.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppCode\Report_Ds\TestStudent.xss">
+      <DependentUpon>TestStudent.xsd</DependentUpon>
+    </None>
+    <Content Include="App_Browsers\ViewStateAdapter.browser" />
+    <None Include="Images\template\btn_small.psd" />
+    <None Include="Images\template\button_3.psd" />
+    <None Include="Images\template\button_4_long.psd" />
+    <None Include="Images\template\Button_styleA.psd" />
+    <None Include="Images\template\card.psd" />
+    <None Include="Images\template\card2.psd" />
+    <None Include="Images\template\top_menu.psd" />
+    <Content Include="log4net.config" />
+    <Content Include="STUDENT\docs\classroomposters.pdf" />
+    <Content Include="STUDENT\SubmitToProctorTrackOnEndTest.ashx" />
+    <None Include="Temp\css\baseStyle.css.bak" />
+    <None Include="Temp\css\gridStyle.css.bak" />
+    <Content Include="Temp\images\Lippincott\images-gifs-unmatched.zip" />
+    <Content Include="Temp\images\nursing images\NCQ1009.zip" />
+    <None Include="Temp\images\template\btn_small.psd" />
+    <None Include="Temp\images\template\button_3.psd" />
+    <None Include="Temp\images\template\button_4_long.psd" />
+    <None Include="Temp\images\template\Button_styleA.psd" />
+    <None Include="Temp\images\template\card.psd" />
+    <None Include="Temp\images\template\card2.psd" />
+    <None Include="Temp\images\template\top_menu.psd" />
+    <None Include="Temp\js\flash.js.bak" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN\Report\ByCohort.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ByCohort.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\ByInstitution.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ByInstitution.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\CaseByCohort.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CaseByCohort.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\CaseCohortComparisons.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CaseCohortComparisons.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\CohortByStudent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CohortByStudent.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\CohortByTest.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CohortByTest.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\CohortComparisons.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CohortComparisons.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\CohortPerformance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CohortPerformance.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\CohortPerformanceByQuestion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CohortPerformanceByQuestion.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\CohortResultByModule.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CohortResultByModule.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\CrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\ExplanationByStudent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ExplanationByStudent.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\RemediationByStudent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RemediationByStudent.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\StudentInfo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StudentInfo.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\StudentQuestion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StudentQuestion.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\StudentReportCard.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StudentReportCard.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\StudentReportCardByModule.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StudentReportCardByModule.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\TestResultsbyQuestion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TestResultsbyQuestion.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\TestResultsbyQuestionForAllCohort.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TestResultsbyQuestionForAllCohort.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\TestResultsbyQuestionForAllCohortForExcel.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TestResultsbyQuestionForAllCohortForExcel.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\TestsExplanationByStudent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TestsExplanationByStudent.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\TestsRemediationByStudent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TestsRemediationByStudent.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\TestStudent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TestStudent.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\TestStudent_Focused.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TestStudent_Focused.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NursingLibrary\NursingLibrary.csproj">
+      <Project>{EC660BC3-B368-44FB-9739-A39ECF046A63}</Project>
+      <Name>NursingLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN\Report\Administrator.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Administrator.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\Cohort.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Cohort.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\Group.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Group.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\Institution.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Institution.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADMIN\Report\TestScheduleByDate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TestScheduleByDate.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN\Report\ReportEnglishForNursingTracking.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportEnglishForNursingTracking.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN\Report\MultiCampusReportCard.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MultiCampusReportCard.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN\Report\StudentsinCohort.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StudentsinCohort.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN\Report\MultiCampusReportCardPdf.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MultiCampusReportCardPdf.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="$(SolutionDir)\Binaries\StyleCop4.5\StyleCop.Targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
